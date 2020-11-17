@@ -5,6 +5,22 @@ body {
   background: #f0f0f0;
 }
 
+.decorBlock {
+  top: 0%;
+  height: 100px;
+  width: 100%;
+  background: #333333;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.decorBlock:nth-of-type(2) {
+  top: 100px;
+  background: #027cce;
+  width: 100%;
+}
+
 .welcomingPanel {
   color: #333333;
   width: 70%;
