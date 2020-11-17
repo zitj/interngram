@@ -1,0 +1,73 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f0f0f0;
+}
+
+.welcomingPanel {
+  color: #333333;
+  width: 70%;
+  margin-left: 10%;
+  margin-top: 5%;
+  padding: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.welcomingPanel .text {
+  margin-top: 5%;
+}
+
+.welcomingPanel .text h1 {
+  font-size: 4em;
+  font-weight: 700;
+  margin-bottom: 0px;
+  line-height: 70px;
+}
+
+.welcomingPanel .text h1 span {
+  color: #027cce;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  margin-left: 5px;
+  margin-top: 0;
+}
+
+.welcomingPanel .text p {
+  margin-top: 0;
+  font-size: 1.3em;
+  margin-left: 5px;
+}
+
+.welcomingPanel .text button {
+  outline: none;
+  border: 2px solid #027cce;
+  color: #027cce;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  cursor: pointer;
+  padding: 14px 40px;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.welcomingPanel .text button:hover {
+  color: white;
+  background: #027cce;
+}
+
+.welcomingPanel .text button:active {
+  color: #027cce;
+  background: none;
+}
+
+.illustration svg {
+  width: 700px;
+  height: 600px;
+}
+/*# sourceMappingURL=style.css.map */
