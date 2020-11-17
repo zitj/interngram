@@ -1,0 +1,139 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "type": "IMAGE",
+      "title": "Web Developer in 2018",
+      "meta": {
+        "url": "https://cdn-images-1.medium.com/max/2000/1*_wZhhTstI_DCebB2fK2c5g.png",
+        "alt": "Web Developer in 2018"
+      }
+    },
+    {
+      "id": 2,
+      "type": "VIDEO",
+      "title": "Web Development Tutorial for Beginners",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=3JluqTojuME"
+      }
+    },
+    {
+      "id": 3,
+      "type": "IMAGE",
+      "title": "Frontend Path & Courses",
+      "meta": {
+        "url": "https://cdn-images-1.medium.com/max/2000/1*V7TMAzvhW7_cn9FbkKqOcQ.png"
+      }
+    },
+    {
+      "type": "LINK",
+      "title": "Expose vs publish: Docker port commands explained simply",
+      "meta": {
+        "url": "https://medium.freecodecamp.org/expose-vs-publish-docker-port-commands-explained-simply-434593dbc9a3"
+      },
+      "id": 4
+    },
+    {
+      "id": 5,
+      "type": "LINK",
+      "title": "The most important lessons I’ve learned after a year of working with React",
+      "meta": {
+        "url": "https://medium.freecodecamp.org/mindset-lessons-from-a-year-with-react-1de862421981"
+      }
+    },
+    {
+      "id": 6,
+      "type": "IMAGE",
+      "title": "Angular Code Snippet",
+      "meta": {
+        "url": "https://angular.io/generated/images/marketing/home/joyful-development.svg"
+      }
+    },
+    {
+      "id": 7,
+      "type": "IMAGE",
+      "title": "Model View Controller",
+      "meta": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/300px-MVC-Process.svg.png"
+      }
+    },
+    {
+      "id": 8,
+      "type": "VIDEO",
+      "title": "React Crash Course",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=Ke90Tje7VS0"
+      }
+    },
+    {
+      "id": 9,
+      "type": "VIDEO",
+      "title": "React Crash Course",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=Ke90Tje7VS0"
+      }
+    },
+    {
+      "id": 10,
+      "type": "VIDEO",
+      "title": "Using APIs in React",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=204C9yNeOYI"
+      }
+    },
+    {
+      "id": 11,
+      "type": "VIDEO",
+      "title": "ReactJS Tutorial for Begginers",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=pgAvVxowaYU"
+      }
+    },
+    {
+      "id": 12,
+      "type": "IMAGE",
+      "title": "Test Image",
+      "date": "1 13 2019 19:44",
+      "meta": {
+        "url": "https://cnet2.cbsistatic.com/img/yN40e7ygOpsPHxZFR-OefDmQ0p4=/570x0/2017/10/16/6ef919da-cb5c-4cb6-84b4-a5b1f3d9e1af/twocats.jpg",
+        "alt": "Cats"
+      }
+    },
+    {
+      "type": "VIDEO",
+      "title": "https://www.youtube.com/watch?v=QgfCl07oOZw",
+      "date": "1 13 2019 19:48",
+      "meta": {
+        "url": "Halsey"
+      },
+      "id": 13
+    },
+    {
+      "id": 14,
+      "type": "VIDEO",
+      "title": "Test Video",
+      "date": "1 13 2019 19:57",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=bdPZ2Cu1vNU"
+      }
+    },
+    {
+      "id": 15,
+      "type": "VIDEO",
+      "title": "https://www.youtube.com/watch?v=XfR-nFssGzQ",
+      "date": "1 13 2019 20:3",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=XfR-nFssGzQ"
+      }
+    },
+    {
+      "type": "IMAGE",
+      "title": "Test image",
+      "date": "1 13 2019 20:3",
+      "meta": {
+        "url": "https://images.pexels.com/photos/257540/pexels-photo-257540.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+      },
+      "id": 16
+    }
+  ]
+}

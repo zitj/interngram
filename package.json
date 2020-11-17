@@ -1,0 +1,26 @@
+{
+  "name": "interngram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "json:server": "json-server --watch data/db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zitj/interngram.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zitj/interngram/issues"
+  },
+  "homepage": "https://github.com/zitj/interngram#readme",
+  "devDependencies": {
+    "eslint": "^7.13.0"
+  },
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}
