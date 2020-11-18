@@ -6,7 +6,7 @@ const form = document.querySelector('form');
 // const editPostBtn = document.querySelector('.editPostBtn');
 
 const closeBtn = document.querySelector('.closeBtn');
-// const deleteBtn = document.querySelector('.delete');
+const deleteBtn = document.querySelector('.delete');
 const editBtn = document.querySelector('.edit');
 
 const renderIndividualPost = async () => {
@@ -59,6 +59,12 @@ const changePost = async (e) =>{
     });
     window.location.reload(`/post.html?=${id}`);
 }
+deleteBtn.addEventListener('click', async (e) => {
+    const res = await fetch('http://localhost:3000/posts/' + id, {
+        method: 'DELETE'
+    })
+    window.location.replace('/main.html');
+})
 
   editBtn.addEventListener('click', ()=>{
     formPanel.classList.add('active');

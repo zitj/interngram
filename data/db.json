@@ -3,17 +3,9 @@
     {
       "id": 1,
       "type": "IMAGE",
-      "title": "Web Developer in 2020",
+      "title": "Web Developer in 2018",
       "meta": {
         "url": "https://cdn-images-1.medium.com/max/2000/1*_wZhhTstI_DCebB2fK2c5g.png"
-      }
-    },
-    {
-      "id": 2,
-      "type": "VIDEO",
-      "title": "Web Development Tutorial for Beginners",
-      "meta": {
-        "url": "https://www.youtube.com/watch?v=3JluqTojuME"
       }
     },
     {
@@ -51,7 +43,7 @@
     {
       "id": 7,
       "type": "IMAGE",
-      "title": "Model View Controller",
+      "title": "MVC - Model View Controller",
       "meta": {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/300px-MVC-Process.svg.png"
       }
@@ -133,30 +125,6 @@
         "url": "https://images.pexels.com/photos/257540/pexels-photo-257540.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
       },
       "id": 16
-    },
-    {
-      "title": "dasda",
-      "type": "IMAGE",
-      "meta": {
-        "url": "sdasd"
-      },
-      "id": 17
-    },
-    {
-      "title": "Novi post",
-      "type": "LINK",
-      "meta": {
-        "url": "www.novipost.com"
-      },
-      "id": 18
-    },
-    {
-      "title": "Sekoooo",
-      "type": "LINK",
-      "meta": {
-        "url": "Brabica"
-      },
-      "id": 19
     }
   ]
 }
