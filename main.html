@@ -11,14 +11,32 @@
 
 </head>
 <body>
+    <div class="formPanel ">
+        <div class="darkBackground"></div>
+        <div class="form">
+        <h1>Create a New Post</h1>
+        <form>
+            <input type="text" name="title" required placeholder="title">
+            <label for="image">Image</label>
+            <input type="radio" id="image" name="type" value="IMAGE">
+            <label for="video">Video</label>
+            <input type="radio" id="video" name="type" value="VIDEO">
+            <label for="link">Link</label>
+            <input type="radio" id="link" name="type" value="LINK">
+            <textarea name="content" id="" cols="30" rows="10" required placeholder="content"></textarea>
+            <a>Create</a>
+        </form>
+        </div>
+    </div>
+    
     <div class="wrapper">
         <nav>
             <h2 class="logo">iNTERNGRAM.</h2>
-            <a href="/new-post.html">Create new post</a>
+            <a class="createBtn">Create new post</a>
         </nav>
 
         <div class="posts">
-            
+
         </div> <!-- end .posts -->
     </div> <!-- end .wrapper -->
 </body>

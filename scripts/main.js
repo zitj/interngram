@@ -1,5 +1,9 @@
 
 const container = document.querySelector('.posts');
+const createBtn = document.querySelector('.createBtn');
+const formPanel = document.querySelector('.formPanel');
+const darkBackground = document.querySelector('.darkBackground');
+
 const renderPosts = async () => {
     let uri = 'http://localhost:3000/posts';
 
@@ -44,5 +48,11 @@ const renderPosts = async () => {
 
 }
 
+createBtn.addEventListener('click', ()=>{
+    formPanel.classList.add('active');
+})
+darkBackground.addEventListener('click', ()=>{
+    formPanel.classList.remove('active');
+})
 
 window.addEventListener('DOMContentLoaded', () => renderPosts());
