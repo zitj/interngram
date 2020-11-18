@@ -14,16 +14,19 @@
     <div class="formPanel ">
         <div class="darkBackground"></div>
         <div class="form">
+        <div class="closeBtn"><img src="https://img.icons8.com/flat_round/64/000000/delete-sign.png"/></div>
         <h1>Create a New Post</h1>
         <form>
-            <input type="text" name="title" required placeholder="title">
-            <label for="image">Image</label>
-            <input type="radio" id="image" name="type" value="IMAGE">
-            <label for="video">Video</label>
-            <input type="radio" id="video" name="type" value="VIDEO">
-            <label for="link">Link</label>
-            <input type="radio" id="link" name="type" value="LINK">
-            <textarea name="content" id="" cols="30" rows="10" required placeholder="content"></textarea>
+            <label for="title">Title of the post:</label>
+            <input type="text" name="title" required placeholder="Title">
+            <label for="type">Choose a type:</label>
+            <select id="type" name="type" required>
+                <option value="IMAGE">Image</option>
+                <option value="VIDEO">Video</option>
+                <option value="LINK">Link</option>
+            </select>
+            <label for="content">Content of the post:</label>
+            <textarea name="content" id="" cols="30" rows="10" required placeholder="Content"></textarea>
             <a>Create</a>
         </form>
         </div>
