@@ -1,9 +1,11 @@
 
 const container = document.querySelector('.posts');
-const createBtn = document.querySelector('.createBtn');
+
+const createNewPostBtn = document.querySelector('.createNewPostBtn');
 const formPanel = document.querySelector('.formPanel');
 const darkBackground = document.querySelector('.darkBackground');
 const closeBtn = document.querySelector('.closeBtn');
+const form = document.querySelector('form');
 
 const renderPosts = async () => {
     let uri = 'http://localhost:3000/posts';
@@ -49,7 +51,27 @@ const renderPosts = async () => {
 
 }
 
-createBtn.addEventListener('click', ()=>{
+const createPost = async (e) =>{
+    e.preventDefault();
+    const doc = {
+        title: form.title.value,
+        type: form.type.value,
+        meta:{
+            url: form.content.value
+        }
+    }
+    await fetch('http://localhost:3000/posts/', {
+        method: 'POST',
+        body: JSON.stringify(doc),
+        headers: { 'Content-Type': 'application/json' }
+    });
+    window.location.reload('/main.html');
+}
+
+
+
+
+createNewPostBtn.addEventListener('click', ()=>{
     formPanel.classList.add('active');
 })
 darkBackground.addEventListener('click', ()=>{
@@ -58,5 +80,7 @@ darkBackground.addEventListener('click', ()=>{
 closeBtn.addEventListener('click', ()=>{
     formPanel.classList.remove('active');
 })
+
+form.addEventListener('submit', createPost);
 
 window.addEventListener('DOMContentLoaded', () => renderPosts());

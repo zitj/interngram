@@ -134,6 +134,30 @@
         "url": "https://images.pexels.com/photos/257540/pexels-photo-257540.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
       },
       "id": 16
+    },
+    {
+      "title": "dasda",
+      "type": "IMAGE",
+      "meta": {
+        "url": "sdasd"
+      },
+      "id": 17
+    },
+    {
+      "title": "Novi post",
+      "type": "LINK",
+      "meta": {
+        "url": "www.novipost.com"
+      },
+      "id": 18
+    },
+    {
+      "title": "Sekoooo",
+      "type": "LINK",
+      "meta": {
+        "url": "Brabica"
+      },
+      "id": 19
     }
   ]
 }

@@ -6,8 +6,10 @@ body{
     font-family: 'Poppins', sans-serif;
     background: rgb(240, 240, 240);
 }
-a{
+a,
+button{
     text-decoration: none;
+    border: none;
     outline: none;
     background: $interngram-blue;
     color: white;
@@ -166,6 +168,7 @@ justify-content: space-around;
             padding: 5px;
             border-radius: 10px;
             color: #333333;
+            font-family: 'Poppins', sans-serif;
         }
         input{
             height: 30px;
@@ -174,10 +177,12 @@ justify-content: space-around;
             width: 97%;
             height: 40px;
         }
-        a{
+        button{
         display: block;
         text-align: center;
         margin-top: 30px;
+        width: 99%;
+        height: 60px;
         }
        
     }
