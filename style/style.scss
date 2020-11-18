@@ -127,7 +127,7 @@ justify-content: space-around;
 }
 .formPanel{
     display: none;
-    
+    z-index: 3;
     &.active{
         display: block;
     }
@@ -187,4 +187,16 @@ justify-content: space-around;
        
     }
     
+}
+.buttons{
+    margin-top: 30px;
+}
+.delete{
+    background: rgb(255, 71, 71);
+    margin-left: 10px;
+}
+.individualPost{
+    background: white;
+    padding: 5%;
+    text-align: center;
 }

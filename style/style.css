@@ -163,6 +163,7 @@ button:active {
 
 .formPanel {
   display: none;
+  z-index: 3;
 }
 
 .formPanel.active {
@@ -231,5 +232,20 @@ button:active {
   margin-top: 30px;
   width: 99%;
   height: 60px;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.delete {
+  background: #ff4747;
+  margin-left: 10px;
+}
+
+.individualPost {
+  background: white;
+  padding: 5%;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
