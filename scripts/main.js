@@ -7,8 +7,14 @@ const darkBackground = document.querySelector('.darkBackground');
 const closeBtn = document.querySelector('.closeBtn');
 const form = document.querySelector('form');
 
+const loadingSpinner = document.querySelector('.loadingSpinner');
+let counter = 4;
+
+
+
+
 const renderPosts = async () => {
-    let uri = 'http://localhost:3000/posts';
+    let uri = `http://localhost:3000/posts?_limit=${counter}`;
 
     const res = await fetch(uri);
     const posts = await res.json();
@@ -68,6 +74,24 @@ const createPost = async (e) =>{
     window.location.reload('/main.html');
 }
 
+const loading = () =>{
+    counter += 4;
+    loadingSpinner.classList.add('active');
+    loadingSpinner.addEventListener('animationend', ()=>{
+        loadingSpinner.classList.remove('active');        
+        renderPosts();
+    })
+}
+
+
+window.addEventListener('scroll', ()=>{
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    console.log({scrollTop, scrollHeight, clientHeight});
+
+    if(clientHeight + scrollTop == scrollHeight){
+        loading();
+    }
+});
 
 
 

@@ -3,7 +3,7 @@
     {
       "id": 1,
       "type": "IMAGE",
-      "title": "Web Developer in 2018",
+      "title": "Web Developer in 2018, 2019, 2020",
       "meta": {
         "url": "https://cdn-images-1.medium.com/max/2000/1*_wZhhTstI_DCebB2fK2c5g.png"
       }
@@ -49,22 +49,6 @@
       }
     },
     {
-      "id": 8,
-      "type": "VIDEO",
-      "title": "React Crash Course",
-      "meta": {
-        "url": "https://www.youtube.com/watch?v=Ke90Tje7VS0"
-      }
-    },
-    {
-      "id": 9,
-      "type": "VIDEO",
-      "title": "React Crash Course",
-      "meta": {
-        "url": "https://www.youtube.com/watch?v=Ke90Tje7VS0"
-      }
-    },
-    {
       "id": 10,
       "type": "VIDEO",
       "title": "Using APIs in React",
@@ -89,15 +73,6 @@
         "url": "https://cnet2.cbsistatic.com/img/yN40e7ygOpsPHxZFR-OefDmQ0p4=/570x0/2017/10/16/6ef919da-cb5c-4cb6-84b4-a5b1f3d9e1af/twocats.jpg",
         "alt": "Cats"
       }
-    },
-    {
-      "type": "VIDEO",
-      "title": "https://www.youtube.com/watch?v=QgfCl07oOZw",
-      "date": "1 13 2019 19:48",
-      "meta": {
-        "url": "Halsey"
-      },
-      "id": 13
     },
     {
       "id": 14,
@@ -125,6 +100,14 @@
         "url": "https://images.pexels.com/photos/257540/pexels-photo-257540.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
       },
       "id": 16
+    },
+    {
+      "title": "Vanilla JS is fun",
+      "type": "IMAGE",
+      "meta": {
+        "url": "https://www.urbanvineinc.com/wp-content/uploads/2019/05/Tahitian-Vanilla.jpg"
+      },
+      "id": 17
     }
   ]
 }
