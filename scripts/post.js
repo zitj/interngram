@@ -68,13 +68,19 @@ deleteBtn.addEventListener('click', async (e) => {
 
   editBtn.addEventListener('click', ()=>{
     formPanel.classList.add('active');
+    darkBackground.classList.add('active');
     uploadInputs();
   })
-  closeBtn.addEventListener('click', ()=>{
+
+const panelRemover = () => {
     formPanel.classList.remove('active');
+    darkBackground.classList.remove('active');
+}  
+  closeBtn.addEventListener('click', ()=>{
+    panelRemover();
   })
   darkBackground.addEventListener('click', ()=>{
-    formPanel.classList.remove('active');
+    panelRemover();
   })
 
   form.addEventListener('submit', changePost);

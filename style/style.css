@@ -109,8 +109,8 @@ button:active {
 .illustration svg .signInBtn:hover {
   cursor: pointer;
   opacity: .9;
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
+  -webkit-transform: scale(1.006);
+          transform: scale(1.006);
 }
 
 .illustration svg .signUpBtn:active,
@@ -123,7 +123,7 @@ button:active {
 .wrapper {
   width: 80%;
   margin-left: 5%;
-  padding: 5%;
+  padding: 2% 5% 5%;
 }
 
 .wrapper nav {
@@ -137,10 +137,13 @@ button:active {
 
 .wrapper nav .logo {
   font-size: 2em;
+  color: #027cce;
+  margin-left: 2%;
 }
 
-.wrapper nav .logo {
-  color: #027cce;
+.wrapper nav.main {
+  background: white;
+  border-radius: 14px;
 }
 
 .wrapper nav a {
@@ -192,27 +195,57 @@ button:active {
   margin-top: 20px;
 }
 
+.wrapper .individualPost {
+  margin-top: 3%;
+}
+
 .formPanel {
-  display: none;
+  -webkit-transform: translateY(-500px);
+          transform: translateY(-500px);
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  opacity: 0;
+}
+
+.formPanel .closeBtn {
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.formPanel .closeBtn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.formPanel .closeBtn:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .formPanel.active {
-  display: block;
+  -webkit-transform: translateY(400px);
+          transform: translateY(400px);
+  opacity: 1;
 }
 
-.formPanel .darkBackground {
-  background: rgba(0, 0, 0, 0.835);
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  cursor: pointer;
+.formPanel.createNewPostPanel.active {
+  -webkit-transform: translateY(500px);
+          transform: translateY(500px);
+}
+
+.formPanel.editPostPanel {
+  -webkit-transform: translateY(-1000px);
+          transform: translateY(-1000px);
+}
+
+.formPanel.editPostPanel.active {
+  -webkit-transform: translateY(-400px);
+          transform: translateY(-400px);
 }
 
 .formPanel .form {
-  -webkit-box-shadow: 0px 0px 60px 5px rgba(255, 255, 255, 0.507);
-          box-shadow: 0px 0px 60px 5px rgba(255, 255, 255, 0.507);
+  -webkit-box-shadow: 0px 0px 60px 5px rgba(255, 255, 255, 0.383);
+          box-shadow: 0px 0px 60px 5px rgba(255, 255, 255, 0.383);
   background: white;
   position: absolute;
   width: 20%;
@@ -222,6 +255,8 @@ button:active {
           transform: translate(-50%, -50%);
   padding: 3.5% 5% 5%;
   border-radius: 22px;
+  -webkit-animation: introForm 1s ease-in-out;
+          animation: introForm 1s ease-in-out;
 }
 
 .formPanel .form h1 {
@@ -269,6 +304,41 @@ button:active {
   margin-top: 30px;
   width: 99%;
   height: 60px;
+}
+
+.darkBackground {
+  display: none;
+  background: rgba(0, 0, 0, 0.835);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  -webkit-animation: intro .4s ease-in-out;
+          animation: intro .4s ease-in-out;
+  cursor: pointer;
+}
+
+.darkBackground.active {
+  display: block;
+}
+
+@-webkit-keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .buttons {

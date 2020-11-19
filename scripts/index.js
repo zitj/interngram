@@ -1,5 +1,5 @@
 const formPanels = document.querySelectorAll('.formPanel');
-const darkBackgrounds = document.querySelectorAll('.darkBackground');
+const darkBackground = document.querySelector('.darkBackground');
 
 const signUpForm = document.querySelector('.signUpForm');
 const signInForm = document.querySelector('.signInForm');
@@ -27,6 +27,7 @@ const loadUsers = async () => {
             console.log(user);
     });
 }
+
 const signInUser = async () => {
     let uri = `http://localhost:3000/users`;
     const res = await fetch(uri);
@@ -58,26 +59,31 @@ const createUser = async (e) =>{
 
 signUpBtn.addEventListener('click', ()=>{
     signUpPanel.classList.add('active');
+    darkBackground.classList.add('active');
 });
 
 signInBtn.addEventListener('click', ()=>{
+    darkBackground.classList.add('active');
     signInPanel.classList.add('active');
 });
 
 for(let clsBtn of closeBtns){
     clsBtn.addEventListener('click', ()=>{
-        for(let formPanel of formPanels)
+        for(let formPanel of formPanels){
             formPanel.classList.remove('active');
+        }
+        darkBackground.classList.remove('active');
         });
-    }
+}
 
-for(let darkBackground of darkBackgrounds){
+
     darkBackground.addEventListener('click', ()=>{
         for(let formPanel of formPanels){
             formPanel.classList.remove('active');
         }
+        darkBackground.classList.remove('active');
     });
-}    
+
 
 signUpForm.addEventListener('submit', createUser);
 signInPanelBtn.addEventListener('click', ()=>{

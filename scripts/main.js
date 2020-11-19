@@ -107,17 +107,21 @@ window.addEventListener('scroll', ()=>{
     }
 });
 
-
+const panelRemover = () => {
+    darkBackground.classList.remove('active');
+    formPanel.classList.remove('active');
+}
 
 createNewPostBtn.addEventListener('click', ()=>{
     formPanel.classList.add('active');
-})
+    darkBackground.classList.add('active');
+});
 darkBackground.addEventListener('click', ()=>{
-    formPanel.classList.remove('active');
-})
+    panelRemover();
+});
 closeBtn.addEventListener('click', ()=>{
-    formPanel.classList.remove('active');
-})
+    panelRemover();
+});
 
 form.addEventListener('submit', createPost);
 
