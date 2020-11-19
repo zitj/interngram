@@ -1,5 +1,8 @@
 
 const container = document.querySelector('.posts');
+const userBtn = document.querySelector('.userBtn');
+
+const id = new URLSearchParams(window.location.search).get('id');
 
 const createNewPostBtn = document.querySelector('.createNewPostBtn');
 const formPanel = document.querySelector('.formPanel');
@@ -10,7 +13,19 @@ const form = document.querySelector('form');
 const loadingSpinner = document.querySelector('.loadingSpinner');
 let counter = 4;
 
+const renderUsers = async () => {
+    let uri = `http://localhost:3000/users`;
+    const res = await fetch(uri);
+    const posts = await res.json();
+    let template = '';
 
+    posts.forEach(post => {
+        if(post.id == id){
+            template = post.firstName + ' ' + post.lastName;
+        }
+})
+    userBtn.innerHTML = template;
+}
 
 
 const renderPosts = async () => {
@@ -20,7 +35,6 @@ const renderPosts = async () => {
     const posts = await res.json();
 
     let template = '';
-
     posts.forEach(post => {
 
         if(post.type === "IMAGE"){
@@ -107,4 +121,7 @@ closeBtn.addEventListener('click', ()=>{
 
 form.addEventListener('submit', createPost);
 
-window.addEventListener('DOMContentLoaded', () => renderPosts());
+window.addEventListener('DOMContentLoaded', () => {
+    renderPosts();
+    renderUsers();
+});

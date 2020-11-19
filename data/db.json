@@ -109,5 +109,49 @@
       },
       "id": 17
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Aleksandar",
+      "lastName": "Veljkovic",
+      "email": "avelj@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "firstName": "Sotir",
+      "lastName": "Zvanidjubre",
+      "email": "sotizzvanidjubre@gmail.com",
+      "password": "4321"
+    },
+    {
+      "firstName": "Jel moze sad",
+      "lastName": "ovakonesto",
+      "email": "nabrzinu@gmail.com",
+      "password": "00000",
+      "id": 3
+    },
+    {
+      "firstName": "Milutin",
+      "lastName": "Popadic",
+      "email": "milutinpopadic54@gmail.com",
+      "password": "boljizivot",
+      "id": 4
+    },
+    {
+      "firstName": "aa",
+      "lastName": "aa",
+      "email": "sas@gmail.com",
+      "password": "9392",
+      "id": 5
+    },
+    {
+      "firstName": "AS",
+      "lastName": "sa",
+      "email": "sa@aw.com",
+      "password": "2222222",
+      "id": 6
+    }
   ]
 }
