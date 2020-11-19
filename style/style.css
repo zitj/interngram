@@ -90,6 +90,36 @@ button:active {
   height: 600px;
 }
 
+.illustration svg text {
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+.illustration svg .signUpBtn,
+.illustration svg .signInBtn {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.illustration svg .signUpBtn:hover,
+.illustration svg .signInBtn:hover {
+  cursor: pointer;
+  opacity: .9;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.illustration svg .signUpBtn:active,
+.illustration svg .signInBtn:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
 .wrapper {
   width: 80%;
   margin-left: 5%;
@@ -192,6 +222,10 @@ button:active {
           transform: translate(-50%, -50%);
   padding: 5%;
   border-radius: 22px;
+}
+
+.formPanel .form h1 {
+  text-align: center;
 }
 
 .formPanel .form .closeBtn {

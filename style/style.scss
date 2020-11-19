@@ -72,10 +72,31 @@ justify-content: space-around;
 }}
 .illustration{
     svg{
+        text{
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            }
         width: 700px;
         height: 600px;
+        .signUpBtn,
+        .signInBtn{
+            user-select: none;
+            transition: .2s ease-in-out;
+            &:hover{
+                cursor: pointer;
+                opacity: .9;
+                transform: scale(1.01);
+            }
+            &:active{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
     }
-}
+    
+
+    }
+   
 .wrapper{
     width: 80%;
     margin-left: 5%;
@@ -151,6 +172,9 @@ justify-content: space-around;
         transform: translate(-50%,-50%);
         padding: 5%;
         border-radius: 22px;
+        h1{
+            text-align: center;
+        }
         .closeBtn{
             position: absolute;
             right: 10%;
