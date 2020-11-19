@@ -152,6 +152,20 @@
       "email": "sa@aw.com",
       "password": "2222222",
       "id": 6
+    },
+    {
+      "firstName": "Dimitrije",
+      "lastName": "Dimitrijevic",
+      "email": "dicele@live.com",
+      "password": "dida\\",
+      "id": 7
+    },
+    {
+      "firstName": "Milan",
+      "lastName": "Stanojevic",
+      "email": "mikica@gmail.com",
+      "password": "90",
+      "id": 8
     }
   ]
 }

@@ -2,11 +2,12 @@ const formPanels = document.querySelectorAll('.formPanel');
 const darkBackgrounds = document.querySelectorAll('.darkBackground');
 
 const signUpForm = document.querySelector('.signUpForm');
-// const signInForm = document.querySelector('.signInForm');
+const signInForm = document.querySelector('.signInForm');
 
 
 const signUpBtn = document.querySelector('.signUpBtn');
 const signUpPanel = document.querySelector('.signUpPanel');
+const signInPanelBtn = document.querySelector('.signInPanelBtn');
 
 const signInPanel = document.querySelector('.signInPanel');
 const signInBtn = document.querySelector('.signInBtn');
@@ -26,6 +27,19 @@ const loadUsers = async () => {
             console.log(user);
     });
 }
+const signInUser = async () => {
+    let uri = `http://localhost:3000/users`;
+    const res = await fetch(uri);
+    const users = await res.json();
+    users.forEach(user => {
+        if(user.email == signInForm.email.value && user.password == signInForm.password.value){
+            window.location.replace(`/main.html?id=${user.id}`);
+        }
+        else{
+            return;
+        }
+    });
+}
 
 const createUser = async (e) =>{
     e.preventDefault();
@@ -40,7 +54,6 @@ const createUser = async (e) =>{
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' }
     });
-    window.location.location(`/main.html?id=${doc.id}`);
 }
 
 signUpBtn.addEventListener('click', ()=>{
@@ -66,13 +79,7 @@ for(let darkBackground of darkBackgrounds){
     });
 }    
 
-// for(let i = 0; i <= closeBtn.length; i++){
-
-// closeBtn[i].addEventListener('click', ()=>{
-//     formPanel[i].classList.remove('active');
-// });
-// darkBackground[i].addEventListener('click', ()=>{
-//     formPanel[i].classList.remove('active');
-// });
-// }
 signUpForm.addEventListener('submit', createUser);
+signInPanelBtn.addEventListener('click', ()=>{
+    signInUser();
+});
