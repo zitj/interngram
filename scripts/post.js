@@ -65,7 +65,7 @@ deleteBtn.addEventListener('click', async (e) => {
     const res = await fetch('http://localhost:3000/posts/' + id, {
         method: 'DELETE'
     })
-    window.location.replace('/main.html');
+    window.location.replace(`/main.html?id=${userParsed.id}`);
 })
 
   editBtn.addEventListener('click', ()=>{
@@ -92,5 +92,3 @@ const panelRemover = () => {
   });
 
   window.addEventListener('DOMContentLoaded', () => renderIndividualPost());
-
-  console.log(userParsed.id);

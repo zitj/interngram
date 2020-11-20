@@ -137,6 +137,8 @@ button:active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background: white;
+  border-radius: 14px;
 }
 
 .wrapper nav .logo {
@@ -145,9 +147,8 @@ button:active {
   margin-left: 2%;
 }
 
-.wrapper nav.main {
-  background: white;
-  border-radius: 14px;
+.wrapper nav .buttons {
+  margin-right: 2%;
 }
 
 .wrapper nav a {

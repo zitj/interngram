@@ -107,15 +107,16 @@ justify-content: space-around;
     nav{
         display: flex;
         justify-content: space-between;
+        background: white;
+        border-radius: 14px;
         .logo{
             font-size: 2em;
             color: $interngram-blue;
             margin-left: 2%;
         }
-        &.main{
-            background: white;
-            border-radius: 14px;
-        }
+       .buttons{
+           margin-right: 2%;
+       }
         a{
             margin-top: 20px;
             line-height: 40px;
