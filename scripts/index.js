@@ -21,11 +21,6 @@ const loadUsers = async () => {
     const res = await fetch(uri);
     const users = await res.json();
     
-    console.log(users);
-
-    users.forEach(user => {
-            console.log(user);
-    });
 }
 
 const signInUser = async () => {
@@ -33,12 +28,16 @@ const signInUser = async () => {
     const res = await fetch(uri);
     const users = await res.json();
     users.forEach(user => {
+        signInForm.email.value.toString();
+        signInForm.password.value.toString();
+
         if(user.email == signInForm.email.value && user.password == signInForm.password.value){
             window.location.replace(`/main.html?id=${user.id}`);
         }
         else{
             return;
         }
+        
     });
 }
 
@@ -86,6 +85,8 @@ for(let clsBtn of closeBtns){
 
 
 signUpForm.addEventListener('submit', createUser);
-signInPanelBtn.addEventListener('click', ()=>{
+signInPanelBtn.addEventListener('click', (e)=>{
+    e.preventDefault();
     signInUser();
 });
+

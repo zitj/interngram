@@ -1,7 +1,7 @@
 
 const container = document.querySelector('.posts');
 const userBtn = document.querySelector('.userBtn');
-
+const logo = document.querySelector('.logo');
 const id = new URLSearchParams(window.location.search).get('id');
 
 const createNewPostBtn = document.querySelector('.createNewPostBtn');
@@ -132,6 +132,11 @@ darkBackground.addEventListener('click', ()=>{
 });
 closeBtn.addEventListener('click', ()=>{
     panelRemover();
+});
+
+logo.addEventListener('click', ()=>{
+    localStorage.removeItem("user");
+    window.location.replace('/index.html');
 });
 
 form.addEventListener('submit', createPost);

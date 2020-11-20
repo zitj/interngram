@@ -26,6 +26,9 @@ button{
     opacity: 1;
     }
 }
+.logo{
+    cursor: pointer;
+}
 .decorBlock{
     top: 0%;
     height: 100px;
@@ -151,6 +154,7 @@ justify-content: space-around;
     }
     .individualPost{
         margin-top: 3%;
+        border-radius: 16px;
     }
 }
 .formPanel{

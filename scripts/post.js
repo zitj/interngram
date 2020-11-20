@@ -3,11 +3,13 @@ const container = document.querySelector('.individualPost');
 const formPanel = document.querySelector('.formPanel');
 const darkBackground = document.querySelector('.darkBackground');
 const form = document.querySelector('form');
-// const editPostBtn = document.querySelector('.editPostBtn');
 
+const logo = document.querySelector('.logo');
 const closeBtn = document.querySelector('.closeBtn');
 const deleteBtn = document.querySelector('.delete');
 const editBtn = document.querySelector('.edit');
+
+let userParsed = JSON.parse(localStorage.getItem("user"));
 
 const renderIndividualPost = async () => {
     const res = await fetch('http://localhost:3000/posts/' + id);
@@ -85,4 +87,10 @@ const panelRemover = () => {
 
   form.addEventListener('submit', changePost);
 
+  logo.addEventListener('click', () =>{
+    window.location.replace(`/main.html?id=${userParsed.id}`);
+  });
+
   window.addEventListener('DOMContentLoaded', () => renderIndividualPost());
+
+  console.log(userParsed.id);
