@@ -60,7 +60,7 @@ const renderPosts = async () => {
             template += `
             <div class="post">
                 <h2>${post.title}</h2>
-                <iframe id="ytplayer" type="text/html" width="550" height="360"
+                <iframe id="ytplayer" type="text/html" width="815" height="360"
                 frameborder="0" src=${post.meta.url}></iframe>
                 <a href="/post.html?id=${post.id}">details</a>
             </div>
