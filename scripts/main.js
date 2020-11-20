@@ -11,22 +11,32 @@ const closeBtn = document.querySelector('.closeBtn');
 const form = document.querySelector('form');
 
 const loadingSpinner = document.querySelector('.loadingSpinner');
+
+let userParsed;
 let counter = 4;
 
 const renderUsers = async () => {
     let uri = `http://localhost:3000/users`;
     const res = await fetch(uri);
-    const posts = await res.json();
+    const users = await res.json();
     let template = '';
 
-    posts.forEach(post => {
-        if(post.id == id){
-            template = post.firstName + ' ' + post.lastName;
+    users.forEach(user => {
+        if(user.id == id){
+            template = user.firstName + ' ' + user.lastName;
+            let userStringified = JSON.stringify(user);
+            localStorage.setItem("user",  userStringified);
+           
         }
 })
     userBtn.innerHTML = template;
 }
 
+const parseUser = async () => {
+    const res = await renderUsers();
+    userParsed = JSON.parse(localStorage.getItem("user"));
+    console.log(userParsed.firstName);
+}
 
 const renderPosts = async () => {
     let uri = `http://localhost:3000/posts?_limit=${counter}`;
@@ -78,7 +88,8 @@ const createPost = async (e) =>{
         type: form.type.value,
         meta:{
             url: form.content.value
-        }
+        },
+        userId: userParsed.id
     }
     await fetch('http://localhost:3000/posts/', {
         method: 'POST',
@@ -124,8 +135,10 @@ closeBtn.addEventListener('click', ()=>{
 });
 
 form.addEventListener('submit', createPost);
-
 window.addEventListener('DOMContentLoaded', () => {
     renderPosts();
     renderUsers();
+    parseUser();
 });
+
+

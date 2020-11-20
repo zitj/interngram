@@ -108,6 +108,24 @@
         "url": "https://www.urbanvineinc.com/wp-content/uploads/2019/05/Tahitian-Vanilla.jpg"
       },
       "id": 17
+    },
+    {
+      "title": "new post",
+      "type": "LINK",
+      "meta": {
+        "url": "aleksandarveljkovic.netlify.app"
+      },
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "title": "testing localStorage 2",
+      "type": "LINK",
+      "meta": {
+        "url": "www.testesteste.net"
+      },
+      "userId": 8,
+      "id": 19
     }
   ],
   "users": [
