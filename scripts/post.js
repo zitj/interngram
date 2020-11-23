@@ -10,6 +10,7 @@ const deleteBtn = document.querySelector('.delete');
 const editBtn = document.querySelector('.edit');
 
 let userParsed = JSON.parse(localStorage.getItem("user"));
+let postParsed;
 
 const renderIndividualPost = async () => {
     const res = await fetch('http://localhost:3000/posts/' + id);
@@ -35,6 +36,8 @@ const renderIndividualPost = async () => {
       `;
     }
     container.innerHTML = template;
+    let postStringified = JSON.stringify(post);
+    localStorage.setItem("post",  postStringified);
   }
 
   const uploadInputs = async () =>{
@@ -46,6 +49,7 @@ const renderIndividualPost = async () => {
 }
 
 const changePost = async (e) =>{
+  
     e.preventDefault();
     const doc = {
         title: form.title.value,
@@ -62,16 +66,31 @@ const changePost = async (e) =>{
     window.location.reload(`/post.html?=${id}`);
 }
 deleteBtn.addEventListener('click', async (e) => {
+  if(postParsed.userId == userParsed.id){
     const res = await fetch('http://localhost:3000/posts/' + id, {
         method: 'DELETE'
     })
     window.location.replace(`/main.html?id=${userParsed.id}`);
+  }else{
+    alert('Sorry, you can not delete the post that is created by someone else.');
+  }
+
 })
 
+const parsePost = async () =>{
+  const res = await renderIndividualPost();
+  postParsed = JSON.parse(localStorage.getItem("post"));
+  console.log(postParsed);
+}
+
   editBtn.addEventListener('click', ()=>{
-    formPanel.classList.add('active');
-    darkBackground.classList.add('active');
-    uploadInputs();
+    if(!userParsed || postParsed.userId == userParsed.id){
+      formPanel.classList.add('active');
+      darkBackground.classList.add('active');
+      uploadInputs();
+    }else{
+      alert('Sorry, you can not edit the post that is created by someone else.');
+    }
   })
 
 const panelRemover = () => {
@@ -88,10 +107,14 @@ const panelRemover = () => {
   form.addEventListener('submit', changePost);
 
   logo.addEventListener('click', () =>{
+    localStorage.removeItem('post');
     if(!userParsed){
       window.location.replace(`/main.html`);
     }
       window.location.replace(`/main.html?id=${userParsed.id}`);
   });
 
-  window.addEventListener('DOMContentLoaded', () => renderIndividualPost());
+  window.addEventListener('DOMContentLoaded', () => {
+    renderIndividualPost();
+    parsePost();
+  });
