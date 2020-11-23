@@ -14,6 +14,8 @@ const logo = document.querySelector('.logo');
 const signOutBtn = document.querySelector('.signOut');
 const settingsBtn = document.querySelector('.settingsBtn');
 
+const userParsed = JSON.parse(localStorage.getItem("user"));
+
 const loadUser = async () =>{
     const res = await fetch(`http://localhost:3000/users/` + id);
     const user = await res.json();
@@ -59,6 +61,7 @@ signOutBtn.addEventListener('click', ()=>{
 settingsBtn.addEventListener('click', ()=>{
     formPanel.classList.add('active');
     darkBackground.classList.add('active');
+    form.avatar.value = userParsed.avatar;
 });
 
 closeBtn.addEventListener('click', panelRemover);

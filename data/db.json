@@ -45,7 +45,7 @@
       "password": "1234",
       "avatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
       "themeColor": "blue",
-      "language": "bulgarian"
+      "language": "english"
     },
     {
       "id": 2,
@@ -95,7 +95,7 @@
       "email": "mikica@gmail.com",
       "password": "90",
       "id": 8,
-      "avatar": "",
+      "avatar": "https://i.imgur.com/K5pVtx8.jpg",
       "themeColor": "blue",
       "language": "english"
     },
@@ -105,6 +105,16 @@
       "email": "ukirossi@gmail.com",
       "password": "cimi",
       "id": 9
+    },
+    {
+      "firstName": "Marijana",
+      "lastName": "Stosic",
+      "email": "marimari@gmail.com",
+      "password": "mari",
+      "id": 10,
+      "avatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
+      "themeColor": "blue",
+      "language": "english"
     }
   ]
 }
