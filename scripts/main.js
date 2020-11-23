@@ -1,9 +1,13 @@
 
 const container = document.querySelector('.posts');
 const userBtn = document.querySelector('.userBtn');
-const avatar = document.querySelector('.avatar');
+const nav = document.querySelector('nav');
+const buttons = nav.querySelector('.buttons');
 const logo = document.querySelector('.logo');
 const id = new URLSearchParams(window.location.search).get('id');
+let avatar = document.querySelector('.avatar');
+
+
 
 const createNewPostBtn = document.querySelector('.createNewPostBtn');
 const formPanel = document.querySelector('.formPanel');
@@ -21,13 +25,12 @@ const renderUsers = async () => {
     const res = await fetch(uri);
     const users = await res.json();
     let template = '';
-
     users.forEach(user => {
         if(user.id == id){
             template = user.firstName + ' ' + user.lastName;
             let userStringified = JSON.stringify(user);
             localStorage.setItem("user",  userStringified);
-           
+            avatar.src = user.avatar
         }
 })
     userBtn.innerHTML = template;
@@ -36,7 +39,7 @@ const renderUsers = async () => {
 const parseUser = async () => {
     const res = await renderUsers();
     userParsed = JSON.parse(localStorage.getItem("user"));
-    console.log(userParsed.firstName);
+    console.log(userParsed);
 }
 
 const renderPosts = async () => {
@@ -129,8 +132,7 @@ const panelRemover = () => {
 }
 
 const toProfilePage = () =>{
-    window.location.replace(`/profile.html?id=${id}`);
-
+        window.location.replace(`/profile.html?id=${id}`);
 }
 createNewPostBtn.addEventListener('click', ()=>{
     formPanel.classList.add('active');
@@ -148,10 +150,23 @@ logo.addEventListener('click', ()=>{
     window.location.replace('/index.html');
 });
 
-userBtn.addEventListener('click', toProfilePage);
-avatar.addEventListener('click', toProfilePage);
+userBtn.addEventListener('click', ()=>{
+    if(!userParsed){
+        return;
+    }else{
+        toProfilePage();        
+    }
+ });
+avatar.addEventListener('click', ()=>{
+    if(!userParsed){
+        return;
+    }else{
+        toProfilePage();        
+    }
+ });
 
 form.addEventListener('submit', createPost);
+
 window.addEventListener('DOMContentLoaded', () => {
     renderPosts();
     renderUsers();

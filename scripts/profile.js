@@ -8,6 +8,7 @@ const containerImg = document.querySelector('.profilePicture');
 const darkBackground = document.querySelector('.darkBackground');
 const formPanel = document.querySelector('.formPanel');
 const closeBtn = document.querySelector('.closeBtn');
+const form = document.querySelector('form');
 
 const logo = document.querySelector('.logo');
 const signOutBtn = document.querySelector('.signOut');
@@ -25,6 +26,20 @@ const loadUser = async () =>{
     paragraph.innerHTML = userEmail;
 }
 
+const updateUser = async (e) =>{
+    e.preventDefault();
+    const doc = {
+        avatar: form.avatar.value,
+        themeColor: form.theme.value,
+        language: form.language.value
+    }
+    await fetch('http://localhost:3000/users/' + id, {
+        method: 'PATCH',
+        body: JSON.stringify(doc),
+        headers: { 'Content-Type': 'application/json' }
+    });
+    window.location.reload(`/profile.html?=${id}`);
+}
 
 const panelRemover = () =>{
     formPanel.classList.remove('active');
@@ -48,5 +63,7 @@ settingsBtn.addEventListener('click', ()=>{
 
 closeBtn.addEventListener('click', panelRemover);
 darkBackground.addEventListener('click', panelRemover);
+
+form.addEventListener('submit', updateUser);
 
 window.addEventListener('DOMContentLoaded', loadUser);
