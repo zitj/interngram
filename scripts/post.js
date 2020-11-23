@@ -65,17 +65,26 @@ const changePost = async (e) =>{
     });
     window.location.reload(`/post.html?=${id}`);
 }
-deleteBtn.addEventListener('click', async (e) => {
-  if(postParsed.userId == userParsed.id){
+
+if(!userParsed){
+  deleteBtn.addEventListener('click', async (e) => {
+    const res = await fetch('http://localhost:3000/posts/' + id, {
+      method: 'DELETE'
+  })
+    window.location.replace(`/main.html`);
+  });  
+}
+
+deleteBtn.addEventListener('click', async (e) => {  
+if(postParsed.userId == userParsed.id){
     const res = await fetch('http://localhost:3000/posts/' + id, {
         method: 'DELETE'
     })
     window.location.replace(`/main.html?id=${userParsed.id}`);
   }else{
-    alert('Sorry, you can not delete the post that is created by someone else.');
-  }
-
-})
+  alert('Sorry, you can not delete the post that is created by someone else.');
+  };
+});
 
 const parsePost = async () =>{
   const res = await renderIndividualPost();
