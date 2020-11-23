@@ -88,7 +88,10 @@ const panelRemover = () => {
   form.addEventListener('submit', changePost);
 
   logo.addEventListener('click', () =>{
-    window.location.replace(`/main.html?id=${userParsed.id}`);
+    if(!userParsed){
+      window.location.replace(`/main.html`);
+    }
+      window.location.replace(`/main.html?id=${userParsed.id}`);
   });
 
   window.addEventListener('DOMContentLoaded', () => renderIndividualPost());
