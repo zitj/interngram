@@ -24,6 +24,16 @@
       },
       "userId": 7,
       "id": 18
+    },
+    {
+      "title": "Artan Lili - Prica",
+      "type": "VIDEO",
+      "meta": {
+        "url": "https://www.youtube.com/embed/kalR4amj5WE"
+      },
+      "userId": 1,
+      "userName": "Aleksandar Veljkovic",
+      "id": 19
     }
   ],
   "users": [

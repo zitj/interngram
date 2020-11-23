@@ -8,22 +8,47 @@
     <title>iNTERNGRAM</title>
 </head>
 <body>
+    <div class="darkBackground "></div>
+    <div class="formPanel settingsPanel ">
+    <div class="form">
+    <div class="closeBtn"><img src="https://img.icons8.com/flat_round/64/000000/delete-sign.png"/></div>
+    <h1>Settings</h1>
+    <form class="settingsForm">
+        <label for="avatar">Upload your profile picture</label>
+        <input type="text" name="avatar" required placeholder="Insert URL">
+        <label for="theme">Change theme color</label>
+        <select id="theme" name="theme">
+            <option value="blue">Blue</option>
+            <option value="pink">Pink</option>
+            <option value="green">Green</option>
+            <option value="black">Black</option>
+          </select>
+          <label for="language">Choose language</label>
+            <select id="language" name="language">
+                <option value="bulgarian">Bulgarian</option>
+                <option value="english">English</option>
+                <option value="serbian">Serbian</option>
+              </select>
+        <button type="submit">Save changes</button>
+    </form>
+    </div> <!-- end .form-->
+    </div> <!-- end .signUpPanel-->
+
     <div class="wrapper">
         <nav>
             <h2 class="logo">iNTERNGRAM.</h2>
             <div class="buttons">
-                <button class="signOut">Sign out</button>
+                <button class="settingsBtn">Settings</button>
+                <button class="signOut">Sign&nbsp;Out</button>
             </div> <!-- end .buttons-->
         </nav>
         <div class="profileWrap">
             <div class="profilePicture">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/220px-User_icon_2.svg.png" alt="avatar">
             </div> <!-- end .profilePicture -->
             <div class="info">
-                <h2>Name and surename</h2>
-                <p>Email address</p>
+                <h2>First and last name</h2>
+                <p>email</p>
                 <div class="buttons">
-                    <button>Settings</button>
                 </div>
             </div> <!-- end .info-->
         </div><!-- end .profileWrap -->

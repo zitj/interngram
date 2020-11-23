@@ -1,6 +1,7 @@
 
 const container = document.querySelector('.posts');
 const userBtn = document.querySelector('.userBtn');
+const avatar = document.querySelector('.avatar');
 const logo = document.querySelector('.logo');
 const id = new URLSearchParams(window.location.search).get('id');
 
@@ -53,6 +54,7 @@ const renderPosts = async () => {
                 <h2>${post.title}</h2>
                 <img src="${post.meta.url}" alt="${post.meta.alt}">
                 <a href="/post.html?id=${post.id}">details</a>
+                <p>Created by: ${post.userName}</p>
             </div>
         ` 
         }
@@ -63,6 +65,7 @@ const renderPosts = async () => {
                 <iframe id="ytplayer" type="text/html" width="815" height="360"
                 frameborder="0" src=${post.meta.url}></iframe>
                 <a href="/post.html?id=${post.id}">details</a>
+                <p>Created by: ${post.userName}</p>
             </div>
         ` 
         }
@@ -72,6 +75,7 @@ const renderPosts = async () => {
                 <h2>${post.title}</h2>
                 <a href="${post.meta.url}">${post.meta.url}</a>
                 <a href="/post.html?id=${post.id}">details</a>
+                <p>Created by: ${post.userName}</p>
             </div>
         `
     }
@@ -89,7 +93,8 @@ const createPost = async (e) =>{
         meta:{
             url: form.content.value
         },
-        userId: userParsed.id
+        userId: userParsed.id,
+        userName: userParsed.firstName + ' ' + userParsed.lastName
     }
     await fetch('http://localhost:3000/posts/', {
         method: 'POST',
@@ -123,6 +128,10 @@ const panelRemover = () => {
     formPanel.classList.remove('active');
 }
 
+const toProfilePage = () =>{
+    window.location.replace(`/profile.html?id=${id}`);
+
+}
 createNewPostBtn.addEventListener('click', ()=>{
     formPanel.classList.add('active');
     darkBackground.classList.add('active');
@@ -138,6 +147,9 @@ logo.addEventListener('click', ()=>{
     localStorage.removeItem("user");
     window.location.replace('/index.html');
 });
+
+userBtn.addEventListener('click', toProfilePage);
+avatar.addEventListener('click', toProfilePage);
 
 form.addEventListener('submit', createPost);
 window.addEventListener('DOMContentLoaded', () => {

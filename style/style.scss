@@ -130,12 +130,14 @@ justify-content: space-around;
            margin-right: 2%;
            .edit,
            .delete,
-           .signOut{
+           .signOut,
+           .settingsBtn{
                height: 60%;
                margin-top: 8%;
            }
-           .signOut{
-               margin-top: 13%;
+           .settingsBtn{
+               
+               margin-right: 1%;
            }
        }
        img{
@@ -160,11 +162,13 @@ justify-content: space-around;
     .profileWrap{
         display: flex;
         margin-top: 5%;
-        margin-left: 3%;
+        margin-left: 8%;
+        width: 80%;
         .profilePicture{
             height: 400px;
-            width: 20%;
-           padding: 3%;
+            width: 25%;
+            padding: 3%;
+            margin-right: 5%;
             img, button{
                 display: block;
                 margin-left: 10%;
@@ -174,6 +178,7 @@ justify-content: space-around;
                 margin-bottom: 12px;
                 height: 60%;
                 border-radius: 50%;
+                border: 3px solid $interngram-blue;
             }
         }
         .info{
@@ -234,6 +239,7 @@ justify-content: space-around;
     }
     &.active{
         display: block;
+        z-index: 5;
         animation: introPanel .3s ease-in-out;
     }
     @keyframes introPanel {
