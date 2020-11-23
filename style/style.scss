@@ -1,5 +1,5 @@
 $interngram-blue: #027cce;
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap');
 body{
     padding: 0;
     margin: 0;
@@ -129,9 +129,13 @@ justify-content: space-around;
            margin-top: 0;
            margin-right: 2%;
            .edit,
-           .delete{
+           .delete,
+           .signOut{
                height: 60%;
                margin-top: 8%;
+           }
+           .signOut{
+               margin-top: 13%;
            }
        }
        img{
@@ -150,6 +154,38 @@ justify-content: space-around;
             height: 40px;
             &:hover{
                 color: white;
+            }
+        }
+    }
+    .profileWrap{
+        display: flex;
+        margin-top: 5%;
+        margin-left: 3%;
+        .profilePicture{
+            height: 400px;
+            width: 20%;
+           padding: 3%;
+            img, button{
+                display: block;
+                margin-left: 10%;
+                width: 80%;
+            }
+            img{
+                margin-bottom: 12px;
+                height: 60%;
+                border-radius: 50%;
+            }
+        }
+        .info{
+            width: 60%;
+            // background: yellow;
+            h2{
+                font-size: 4em;
+                margin-bottom: 0;
+            }
+            p{
+                margin-top: 0;
+                font-size: 1.6em;
             }
         }
     }

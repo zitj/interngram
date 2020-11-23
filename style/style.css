@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap");
 body {
   padding: 0;
   margin: 0;
@@ -167,9 +168,14 @@ button:active {
 }
 
 .wrapper nav .buttons .edit,
-.wrapper nav .buttons .delete {
+.wrapper nav .buttons .delete,
+.wrapper nav .buttons .signOut {
   height: 60%;
   margin-top: 8%;
+}
+
+.wrapper nav .buttons .signOut {
+  margin-top: 13%;
 }
 
 .wrapper nav img {
@@ -193,6 +199,46 @@ button:active {
 
 .wrapper nav a:hover {
   color: white;
+}
+
+.wrapper .profileWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+
+.wrapper .profileWrap .profilePicture {
+  height: 400px;
+  width: 20%;
+  padding: 3%;
+}
+
+.wrapper .profileWrap .profilePicture img, .wrapper .profileWrap .profilePicture button {
+  display: block;
+  margin-left: 10%;
+  width: 80%;
+}
+
+.wrapper .profileWrap .profilePicture img {
+  margin-bottom: 12px;
+  height: 60%;
+  border-radius: 50%;
+}
+
+.wrapper .profileWrap .info {
+  width: 60%;
+}
+
+.wrapper .profileWrap .info h2 {
+  font-size: 4em;
+  margin-bottom: 0;
+}
+
+.wrapper .profileWrap .info p {
+  margin-top: 0;
+  font-size: 1.6em;
 }
 
 .wrapper .posts {
