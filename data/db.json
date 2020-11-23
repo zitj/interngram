@@ -100,6 +100,15 @@
         "url": "https://www.urbanvineinc.com/wp-content/uploads/2019/05/Tahitian-Vanilla.jpg"
       },
       "id": 17
+    },
+    {
+      "title": "Fixing css bugs 2",
+      "type": "LINK",
+      "meta": {
+        "url": "www.fixbug.com"
+      },
+      "userId": 1,
+      "id": 18
     }
   ],
   "users": [
