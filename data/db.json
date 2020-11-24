@@ -11,7 +11,7 @@
       "id": 19
     },
     {
-      "title": "Angular Crash Course for beginners 2022",
+      "title": "Angular Crash Course for beginners",
       "type": "VIDEO",
       "meta": {
         "url": "https://www.youtube.com/watch?v=T_Fe4IaG0KU&ab_channel=HiteshChoudhary"
@@ -49,6 +49,16 @@
       "userId": 5,
       "userName": "Marijana Stosic",
       "id": 23
+    },
+    {
+      "title": "What is MVC?",
+      "type": "VIDEO",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=pCvZtjoRq1I&ab_channel=TraversyMedia"
+      },
+      "userId": 1,
+      "userName": "Aleksandar Veljkovic",
+      "id": 24
     }
   ],
   "users": [
@@ -106,7 +116,7 @@
       "password": "2222",
       "id": 6,
       "avatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
-      "themeColor": "blue",
+      "themeColor": "pink",
       "language": "bulgarian"
     }
   ],
@@ -174,6 +184,22 @@
       "postId": 20,
       "content": "@Milan Yes, it is legit I just finished it. ",
       "id": 8
+    },
+    {
+      "userId": 3,
+      "userName": "Milan Stanojevic",
+      "userAvatar": "https://i.imgur.com/K5pVtx8.jpg",
+      "postId": 22,
+      "content": "Nice article, totally worth reading!",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "userName": "Aleksandar Veljkovic",
+      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
+      "postId": 22,
+      "content": "Cheers to that!",
+      "id": 10
     }
   ]
 }

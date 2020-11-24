@@ -27,7 +27,9 @@ const renderIndividualPost = async () => {
     const res = await fetch('http://localhost:3000/posts/' + id);
     const post = await res.json();   
     let template = '';
-    body.classList.add(`${userParsed.themeColor}`);
+    if(userParsed){
+      body.classList.add(`${userParsed.themeColor}`);
+    }
     if(post.type === 'IMAGE'){
          template = `
         <h1>${post.title}</h1>
