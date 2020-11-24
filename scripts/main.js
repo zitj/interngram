@@ -39,7 +39,6 @@ const renderUsers = async () => {
 const parseUser = async () => {
     const res = await renderUsers();
     userParsed = JSON.parse(localStorage.getItem("user"));
-    console.log(userParsed);
 }
 
 const renderPosts = async () => {
@@ -69,12 +68,11 @@ const renderPosts = async () => {
                 let link = post.meta.url.split('=');
                 let linkID = link[1].split('&');
                 let linkIdEmbed = linkID[0];
-                console.log(linkIdEmbed);
             
             template += `
             <div class="post">
                 <h2>${post.title}</h2>
-                <iframe id="ytplayer" type="text/html" width="815" height="360"
+                <iframe id="ytplayer" type="text/html"
                 frameborder="0" src='https://www.youtube.com/embed/${linkIdEmbed}'></iframe>
                 <a href="/post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
@@ -128,7 +126,6 @@ const loading = () =>{
 
 window.addEventListener('scroll', ()=>{
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    console.log({scrollTop, scrollHeight, clientHeight});
 
     if(clientHeight + scrollTop == scrollHeight){
         loading();

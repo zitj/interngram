@@ -20,19 +20,27 @@ const renderIndividualPost = async () => {
          template = `
         <h1>${post.title}</h1>
         <img src="${post.meta.url}" alt="">
+        <p>Created by: ${post.userName}</p>
       `;
     }
     if(post.type === 'VIDEO'){
+      if(post.meta.url.split('=') && post.meta.url.split('&')){
+        let link = post.meta.url.split('=');
+        let linkID = link[1].split('&');
+        let linkIdEmbed = linkID[0];
+
         template = `
         <h1>${post.title}</h1>
-        <iframe id="ytplayer" type="text/html" width="550" height="360"
-        frameborder="0" src=${post.meta.url}></iframe>
+        <iframe id="ytplayer" type="text/html"
+        frameborder="0" src='https://www.youtube.com/embed/${linkIdEmbed}'></iframe>
+        <p>Created by: ${post.userName}</p>
       `;
-    }
+    }}
     if(post.type === 'LINK'){
         template = `
         <h1>${post.title}</h1>
-        <a href="${post.meta.url}">${post.meta.url}</a>
+        <a class='postLink' href="${post.meta.url}">${post.meta.url}</a>
+        <p>Created by: ${post.userName}</p>
       `;
     }
     container.innerHTML = template;
