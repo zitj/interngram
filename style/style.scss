@@ -1,5 +1,7 @@
 $interngram-blue: #027cce;
+$pink: #c841c8;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap');
+@import '_mixins.scss';
 body{
     padding: 0;
     margin: 0;
@@ -183,7 +185,6 @@ justify-content: space-around;
         }
         .info{
             width: 60%;
-            // background: yellow;
             h2{
                 font-size: 4em;
                 margin-bottom: 0;
@@ -466,3 +467,7 @@ justify-content: space-around;
           transform: rotate(360deg) scale(1);
         }
       }
+body.pink{
+    @include themeColor($pink);
+    
+}

@@ -19,7 +19,7 @@ const userParsed = JSON.parse(localStorage.getItem("user"));
 const loadUser = async () =>{
     const res = await fetch(`http://localhost:3000/users/` + id);
     const user = await res.json();
-    let profilePic = `<img src="${user.avatar}" alt="avatar">`;
+    let profilePic = `<img id="profPic" src="${user.avatar}" alt="avatar">`;
     let userName = user.firstName + ' ' + user.lastName;
     let userEmail = user.email;
 

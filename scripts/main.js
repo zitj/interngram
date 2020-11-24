@@ -39,6 +39,7 @@ const renderUsers = async () => {
 const parseUser = async () => {
     const res = await renderUsers();
     userParsed = JSON.parse(localStorage.getItem("user"));
+    console.log(userParsed);
 }
 
 const renderPosts = async () => {
@@ -177,6 +178,7 @@ window.addEventListener('DOMContentLoaded', () => {
     renderPosts();
     renderUsers();
     parseUser();
+    
 });
 
 

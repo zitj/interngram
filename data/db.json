@@ -11,7 +11,7 @@
       "id": 19
     },
     {
-      "title": "Angular Crash Course for beginners 2020",
+      "title": "Angular Crash Course for beginners 2022",
       "type": "VIDEO",
       "meta": {
         "url": "https://www.youtube.com/watch?v=T_Fe4IaG0KU&ab_channel=HiteshChoudhary"
@@ -98,6 +98,16 @@
       "avatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
       "themeColor": "blue",
       "language": "english"
+    },
+    {
+      "firstName": "Arija",
+      "lastName": "Obilic",
+      "email": "arija@gmail.com",
+      "password": "2222",
+      "id": 6,
+      "avatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
+      "themeColor": "blue",
+      "language": "bulgarian"
     }
   ],
   "comments": [
@@ -156,6 +166,14 @@
       "postId": 20,
       "content": "Give it a shot and see by yourself. ;)",
       "id": 7
+    },
+    {
+      "userId": 6,
+      "userName": "Arija Obilic",
+      "userAvatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
+      "postId": 20,
+      "content": "@Milan Yes, it is legit I just finished it. ",
+      "id": 8
     }
   ]
 }

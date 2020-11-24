@@ -1,0 +1,46 @@
+@mixin themeColor($color){
+   
+    a,
+    button{
+        background: $color;
+    }
+    .logo{
+        color: $color;   
+    }
+    .posts{
+        .post{
+            .postLink{
+                border: 1px solid $color;
+                color: $color;
+            }
+        }
+    }
+    .loadingSpinner:after{
+        border-top-color:$color;
+        border-bottom-color:$color;
+      }
+  nav{
+      .userBtn{
+          color:$color;
+          &:hover{
+              color:$color;
+          }
+      }
+      img{
+        border: 1px solid $color;
+    }
+  } 
+#comment{
+    border: 1px solid $color;
+}
+.form{
+    input,
+    select,
+    textarea{
+        border: 1px solid $color;
+    }
+}
+#profPic{
+    border: 3px solid $color;
+}
+}

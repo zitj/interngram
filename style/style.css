@@ -608,4 +608,49 @@ button:active {
             transform: rotate(360deg) scale(1);
   }
 }
+
+body.pink a,
+body.pink button {
+  background: #c841c8;
+}
+
+body.pink .logo {
+  color: #c841c8;
+}
+
+body.pink .posts .post .postLink {
+  border: 1px solid #c841c8;
+  color: #c841c8;
+}
+
+body.pink .loadingSpinner:after {
+  border-top-color: #c841c8;
+  border-bottom-color: #c841c8;
+}
+
+body.pink nav .userBtn {
+  color: #c841c8;
+}
+
+body.pink nav .userBtn:hover {
+  color: #c841c8;
+}
+
+body.pink nav img {
+  border: 1px solid #c841c8;
+}
+
+body.pink #comment {
+  border: 1px solid #c841c8;
+}
+
+body.pink .form input,
+body.pink .form select,
+body.pink .form textarea {
+  border: 1px solid #c841c8;
+}
+
+body.pink #profPic {
+  border: 3px solid #c841c8;
+}
 /*# sourceMappingURL=style.css.map */
