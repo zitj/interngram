@@ -3,6 +3,10 @@ const container = document.querySelector('.individualPost');
 const formPanel = document.querySelector('.formPanel');
 const darkBackground = document.querySelector('.darkBackground');
 const form = document.querySelector('form');
+const editForm = document.getElementById('editForm');
+const title = document.getElementById('title');
+const type = document.getElementById('type');
+const content = document.getElementById('content');
 
 const logo = document.querySelector('.logo');
 const closeBtn = document.querySelector('.closeBtn');
@@ -48,22 +52,16 @@ const renderIndividualPost = async () => {
     localStorage.setItem("post",  postStringified);
   }
 
-  const uploadInputs = async () =>{
-    const res = await fetch('http://localhost:3000/posts/' + id);
-    const post = await res.json(); 
-    form.title.value = post.title;
-    form.type.value = post.type;
-    form.content.value = post.meta.url;
-}
+
 
 const changePost = async (e) =>{
   
     e.preventDefault();
     const doc = {
-        title: form.title.value,
-        type: form.type.value,
+        title: title.value,
+        type: type.value,
         meta:{
-            url: form.content.value
+            url: content.value
         }
     }
     await fetch('http://localhost:3000/posts/' + id, {
@@ -99,6 +97,11 @@ const parsePost = async () =>{
   postParsed = JSON.parse(localStorage.getItem("post"));
   console.log(postParsed);
 }
+const uploadInputs =  () =>{
+title.value = postParsed.title;
+type.value = postParsed.type;
+content.value = postParsed.meta.url;
+}
 
   editBtn.addEventListener('click', ()=>{
     if(!userParsed || postParsed.userId == userParsed.id){
@@ -121,7 +124,7 @@ const panelRemover = () => {
     panelRemover();
   })
 
-  form.addEventListener('submit', changePost);
+  editForm.addEventListener('submit', changePost);
 
   logo.addEventListener('click', () =>{
     localStorage.removeItem('post');

@@ -292,6 +292,9 @@ button:active {
 .wrapper .individualPost {
   margin-top: 3%;
   border-radius: 16px;
+  background: white;
+  padding: 5%;
+  text-align: center;
 }
 
 .wrapper .individualPost .postLink {
@@ -305,6 +308,28 @@ button:active {
 .wrapper .individualPost iframe {
   width: 80%;
   height: 600px;
+}
+
+.wrapper .commentSection {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.wrapper .commentSection form textarea {
+  display: block;
+  width: 40%;
+  margin-left: 30%;
+  margin-bottom: 1%;
+  border-radius: 14px;
+  padding: 15px;
+  outline: none;
+  border: 1px solid #027cce;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper .commentSection form button {
+  width: 42.3%;
+  margin-left: 2%;
 }
 
 .formPanel {
@@ -456,12 +481,6 @@ button:active {
 .delete {
   background: #ff4747;
   margin-left: 10px;
-}
-
-.individualPost {
-  background: white;
-  padding: 5%;
-  text-align: center;
 }
 
 .loadingSpinner {

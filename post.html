@@ -21,15 +21,22 @@
         </nav>
         <div class="individualPost">
         </div> <!-- end individualPost-->
-        
+        <div class="commentSection">
+            <h3>Comments</h3>
+            <div class="comments"></div><!-- end comments -->
+            <form action="">
+                <textarea name="comment" id="comment" cols="30" rows="5" placeholder="Write your comment here..."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div> <!-- end commentSection -->
         <div class="darkBackground"></div>
         <div class="formPanel editPostPanel">
             <div class="form" id="form">
             <div class="closeBtn"><img src="https://img.icons8.com/flat_round/64/000000/delete-sign.png"/></div>
             <h1>Edit this post</h1>
-            <form>
+            <form id="editForm">
                 <label for="title">Title of the post:</label>
-                <input type="text" name="title" required placeholder="Title">
+                <input type="text" name="title" id="title" required placeholder="Title">
                 <label for="type">Choose a type:</label>
                 <select id="type" name="type" required>
                     <option value="IMAGE">Image</option>
@@ -37,7 +44,7 @@
                     <option value="LINK">Link</option>
                 </select>
                 <label for="content">Content of the post:</label>
-                <textarea name="content" id="" cols="30" rows="10" required placeholder="Content"></textarea>
+                <textarea id="content" name="content" id="" cols="30" rows="10" required placeholder="Content"></textarea>
                 <button class="editPostBtn"type="submit">Edit post</button>
             </form>
             </div>
