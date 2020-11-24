@@ -83,7 +83,7 @@ const renderPosts = async () => {
         template += `
             <div class="post">
                 <h2>${post.title}</h2>
-                <a href="${post.meta.url}">${post.meta.url}</a>
+                <a class="postLink" href="${post.meta.url}">${post.meta.url}</a>
                 <a href="/post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>

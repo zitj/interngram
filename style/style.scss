@@ -219,6 +219,12 @@ justify-content: space-around;
             a{
                 margin-top: 20px;
             }
+            .postLink{
+                background: white;
+                color: $interngram-blue;
+                border: 1px solid $interngram-blue;
+                text-decoration: underline;
+            }
             iframe{
                 width: 100%;
                 height: 400px; 
