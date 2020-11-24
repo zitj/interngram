@@ -51,6 +51,8 @@ const renderPosts = async () => {
     let template = '';
     posts.forEach(post => {
 
+        
+      
         if(post.type === "IMAGE"){
             template += `
             <div class="post">
@@ -62,16 +64,23 @@ const renderPosts = async () => {
         ` 
         }
         if(post.type === "VIDEO"){
+
+            if(post.meta.url.split('=') && post.meta.url.split('&')){
+                let link = post.meta.url.split('=');
+                let linkID = link[1].split('&');
+                let linkIdEmbed = linkID[0];
+                console.log(linkIdEmbed);
+            
             template += `
             <div class="post">
                 <h2>${post.title}</h2>
                 <iframe id="ytplayer" type="text/html" width="815" height="360"
-                frameborder="0" src=${post.meta.url}></iframe>
+                frameborder="0" src='https://www.youtube.com/embed/${linkIdEmbed}'></iframe>
                 <a href="/post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
         ` 
-        }
+        }}
         if(post.type === "LINK"){
         template += `
             <div class="post">
