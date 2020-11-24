@@ -63,19 +63,20 @@ const renderComments = async () =>{
   let template = '';
   comments.forEach(comment => {
     if(comment.postId == id){
-      template = `
-        <div class="comment">
-        <div class="user">
-        <img src=${comment.userAvatar} alt=${comment.userName}>
-        <p>${comment.userName}</p>
-        </div>
-        <p class="usersComment">${comment.content}</p>
-        
-        </div>
+      template += `
+      <div class="comment">
+      <div class="user">
+      <img src=${comment.userAvatar} alt=${comment.userName}>
+      <p>${comment.userName}</p>
+      </div>
+      <p class="usersComment">${comment.content}</p>
+      
+      </div>
       `
+      console.log(comment);
     }
     
-  })
+  });
   commentsContainer.innerHTML = template;
 }  
 

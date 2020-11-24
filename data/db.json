@@ -124,6 +124,38 @@
       "postId": 23,
       "content": "First comment here!",
       "id": 3
+    },
+    {
+      "userId": 2,
+      "userName": "Dimitrije Dimitrijevic",
+      "userAvatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
+      "postId": 19,
+      "content": "Stop spamming my post... ",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "userName": "Dimitrije Dimitrijevic",
+      "userAvatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
+      "postId": 23,
+      "content": "Wow, you already commented here as well...",
+      "id": 5
+    },
+    {
+      "userId": 3,
+      "userName": "Milan Stanojevic",
+      "userAvatar": "https://i.imgur.com/K5pVtx8.jpg",
+      "postId": 20,
+      "content": "Is this course legit?",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "userName": "Aleksandar Veljkovic",
+      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
+      "postId": 20,
+      "content": "Give it a shot and see by yourself. ;)",
+      "id": 7
     }
   ]
 }
