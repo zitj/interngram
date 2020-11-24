@@ -250,7 +250,9 @@ justify-content: space-around;
     }
     .commentSection{
         margin-top: 2em;
-        text-align: center;
+        h3{
+            text-align: center;
+        }
         form{
             textarea{
                 display: block;
@@ -265,9 +267,39 @@ justify-content: space-around;
             }
             button{
                 width: 42.3%;
-                margin-left: 2%;
+                margin-left: 30%;
             }
             
+        }
+        .comments{
+            .comment{
+                background: white;
+                padding: 2%;
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: column;
+                width: 38%;
+                margin-left: 30%;
+                border-radius: 16px;
+                margin-bottom: 3%;
+                .usersComment{
+                    padding: 10px;
+                }
+                .user{
+                    display: flex;
+                img{
+                    margin-right: 15px;                    
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+                p{
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    margin-top: 10px;
+                }
+            }
+            }
         }
         
     }

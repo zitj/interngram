@@ -11,7 +11,7 @@
       "id": 19
     },
     {
-      "title": "Angular Crash Course for beginners 2019",
+      "title": "Angular Crash Course for beginners 2020",
       "type": "VIDEO",
       "meta": {
         "url": "https://www.youtube.com/watch?v=T_Fe4IaG0KU&ab_channel=HiteshChoudhary"
@@ -98,6 +98,32 @@
       "avatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
       "themeColor": "blue",
       "language": "english"
+    }
+  ],
+  "comments": [
+    {
+      "userId": 1,
+      "userName": "Aleksandar Veljkovic",
+      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
+      "postId": 19,
+      "content": "First comment ever!",
+      "id": 1
+    },
+    {
+      "userId": 5,
+      "userName": "Marijana Stosic",
+      "userAvatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
+      "postId": 19,
+      "content": "Commenting is fuuuuuuuuun! :D",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "userName": "Aleksandar Veljkovic",
+      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
+      "postId": 23,
+      "content": "First comment here!",
+      "id": 3
     }
   ]
 }

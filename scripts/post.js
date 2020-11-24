@@ -13,6 +13,11 @@ const closeBtn = document.querySelector('.closeBtn');
 const deleteBtn = document.querySelector('.delete');
 const editBtn = document.querySelector('.edit');
 
+const commentSection = document.querySelector('.commentSection');
+const commentsContainer = document.querySelector('.comments');
+const commentForm = document.querySelector('.commentForm');
+const commentContent = document.getElementById('comment');
+
 let userParsed = JSON.parse(localStorage.getItem("user"));
 let postParsed;
 
@@ -52,7 +57,46 @@ const renderIndividualPost = async () => {
     localStorage.setItem("post",  postStringified);
   }
 
+const renderComments = async () =>{
+  const res = await fetch('http://localhost:3000/comments/');
+  const comments = await res.json();
+  let template = '';
+  comments.forEach(comment => {
+    if(comment.postId == id){
+      template = `
+        <div class="comment">
+        <div class="user">
+        <img src=${comment.userAvatar} alt=${comment.userName}>
+        <p>${comment.userName}</p>
+        </div>
+        <p class="usersComment">${comment.content}</p>
+        
+        </div>
+      `
+    }
+    
+  })
+  commentsContainer.innerHTML = template;
+}  
 
+
+const submitComment = async (e) =>{
+  e.preventDefault();
+  const doc = {
+    userId: userParsed.id,
+    userName: userParsed.firstName + ' ' + userParsed.lastName,
+    userAvatar: userParsed.avatar,
+    postId: postParsed.id,
+    content: commentContent.value 
+
+  }
+  await fetch('http://localhost:3000/comments/', {
+        method: 'POST',
+        body: JSON.stringify(doc),
+        headers: { 'Content-Type': 'application/json' }
+    });
+  window.location.reload(`/post.html?=${id}`);
+}
 
 const changePost = async (e) =>{
   
@@ -125,6 +169,7 @@ const panelRemover = () => {
   })
 
   editForm.addEventListener('submit', changePost);
+  commentForm.addEventListener('submit', submitComment);
 
   logo.addEventListener('click', () =>{
     localStorage.removeItem('post');
@@ -137,4 +182,5 @@ const panelRemover = () => {
   window.addEventListener('DOMContentLoaded', () => {
     renderIndividualPost();
     parsePost();
+    renderComments();
   });
