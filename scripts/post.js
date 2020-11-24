@@ -1,4 +1,6 @@
 const id = new URLSearchParams(window.location.search).get('id');
+const body = document.querySelector('body');
+
 const container = document.querySelector('.individualPost');
 const formPanel = document.querySelector('.formPanel');
 const darkBackground = document.querySelector('.darkBackground');
@@ -25,6 +27,7 @@ const renderIndividualPost = async () => {
     const res = await fetch('http://localhost:3000/posts/' + id);
     const post = await res.json();   
     let template = '';
+    body.classList.add(`${userParsed.themeColor}`);
     if(post.type === 'IMAGE'){
          template = `
         <h1>${post.title}</h1>

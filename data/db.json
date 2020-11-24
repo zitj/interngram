@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "title": "Local storage JS",
+      "title": "How to use localStorage",
       "type": "VIDEO",
       "meta": {
         "url": "https://www.youtube.com/watch?v=k8yJCeuP6I8&ab_channel=dcode"
@@ -69,7 +69,7 @@
       "password": "dida",
       "id": 2,
       "avatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
-      "themeColor": "blue",
+      "themeColor": "green",
       "language": "bulgarian"
     },
     {
@@ -96,8 +96,8 @@
       "password": "mari",
       "id": 5,
       "avatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
-      "themeColor": "blue",
-      "language": "english"
+      "themeColor": "pink",
+      "language": "bulgarian"
     },
     {
       "firstName": "Arija",

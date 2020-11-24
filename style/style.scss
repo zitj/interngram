@@ -1,5 +1,6 @@
 $interngram-blue: #027cce;
-$pink: #c841c8;
+$pink:#FF5A7E;
+$green: #41B741;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap');
 @import '_mixins.scss';
 body{
@@ -469,5 +470,7 @@ justify-content: space-around;
       }
 body.pink{
     @include themeColor($pink);
-    
+}
+body.green{
+    @include themeColor($green);
 }

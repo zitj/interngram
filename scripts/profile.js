@@ -1,4 +1,5 @@
 const id = new URLSearchParams(window.location.search).get('id');
+const body = document.querySelector('body');
 
 const container = document.querySelector('.profileWrap');
 const heading = container.querySelector('h2');
@@ -23,6 +24,8 @@ const loadUser = async () =>{
     let userName = user.firstName + ' ' + user.lastName;
     let userEmail = user.email;
 
+    body.classList.add(`${userParsed.themeColor}`);
+
     containerImg.innerHTML = profilePic;
     heading.innerHTML = userName;
     paragraph.innerHTML = userEmail;
@@ -40,7 +43,7 @@ const updateUser = async (e) =>{
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' }
     });
-    window.location.reload(`/profile.html?=${id}`);
+    window.location.replace(`/main.html?id=${id}`);
 }
 
 const panelRemover = () =>{

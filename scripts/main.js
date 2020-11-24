@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 
 const container = document.querySelector('.posts');
 const userBtn = document.querySelector('.userBtn');
@@ -6,8 +7,6 @@ const buttons = nav.querySelector('.buttons');
 const logo = document.querySelector('.logo');
 const id = new URLSearchParams(window.location.search).get('id');
 let avatar = document.querySelector('.avatar');
-
-
 
 const createNewPostBtn = document.querySelector('.createNewPostBtn');
 const formPanel = document.querySelector('.formPanel');
@@ -39,6 +38,7 @@ const renderUsers = async () => {
 const parseUser = async () => {
     const res = await renderUsers();
     userParsed = JSON.parse(localStorage.getItem("user"));
+    body.classList.add(`${userParsed.themeColor}`);
     console.log(userParsed);
 }
 
@@ -141,6 +141,9 @@ const panelRemover = () => {
 const toProfilePage = () =>{
         window.location.replace(`/profile.html?id=${id}`);
 }
+
+
+
 createNewPostBtn.addEventListener('click', ()=>{
     formPanel.classList.add('active');
     darkBackground.classList.add('active');
@@ -178,7 +181,6 @@ window.addEventListener('DOMContentLoaded', () => {
     renderPosts();
     renderUsers();
     parseUser();
-    
 });
 
 
