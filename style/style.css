@@ -333,36 +333,35 @@ button:active {
   margin-top: 10px;
 }
 
-.wrapper .likeAndBookmark .like,
-.wrapper .likeAndBookmark .bookmark {
+.wrapper .likeAndBookmark button {
   background: white;
   color: #027cce;
   border: 1px solid #027cce;
   line-height: 20px;
   font-size: 1.4em;
-  padding-right: 20px;
 }
 
-.wrapper .likeAndBookmark .like span:nth-of-type(1),
-.wrapper .likeAndBookmark .bookmark span:nth-of-type(1) {
+.wrapper .likeAndBookmark button span:nth-of-type(1) {
   margin-left: -10px;
   margin-right: 10px;
 }
 
-.wrapper .likeAndBookmark .like span:nth-of-type(2),
-.wrapper .likeAndBookmark .bookmark span:nth-of-type(2) {
+.wrapper .likeAndBookmark button span:nth-of-type(2) {
+  display: none;
   color: white;
 }
 
-.wrapper .likeAndBookmark .like.active,
-.wrapper .likeAndBookmark .bookmark.active {
+.wrapper .likeAndBookmark button.active {
   background: #027cce;
   color: white;
   border: none;
 }
 
-.wrapper .likeAndBookmark .like.active svg g,
-.wrapper .likeAndBookmark .bookmark.active svg g {
+.wrapper .likeAndBookmark button.active span:nth-of-type(2) {
+  display: inline-block;
+}
+
+.wrapper .likeAndBookmark button.active svg g {
   fill: white;
 }
 
