@@ -48,6 +48,7 @@ const createUser = async (e) =>{
         lastName: signUpForm.lastname.value,
         email: signUpForm.email.value,
         password: signUpForm.password.value,
+        likedPosts: [],
     }
     await fetch('http://localhost:3000/users/', {
         method: 'POST',
