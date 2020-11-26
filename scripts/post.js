@@ -198,16 +198,16 @@ const panelRemover = () => {
     if(!userParsed){
       window.location.replace(`/main.html`);
     }
-      window.location.replace(`/main.html?id=${userParsed.id}`);
-      isThePostLiked();
+    isThePostLiked();
+    window.location.replace(`/main.html?id=${userParsed.id}`);
   });
   
 // LIKE POST FEATURE
 
 const waitForAnArray = async () => {
   const res = await parsePost();
-  for(i = 0; i <= userParsed.likedPosts.length; i++){
-    if(userParsed.likedPosts[i] == postParsed.title){
+  for(i = 0; i <= postParsed.usersWhoLiked.length; i++){
+    if(postParsed.usersWhoLiked[i] == userParsed.id){
       likeBtn.classList.add('active');
     }
   }
@@ -221,27 +221,32 @@ const removeFromAnAray = (arr, item) =>{
 
  const isThePostLiked = async (e) =>{
    if(likeBtn.classList.contains('active')){
-    let user = userParsed;
-    user.likedPosts.push(postParsed.title);
-    user.likedPosts = [...new Set(user.likedPosts)];
-    await fetch('http://localhost:3000/users/' + userParsed.id, {
+    let post = postParsed;
+    post.usersWhoLiked.push(userParsed.id);
+    post.usersWhoLiked = [...new Set(postParsed.usersWhoLiked)];
+    await fetch('http://localhost:3000/posts/' + post.id, {
        method: 'PATCH',
-       body: JSON.stringify(user),
+       body: JSON.stringify(post),
        headers: { 'Content-Type': 'application/json' }
       });
    }
-   if(!likeBtn.classList.contains('active')){
-    let user2 = userParsed;
-    removeFromAnAray(user2.likedPosts, postParsed.title);
 
-    await fetch('http://localhost:3000/users/' + userParsed.id, {
+   if(!likeBtn.classList.contains('active')){
+    let post2 = postParsed;
+    removeFromAnAray(post2.usersWhoLiked, userParsed.id);
+
+    await fetch('http://localhost:3000/posts/' + post2.id, {
       method: 'PATCH',
-      body: JSON.stringify(user2),
+      body: JSON.stringify(post2),
       headers: { 'Content-Type': 'application/json' }
         });
    }
  }
-  
+
+ const returnUserWithNewArray = async (e) =>{
+   const res = await isThePostLiked();
+ } 
+
  likeBtn.addEventListener('click',() =>{
    if(!likeBtn.classList.contains('active')){
      likeBtn.classList.add('active');

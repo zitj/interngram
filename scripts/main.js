@@ -16,32 +16,36 @@ const form = document.querySelector('form');
 
 const loadingSpinner = document.querySelector('.loadingSpinner');
 
-let userParsed;
+let userParsed = JSON.parse(localStorage.getItem("user"));
+userBtn.innerHTML = userParsed.firstName + ' ' + userParsed.lastName;
+avatar.src = userParsed.avatar;
+body.classList.add(`${userParsed.themeColor}`);
+
 let counter = 4;
 let numberOfPosts = 0;
 
-const renderUsers = async () => {
-    let uri = `http://localhost:3000/users`;
-    const res = await fetch(uri);
-    const users = await res.json();
-    let template = '';
-    users.forEach(user => {
-        if(user.id == id){
-            template = user.firstName + ' ' + user.lastName;
-            let userStringified = JSON.stringify(user);
-            localStorage.setItem("user",  userStringified);
-            avatar.src = user.avatar
-        }
-})
-    userBtn.innerHTML = template;
-}
+// const renderUser = async () => {
+//     let uri = `http://localhost:3000/users?id=${id}`;
+//     const res = await fetch(uri);
+//     const user = await res.json();
+//     let template = '';
+    
+//         if(user.id == id){
+//             template = user.firstName + ' ' + user.lastName;
+//             let userStringified = JSON.stringify(user);
+//             localStorage.setItem("user",  userStringified);
+//             avatar.src = user.avatar
+//         }
 
-const parseUser = async () => {
-    const res = await renderUsers();
-    userParsed = JSON.parse(localStorage.getItem("user"));
-    body.classList.add(`${userParsed.themeColor}`);
-    console.log(userParsed);
-}
+//     userBtn.innerHTML = template;
+// }
+
+// const parseUser = async () => {
+//     const res = await renderUsers();
+//     userParsed = JSON.parse(localStorage.getItem("user"));
+//     body.classList.add(`${userParsed.themeColor}`);
+//     console.log(userParsed);
+// }
 
 const renderPosts = async () => {
     let uri = `http://localhost:3000/posts?_limit=${counter}`;
@@ -93,6 +97,7 @@ const renderPosts = async () => {
 
   container.innerHTML = template;
   console.log(numberOfPosts);
+  console.log(userParsed);
 }
 
 const createPost = async (e) =>{
@@ -104,7 +109,8 @@ const createPost = async (e) =>{
             url: form.content.value
         },
         userId: userParsed.id,
-        userName: userParsed.firstName + ' ' + userParsed.lastName
+        userName: userParsed.firstName + ' ' + userParsed.lastName,
+        usersWhoLiked: []
     }
     await fetch('http://localhost:3000/posts/', {
         method: 'POST',
@@ -179,9 +185,8 @@ avatar.addEventListener('click', ()=>{
 form.addEventListener('submit', createPost);
 
 window.addEventListener('DOMContentLoaded', () => {
+    localStorage.removeItem("post");
     renderPosts();
-    renderUsers();
-    parseUser();
 });
 
 

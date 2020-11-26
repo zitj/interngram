@@ -32,6 +32,8 @@ const signInUser = async () => {
         signInForm.password.value.toString();
 
         if(user.email == signInForm.email.value && user.password == signInForm.password.value){
+            let userStringified = JSON.stringify(user);
+            localStorage.setItem("user",  userStringified);
             window.location.replace(`/main.html?id=${user.id}`);
         }
         else{
@@ -48,7 +50,7 @@ const createUser = async (e) =>{
         lastName: signUpForm.lastname.value,
         email: signUpForm.email.value,
         password: signUpForm.password.value,
-        likedPosts: [],
+        
     }
     await fetch('http://localhost:3000/users/', {
         method: 'POST',

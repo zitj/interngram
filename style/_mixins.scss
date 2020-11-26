@@ -43,4 +43,45 @@
 #profPic{
     border: 3px solid $color;
 }
+.likeAndBookmark{
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 10%;
+    .buttons{
+        margin-top: 10px;
+    }
+    button{
+        color: $color;
+        border: 1px solid $color;
+        svg{
+            g{
+                fill: $color;
+            }
+        }
+        &.active{
+            background: $color;
+            color: white;
+            border: none;
+            span{
+                &:nth-of-type(2){
+                    display: inline-block;
+                }
+            }
+           
+            svg{
+                g{
+                    fill: white;
+                }
+            }
+        }
+    }
+  
+}
+
+#delete,
+#signOut{
+    background:#FF5A7E;
+}
 }

@@ -702,6 +702,50 @@ body.pink #profPic {
   border: 3px solid #FF5A7E;
 }
 
+body.pink .likeAndBookmark {
+  margin-top: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+}
+
+body.pink .likeAndBookmark .buttons {
+  margin-top: 10px;
+}
+
+body.pink .likeAndBookmark button {
+  color: #FF5A7E;
+  border: 1px solid #FF5A7E;
+}
+
+body.pink .likeAndBookmark button svg g {
+  fill: #FF5A7E;
+}
+
+body.pink .likeAndBookmark button.active {
+  background: #FF5A7E;
+  color: white;
+  border: none;
+}
+
+body.pink .likeAndBookmark button.active span:nth-of-type(2) {
+  display: inline-block;
+}
+
+body.pink .likeAndBookmark button.active svg g {
+  fill: white;
+}
+
+body.pink #delete,
+body.pink #signOut {
+  background: #FF5A7E;
+}
+
 body.green a,
 body.green button {
   background: #41B741;
@@ -745,5 +789,49 @@ body.green .form textarea {
 
 body.green #profPic {
   border: 3px solid #41B741;
+}
+
+body.green .likeAndBookmark {
+  margin-top: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+}
+
+body.green .likeAndBookmark .buttons {
+  margin-top: 10px;
+}
+
+body.green .likeAndBookmark button {
+  color: #41B741;
+  border: 1px solid #41B741;
+}
+
+body.green .likeAndBookmark button svg g {
+  fill: #41B741;
+}
+
+body.green .likeAndBookmark button.active {
+  background: #41B741;
+  color: white;
+  border: none;
+}
+
+body.green .likeAndBookmark button.active span:nth-of-type(2) {
+  display: inline-block;
+}
+
+body.green .likeAndBookmark button.active svg g {
+  fill: white;
+}
+
+body.green #delete,
+body.green #signOut {
+  background: #FF5A7E;
 }
 /*# sourceMappingURL=style.css.map */

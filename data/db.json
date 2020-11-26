@@ -1,14 +1,19 @@
 {
   "posts": [
     {
-      "title": "How to use localStorage",
+      "title": "How to use localStorage 2020",
       "type": "VIDEO",
       "meta": {
         "url": "https://www.youtube.com/watch?v=k8yJCeuP6I8&ab_channel=dcode"
       },
       "userId": 2,
       "userName": "Dimitrije Dimitrijevic",
-      "id": 19
+      "id": 19,
+      "usersWhoLiked": [
+        6,
+        2,
+        7
+      ]
     },
     {
       "title": "Angular Crash Course for beginners",
@@ -18,7 +23,12 @@
       },
       "userId": 1,
       "userName": "Aleksandar Veljkovic",
-      "id": 20
+      "id": 20,
+      "usersWhoLiked": [
+        2,
+        1,
+        6
+      ]
     },
     {
       "title": "Top 5 VSCode extensions - DevEd",
@@ -28,7 +38,12 @@
       },
       "userId": 3,
       "userName": "Milan Stanojevic",
-      "id": 21
+      "id": 21,
+      "usersWhoLiked": [
+        6,
+        2,
+        5
+      ]
     },
     {
       "title": "Why you should learn vanilla JavaScript?",
@@ -38,17 +53,21 @@
       },
       "userId": 5,
       "userName": "Marijana Stosic",
-      "id": 22
+      "id": 22,
+      "usersWhoLiked": [
+        6
+      ]
     },
     {
-      "title": "Writing vanilla JavaScript is FUN!",
+      "title": "Writing vanilla JavaScript is FUN!!!",
       "type": "IMAGE",
       "meta": {
         "url": "https://cdn.hswstatic.com/gif/vanilla-expensive.jpg"
       },
       "userId": 5,
       "userName": "Marijana Stosic",
-      "id": 23
+      "id": 23,
+      "usersWhoLiked": []
     },
     {
       "title": "What is MVC?",
@@ -58,7 +77,10 @@
       },
       "userId": 1,
       "userName": "Aleksandar Veljkovic",
-      "id": 24
+      "id": 24,
+      "usersWhoLiked": [
+        7
+      ]
     },
     {
       "title": "Mr. Tambourine Man",
@@ -68,7 +90,41 @@
       },
       "userId": 7,
       "userName": "Bob Dylan",
-      "id": 25
+      "id": 25,
+      "usersWhoLiked": []
+    },
+    {
+      "title": "Najnoviji post",
+      "type": "LINK",
+      "meta": {
+        "url": "www.najnovijipost.com"
+      },
+      "userId": 2,
+      "userName": "Dimitrije Dimitrijevic",
+      "id": 27,
+      "usersWhoLiked": []
+    },
+    {
+      "title": "Koga briga?!",
+      "type": "LINK",
+      "meta": {
+        "url": "www.kogabriga.com"
+      },
+      "userId": 2,
+      "userName": "Dimitrije Dimitrijevic",
+      "id": 28,
+      "usersWhoLiked": []
+    },
+    {
+      "title": "PROBA",
+      "type": "LINK",
+      "meta": {
+        "url": "www.proba.net"
+      },
+      "userId": 6,
+      "userName": "Arija Obilic",
+      "id": 29,
+      "usersWhoLiked": []
     }
   ],
   "users": [
@@ -80,8 +136,7 @@
       "password": "1234",
       "avatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
       "themeColor": "blue",
-      "language": "bulgarian",
-      "likedPosts": []
+      "language": "bulgarian"
     },
     {
       "firstName": "Dimitrije",
@@ -91,8 +146,7 @@
       "id": 2,
       "avatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
       "themeColor": "green",
-      "language": "bulgarian",
-      "likedPosts": []
+      "language": "bulgarian"
     },
     {
       "firstName": "Milan",
@@ -102,16 +156,13 @@
       "id": 3,
       "avatar": "https://i.imgur.com/K5pVtx8.jpg",
       "themeColor": "blue",
-      "language": "english",
-      "likedPosts": []
+      "language": "english"
     },
     {
       "firstName": "Uros",
       "lastName": "Zlatanovic",
       "email": "ukirossi@gmail.com",
-      "password": "cimi",
-      "id": 4,
-      "likedPosts": []
+      "password": "cimi"
     },
     {
       "firstName": "Marijana",
@@ -121,8 +172,7 @@
       "id": 5,
       "avatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
       "themeColor": "pink",
-      "language": "bulgarian",
-      "likedPosts": []
+      "language": "bulgarian"
     },
     {
       "firstName": "Arija",
@@ -132,22 +182,13 @@
       "id": 6,
       "avatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
       "themeColor": "pink",
-      "language": "bulgarian",
-      "likedPosts": [
-        "How to use localStorage",
-        "Writing vanilla JavaScript is FUN!"
-      ]
+      "language": "bulgarian"
     },
     {
       "firstName": "Bob",
       "lastName": "Dylan",
       "email": "bob@gmail.com",
       "password": "bob",
-      "likedPosts": [
-        "How to use localStorage",
-        "Why you should learn vanilla JavaScript?",
-        "Writing vanilla JavaScript is FUN!"
-      ],
       "id": 7,
       "avatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
       "themeColor": "green",
@@ -266,6 +307,30 @@
       "postId": 25,
       "content": "@Bob Keep posting dem songs. :D",
       "id": 14
+    },
+    {
+      "userId": 6,
+      "userName": "Arija Obilic",
+      "userAvatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
+      "postId": 21,
+      "content": "Does the comment feature still works?",
+      "id": 15
+    },
+    {
+      "userId": 2,
+      "userName": "Dimitrije Dimitrijevic",
+      "userAvatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
+      "postId": 21,
+      "content": "Apparently... ",
+      "id": 16
+    },
+    {
+      "userId": 5,
+      "userName": "Marijana Stosic",
+      "userAvatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
+      "postId": 21,
+      "content": "I love these extensions, they are literally saving my life! ^_^",
+      "id": 17
     }
   ]
 }
