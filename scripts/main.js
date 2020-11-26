@@ -16,36 +16,36 @@ const form = document.querySelector('form');
 
 const loadingSpinner = document.querySelector('.loadingSpinner');
 
-let userParsed = JSON.parse(localStorage.getItem("user"));
-userBtn.innerHTML = userParsed.firstName + ' ' + userParsed.lastName;
-avatar.src = userParsed.avatar;
-body.classList.add(`${userParsed.themeColor}`);
+let userSignedIn= {};
 
 let counter = 4;
 let numberOfPosts = 0;
 
-// const renderUser = async () => {
-//     let uri = `http://localhost:3000/users?id=${id}`;
-//     const res = await fetch(uri);
-//     const user = await res.json();
-//     let template = '';
+const renderUser = async () => {
+    let uri = `http://localhost:3000/users`;
+    const res = await fetch(uri);
+    const users = await res.json();
     
-//         if(user.id == id){
-//             template = user.firstName + ' ' + user.lastName;
-//             let userStringified = JSON.stringify(user);
-//             localStorage.setItem("user",  userStringified);
-//             avatar.src = user.avatar
-//         }
+    users.forEach(user => {
+        if(user.id == id){
+            userBtn.innerHTML = user.firstName + ' ' + user.lastName;
+            avatar.src = user.avatar;
+            body.classList.add(`${user.themeColor}`);
+            userSignedIn = user;
+            localStorage.setItem('userID', userSignedIn.id);
+            console.log(userSignedIn);
+        
+        }
+    })
 
-//     userBtn.innerHTML = template;
-// }
+}
 
-// const parseUser = async () => {
-//     const res = await renderUsers();
-//     userParsed = JSON.parse(localStorage.getItem("user"));
-//     body.classList.add(`${userParsed.themeColor}`);
-//     console.log(userParsed);
-// }
+const parseUser = async () => {
+    const res = await renderUsers();
+    userParsed = JSON.parse(localStorage.getItem("user"));
+    body.classList.add(`${userParsed.themeColor}`);
+    console.log(userParsed);
+}
 
 const renderPosts = async () => {
     let uri = `http://localhost:3000/posts?_limit=${counter}`;
@@ -97,7 +97,6 @@ const renderPosts = async () => {
 
   container.innerHTML = template;
   console.log(numberOfPosts);
-  console.log(userParsed);
 }
 
 const createPost = async (e) =>{
@@ -108,8 +107,8 @@ const createPost = async (e) =>{
         meta:{
             url: form.content.value
         },
-        userId: userParsed.id,
-        userName: userParsed.firstName + ' ' + userParsed.lastName,
+        userId: userSignedIn.id,
+        userName: userSignedIn.firstName + ' ' + userSignedIn.lastName,
         usersWhoLiked: []
     }
     await fetch('http://localhost:3000/posts/', {
@@ -163,12 +162,12 @@ closeBtn.addEventListener('click', ()=>{
 });
 
 logo.addEventListener('click', ()=>{
-    localStorage.removeItem("user");
+    localStorage.removeItem('userID');
     window.location.replace('/index.html');
 });
 
 userBtn.addEventListener('click', ()=>{
-    if(!userParsed){
+    if(!userSignedIn){
         return;
     }else{
         toProfilePage();        
@@ -187,6 +186,7 @@ form.addEventListener('submit', createPost);
 window.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem("post");
     renderPosts();
+    renderUser();
 });
 
 

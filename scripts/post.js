@@ -26,20 +26,27 @@ const likeBtn = document.querySelector('.like');
 const bookmarkBtn = document.querySelector('.bookmark');
 
 
-console.log(likeBtn, bookmarkBtn);
 
-let userParsed = JSON.parse(localStorage.getItem("user"));
-let postParsed;
+let userSignedIn = {};
+let activePost = {};
 
 
+const loadUser = async () =>{
+  const res = await fetch(`http://localhost:3000/users/` + localStorage.getItem('userID'));
+  const user = await res.json();
+
+
+  body.classList.add(`${user.themeColor}`);
+
+  userSignedIn = user;
+  console.log(userSignedIn);
+}
 
 const renderIndividualPost = async () => {
     const res = await fetch('http://localhost:3000/posts/' + id);
     const post = await res.json();   
     let template = '';
-    if(userParsed){
-      body.classList.add(`${userParsed.themeColor}`);
-    }
+    activePost = post;
     if(post.type === 'IMAGE'){
          template = `
         <h1>${post.title}</h1>
@@ -73,9 +80,8 @@ const renderIndividualPost = async () => {
 
     }
     container.innerHTML = template;
-    let postStringified = JSON.stringify(post);
-    localStorage.setItem("post",  postStringified);
-    console.log(userParsed);
+    console.log(activePost);
+
   }
 
 const renderComments = async () =>{
@@ -101,14 +107,15 @@ const renderComments = async () =>{
   commentsContainer.innerHTML = template;
 }  
 
+//Submit comment
 
 const submitComment = async (e) =>{
   e.preventDefault();
   const doc = {
-    userId: userParsed.id,
-    userName: userParsed.firstName + ' ' + userParsed.lastName,
-    userAvatar: userParsed.avatar,
-    postId: postParsed.id,
+    userId: userSignedIn.id,
+    userName: userSignedIn.firstName + ' ' + userSignedIn.lastName,
+    userAvatar: userSignedIn.avatar,
+    postId: activePost.id,
     content: commentContent.value 
 
   }
@@ -119,6 +126,8 @@ const submitComment = async (e) =>{
     });
   window.location.reload(`/post.html?=${id}`);
 }
+
+//Edit post & Delete post
 
 const changePost = async (e) =>{
   
@@ -138,7 +147,7 @@ const changePost = async (e) =>{
     window.location.reload(`/post.html?=${id}`);
 }
 
-if(!userParsed){
+if(!userSignedIn){
   deleteBtn.addEventListener('click', async (e) => {
     const res = await fetch('http://localhost:3000/posts/' + id, {
       method: 'DELETE'
@@ -148,29 +157,24 @@ if(!userParsed){
 }
 
 deleteBtn.addEventListener('click', async (e) => {  
-if(postParsed.userId == userParsed.id){
+if(activePost.userId == userSignedIn.id){
     const res = await fetch('http://localhost:3000/posts/' + id, {
         method: 'DELETE'
     })
-    window.location.replace(`/main.html?id=${userParsed.id}`);
+    window.location.replace(`/main.html?id=${userSignedIn.id}`);
   }else{
   alert('Sorry, you can not delete the post that is created by someone else.');
   };
 });
 
-const parsePost = async () =>{
-  const res = await renderIndividualPost();
-  postParsed = JSON.parse(localStorage.getItem("post"));
-  console.log(postParsed);
-}
 const uploadInputs =  () =>{
-title.value = postParsed.title;
-type.value = postParsed.type;
-content.value = postParsed.meta.url;
+title.value = activePost.title;
+type.value = activePost.type;
+content.value = activePost.meta.url;
 }
 
   editBtn.addEventListener('click', ()=>{
-    if(!userParsed || postParsed.userId == userParsed.id){
+    if(!userSignedIn || activePost.userId == userSignedIn.id){
       formPanel.classList.add('active');
       darkBackground.classList.add('active');
       uploadInputs();
@@ -195,19 +199,18 @@ const panelRemover = () => {
 
   logo.addEventListener('click', () =>{
     localStorage.removeItem('post');
-    if(!userParsed){
+    if(!userSignedIn){
       window.location.replace(`/main.html`);
     }
     isThePostLiked();
-    window.location.replace(`/main.html?id=${userParsed.id}`);
   });
   
 // LIKE POST FEATURE
 
 const waitForAnArray = async () => {
-  const res = await parsePost();
-  for(i = 0; i <= postParsed.usersWhoLiked.length; i++){
-    if(postParsed.usersWhoLiked[i] == userParsed.id){
+  const res = await loadUser();
+  for(i = 0; i <= activePost.usersWhoLiked.length; i++){
+    if(activePost.usersWhoLiked[i] == userSignedIn.id){
       likeBtn.classList.add('active');
     }
   }
@@ -220,32 +223,36 @@ const removeFromAnAray = (arr, item) =>{
 }
 
  const isThePostLiked = async (e) =>{
+   const res = await renderIndividualPost();
    if(likeBtn.classList.contains('active')){
-    let post = postParsed;
-    post.usersWhoLiked.push(userParsed.id);
-    post.usersWhoLiked = [...new Set(postParsed.usersWhoLiked)];
-    await fetch('http://localhost:3000/posts/' + post.id, {
+    
+    activePost.usersWhoLiked.push(userSignedIn.id);
+    activePost.usersWhoLiked = [...new Set(activePost.usersWhoLiked)];
+    await fetch('http://localhost:3000/posts/' + activePost.id, {
        method: 'PATCH',
-       body: JSON.stringify(post),
+       body: JSON.stringify(activePost),
        headers: { 'Content-Type': 'application/json' }
       });
+    window.location.replace(`/main.html?id=${userSignedIn.id}`);
+
    }
 
    if(!likeBtn.classList.contains('active')){
-    let post2 = postParsed;
-    removeFromAnAray(post2.usersWhoLiked, userParsed.id);
-
-    await fetch('http://localhost:3000/posts/' + post2.id, {
+    
+    removeFromAnAray(activePost.usersWhoLiked, userSignedIn.id);
+    await fetch('http://localhost:3000/posts/' + activePost.id, {
       method: 'PATCH',
-      body: JSON.stringify(post2),
+      body: JSON.stringify(activePost),
       headers: { 'Content-Type': 'application/json' }
         });
+    window.location.replace(`/main.html?id=${userSignedIn.id}`);
+
    }
  }
 
  const returnUserWithNewArray = async (e) =>{
    const res = await isThePostLiked();
- } 
+ }  
 
  likeBtn.addEventListener('click',() =>{
    if(!likeBtn.classList.contains('active')){
@@ -258,7 +265,7 @@ const removeFromAnAray = (arr, item) =>{
 
   window.addEventListener('DOMContentLoaded', () => {
     renderIndividualPost();
-    parsePost();
     renderComments();
     waitForAnArray();
+    loadUser();
   });

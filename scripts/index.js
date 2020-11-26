@@ -32,8 +32,6 @@ const signInUser = async () => {
         signInForm.password.value.toString();
 
         if(user.email == signInForm.email.value && user.password == signInForm.password.value){
-            let userStringified = JSON.stringify(user);
-            localStorage.setItem("user",  userStringified);
             window.location.replace(`/main.html?id=${user.id}`);
         }
         else{
