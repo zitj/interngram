@@ -18,6 +18,7 @@ const loadingSpinner = document.querySelector('.loadingSpinner');
 
 let userParsed;
 let counter = 4;
+let numberOfPosts = 0;
 
 const renderUsers = async () => {
     let uri = `http://localhost:3000/users`;
@@ -47,12 +48,10 @@ const renderPosts = async () => {
 
     const res = await fetch(uri);
     const posts = await res.json();
-
+    numberOfPosts = posts.length;
     let template = '';
     posts.forEach(post => {
-
         
-      
         if(post.type === "IMAGE"){
             template += `
             <div class="post">
@@ -93,7 +92,7 @@ const renderPosts = async () => {
     })
 
   container.innerHTML = template;
-
+  console.log(numberOfPosts);
 }
 
 const createPost = async (e) =>{
@@ -116,12 +115,14 @@ const createPost = async (e) =>{
 }
 
 const loading = () =>{
-    counter += 4;
-    loadingSpinner.classList.add('active');
-    loadingSpinner.addEventListener('animationend', ()=>{
-        loadingSpinner.classList.remove('active');        
-        renderPosts();
-    })
+    if(counter <= numberOfPosts){
+            counter += 4;
+            loadingSpinner.classList.add('active');
+            loadingSpinner.addEventListener('animationend', ()=>{
+            loadingSpinner.classList.remove('active');        
+            renderPosts();
+        })
+    }
 }
 
 

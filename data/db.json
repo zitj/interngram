@@ -59,6 +59,16 @@
       "userId": 1,
       "userName": "Aleksandar Veljkovic",
       "id": 24
+    },
+    {
+      "title": "Mr. Tambourine Man",
+      "type": "VIDEO",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=oecX_1pqxk0&ab_channel=BobDylanVEVO"
+      },
+      "userId": 7,
+      "userName": "Bob Dylan",
+      "id": 25
     }
   ],
   "users": [
@@ -124,7 +134,8 @@
       "themeColor": "pink",
       "language": "bulgarian",
       "likedPosts": [
-        "How to use localStorage"
+        "How to use localStorage",
+        "Writing vanilla JavaScript is FUN!"
       ]
     },
     {
@@ -134,7 +145,8 @@
       "password": "bob",
       "likedPosts": [
         "How to use localStorage",
-        "Why you should learn vanilla JavaScript?"
+        "Why you should learn vanilla JavaScript?",
+        "Writing vanilla JavaScript is FUN!"
       ],
       "id": 7,
       "avatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
@@ -222,6 +234,38 @@
       "postId": 22,
       "content": "Cheers to that!",
       "id": 10
+    },
+    {
+      "userId": 7,
+      "userName": "Bob Dylan",
+      "userAvatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
+      "postId": 23,
+      "content": "I actually really like this post, liked it so much that I had to comment it!",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "userName": "Aleksandar Veljkovic",
+      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
+      "postId": 25,
+      "content": "Dude... It is so not cool to post your songs on a network like this.",
+      "id": 12
+    },
+    {
+      "userId": 7,
+      "userName": "Bob Dylan",
+      "userAvatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
+      "postId": 25,
+      "content": "@Aleksandar\nLike and subscribe to the channel ;)",
+      "id": 13
+    },
+    {
+      "userId": 6,
+      "userName": "Arija Obilic",
+      "userAvatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
+      "postId": 25,
+      "content": "@Bob Keep posting dem songs. :D",
+      "id": 14
     }
   ]
 }
