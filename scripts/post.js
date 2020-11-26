@@ -1,7 +1,7 @@
 const id = new URLSearchParams(window.location.search).get('id');
 const body = document.querySelector('body');
 
-const container = document.querySelector('.individualPost');
+const container = document.querySelector('.container');
 const formPanel = document.querySelector('.formPanel');
 const darkBackground = document.querySelector('.darkBackground');
 const form = document.querySelector('form');
@@ -20,8 +20,18 @@ const commentsContainer = document.querySelector('.comments');
 const commentForm = document.querySelector('.commentForm');
 const commentContent = document.getElementById('comment');
 
+
+const likeAndBookmarkContainer = document.querySelector('.likeAndBookmark');
+const likeBtn = document.querySelector('.like');
+const bookmarkBtn = document.querySelector('.bookmark');
+
+
+console.log(likeBtn, bookmarkBtn);
+
 let userParsed = JSON.parse(localStorage.getItem("user"));
 let postParsed;
+
+
 
 const renderIndividualPost = async () => {
     const res = await fetch('http://localhost:3000/posts/' + id);
@@ -34,8 +44,9 @@ const renderIndividualPost = async () => {
          template = `
         <h1>${post.title}</h1>
         <img src="${post.meta.url}" alt="">
-        <p>Created by: ${post.userName}</p>
       `;
+      likeAndBookmarkContainer.children[1].innerHTML = `Created by: ${post.userName}`;
+
     }
     if(post.type === 'VIDEO'){
       if(post.meta.url.split('=') && post.meta.url.split('&')){
@@ -47,19 +58,24 @@ const renderIndividualPost = async () => {
         <h1>${post.title}</h1>
         <iframe id="ytplayer" type="text/html"
         frameborder="0" src='https://www.youtube.com/embed/${linkIdEmbed}'></iframe>
-        <p>Created by: ${post.userName}</p>
+    
       `;
+      likeAndBookmarkContainer.children[1].innerHTML = `Created by: ${post.userName}`;
+
     }}
     if(post.type === 'LINK'){
         template = `
         <h1>${post.title}</h1>
         <a class='postLink' href="${post.meta.url}">${post.meta.url}</a>
-        <p>Created by: ${post.userName}</p>
+ 
       `;
+      likeAndBookmarkContainer.children[1].innerHTML = `Created by: ${post.userName}`;
+
     }
     container.innerHTML = template;
     let postStringified = JSON.stringify(post);
     localStorage.setItem("post",  postStringified);
+    console.log(userParsed);
   }
 
 const renderComments = async () =>{
@@ -183,10 +199,61 @@ const panelRemover = () => {
       window.location.replace(`/main.html`);
     }
       window.location.replace(`/main.html?id=${userParsed.id}`);
+      isThePostLiked();
   });
+  
+// LIKE POST FEATURE
+
+const waitForAnArray = async () => {
+  const res = await parsePost();
+  for(i = 0; i <= userParsed.likedPosts.length; i++){
+    if(userParsed.likedPosts[i] == postParsed.title){
+      likeBtn.classList.add('active');
+    }
+  }
+}  
+
+const removeFromAnAray = (arr, item) =>{
+ for (var i = arr.length; i--;){
+  if (arr[i] === item) {arr.splice(i, 1);}
+ }
+}
+
+ const isThePostLiked = async (e) =>{
+   if(likeBtn.classList.contains('active')){
+    let user = userParsed;
+    user.likedPosts.push(postParsed.title);
+    user.likedPosts = [...new Set(user.likedPosts)];
+    await fetch('http://localhost:3000/users/' + userParsed.id, {
+       method: 'PATCH',
+       body: JSON.stringify(user),
+       headers: { 'Content-Type': 'application/json' }
+      });
+   }
+   if(!likeBtn.classList.contains('active')){
+    let user2 = userParsed;
+    removeFromAnAray(user2.likedPosts, postParsed.title);
+
+    await fetch('http://localhost:3000/users/' + userParsed.id, {
+      method: 'PATCH',
+      body: JSON.stringify(user2),
+      headers: { 'Content-Type': 'application/json' }
+        });
+   }
+ }
+  
+ likeBtn.addEventListener('click',() =>{
+   if(!likeBtn.classList.contains('active')){
+     likeBtn.classList.add('active');
+    }else{
+      likeBtn.classList.remove('active');
+   }
+ });
+
 
   window.addEventListener('DOMContentLoaded', () => {
     renderIndividualPost();
     parsePost();
     renderComments();
+    waitForAnArray();
   });

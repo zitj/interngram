@@ -250,6 +250,50 @@ justify-content: space-around;
            height: 600px; 
         }
     }
+    .likeAndBookmark{
+        margin-top: 1%;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin-left: 10%;
+        .buttons{
+            margin-top: 10px;
+        }
+        button{
+            background: white;
+            color: $interngram-blue;
+            border: 1px solid $interngram-blue;
+            line-height: 20px;
+            font-size: 1.4em;
+            span{
+                &:nth-of-type(1){
+                    margin-left: -10px;
+                    margin-right: 10px;
+                }
+                &:nth-of-type(2){
+                    display: none;
+                    color: white;
+                }
+            }
+            &.active{
+                background: $interngram-blue;
+                color: white;
+                border: none;
+                span{
+                    &:nth-of-type(2){
+                        display: inline-block;
+                    }
+                }
+               
+                svg{
+                    g{
+                        fill: white;
+                    }
+                }
+            }
+        }
+      
+    }
     .commentSection{
         margin-top: 2em;
         h3{

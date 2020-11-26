@@ -317,6 +317,54 @@ button:active {
   height: 600px;
 }
 
+.wrapper .likeAndBookmark {
+  margin-top: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.wrapper .likeAndBookmark .buttons {
+  margin-top: 10px;
+}
+
+.wrapper .likeAndBookmark button {
+  background: white;
+  color: #027cce;
+  border: 1px solid #027cce;
+  line-height: 20px;
+  font-size: 1.4em;
+}
+
+.wrapper .likeAndBookmark button span:nth-of-type(1) {
+  margin-left: -10px;
+  margin-right: 10px;
+}
+
+.wrapper .likeAndBookmark button span:nth-of-type(2) {
+  display: none;
+  color: white;
+}
+
+.wrapper .likeAndBookmark button.active {
+  background: #027cce;
+  color: white;
+  border: none;
+}
+
+.wrapper .likeAndBookmark button.active span:nth-of-type(2) {
+  display: inline-block;
+}
+
+.wrapper .likeAndBookmark button.active svg g {
+  fill: white;
+}
+
 .wrapper .commentSection {
   margin-top: 2em;
 }
