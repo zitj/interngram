@@ -13,11 +13,12 @@
         6,
         2,
         8,
-        7
+        7,
+        1
       ]
     },
     {
-      "title": "Angular Crash Course for beginners 2020",
+      "title": "Angular Crash Course for beginners",
       "type": "VIDEO",
       "meta": {
         "url": "https://www.youtube.com/watch?v=T_Fe4IaG0KU&ab_channel=HiteshChoudhary"
@@ -73,19 +74,6 @@
       "usersWhoLiked": []
     },
     {
-      "title": "What is MVC?",
-      "type": "VIDEO",
-      "meta": {
-        "url": "https://www.youtube.com/watch?v=pCvZtjoRq1I&ab_channel=TraversyMedia"
-      },
-      "userId": 1,
-      "userName": "Aleksandar Veljkovic",
-      "id": 24,
-      "usersWhoLiked": [
-        9
-      ]
-    },
-    {
       "title": "Mr. Tambourine Man",
       "type": "VIDEO",
       "meta": {
@@ -99,17 +87,6 @@
       ]
     },
     {
-      "title": "Najnoviji post",
-      "type": "LINK",
-      "meta": {
-        "url": "www.najnovijipost.com"
-      },
-      "userId": 2,
-      "userName": "Dimitrije Dimitrijevic",
-      "id": 27,
-      "usersWhoLiked": []
-    },
-    {
       "title": "Azbuka A",
       "type": "VIDEO",
       "meta": {
@@ -119,6 +96,17 @@
       "userName": "Vuk Karadzic",
       "usersWhoLiked": [],
       "id": 29
+    },
+    {
+      "title": "Model View Controller",
+      "type": "VIDEO",
+      "meta": {
+        "url": "https://www.youtube.com/watch?v=DUg2SWWK18I&ab_channel=WebDevSimplified"
+      },
+      "userId": 1,
+      "userName": "Aleksandar Veljkovic",
+      "usersWhoLiked": [],
+      "id": 30
     }
   ],
   "users": [
@@ -130,7 +118,7 @@
       "password": "1234",
       "avatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
       "themeColor": "blue",
-      "language": "bulgarian"
+      "language": "serbian"
     },
     {
       "firstName": "Dimitrije",
@@ -348,12 +336,6 @@
       "id": 17
     },
     {
-      "userName": "undefined undefined",
-      "postId": 19,
-      "content": "Does this work?",
-      "id": 18
-    },
-    {
       "userId": 7,
       "userName": "Bob Dylan",
       "userAvatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
@@ -368,14 +350,6 @@
       "postId": 25,
       "content": "Thanks, I will. :)",
       "id": 20
-    },
-    {
-      "userId": 5,
-      "userName": "Marijana Stosic",
-      "userAvatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
-      "postId": 27,
-      "content": "First comment here",
-      "id": 21
     },
     {
       "userId": 1,

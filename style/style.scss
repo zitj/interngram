@@ -259,7 +259,7 @@ justify-content: space-around;
             margin-top: 10px;
         }
         button{
-            background: white;
+            background: rgba(255, 255, 255, 0);
             color: $interngram-blue;
             border: 1px solid $interngram-blue;
             line-height: 20px;
@@ -519,5 +519,8 @@ body.green{
 }
 #delete,
 #signOut{
-    background:#FF5A7E;
+    background:$pink;
+}
+#edit{
+    background: $green;
 }

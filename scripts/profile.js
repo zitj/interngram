@@ -47,7 +47,7 @@ const updateUser = async (e) =>{
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' }
     });
-    window.location.replace(`/main.html?id=${id}`);
+    window.location.replace(`main.html?id=${id}`);
 }
 
 const panelRemover = () =>{
@@ -56,13 +56,13 @@ const panelRemover = () =>{
 }
 
 logo.addEventListener('click', ()=>{
-    window.location.replace(`/main.html?id=${id}`);
+    window.location.replace(`main.html?id=${id}`);
 });
 
 signOutBtn.addEventListener('click', ()=>{
     localStorage.removeItem("user");
     localStorage.removeItem("post");
-    window.location.replace('/index.html');
+    window.location.replace('../index.html');
 });
 
 settingsBtn.addEventListener('click', ()=>{

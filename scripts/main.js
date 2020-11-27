@@ -61,7 +61,7 @@ const renderPosts = async () => {
             <div class="post">
                 <h2>${post.title}</h2>
                 <img src="${post.meta.url}" alt="${post.meta.alt}">
-                <a href="/post.html?id=${post.id}">details</a>
+                <a href="post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
         ` 
@@ -78,7 +78,7 @@ const renderPosts = async () => {
                 <h2>${post.title}</h2>
                 <iframe id="ytplayer" type="text/html"
                 frameborder="0" src='https://www.youtube.com/embed/${linkIdEmbed}'></iframe>
-                <a href="/post.html?id=${post.id}">details</a>
+                <a href="post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
         ` 
@@ -88,7 +88,7 @@ const renderPosts = async () => {
             <div class="post">
                 <h2>${post.title}</h2>
                 <a class="postLink" href="${post.meta.url}">${post.meta.url}</a>
-                <a href="/post.html?id=${post.id}">details</a>
+                <a href="post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
         `
@@ -145,13 +145,13 @@ const panelRemover = () => {
 }
 
 const toProfilePage = () =>{
-        window.location.replace(`/profile.html?id=${id}`);
+        window.location.replace(`profile.html?id=${id}`);
 }
 
 
 
 createNewPostBtn.addEventListener('click', ()=>{
-    formPanel.classList.add('active');
+    formPanel.classList.add('active')
     darkBackground.classList.add('active');
 });
 darkBackground.addEventListener('click', ()=>{
@@ -163,7 +163,7 @@ closeBtn.addEventListener('click', ()=>{
 
 logo.addEventListener('click', ()=>{
     localStorage.removeItem('userID');
-    window.location.replace('/index.html');
+    window.location.replace('../index.html');
 });
 
 userBtn.addEventListener('click', ()=>{

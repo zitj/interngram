@@ -124,7 +124,7 @@ const submitComment = async (e) =>{
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' }
     });
-  window.location.reload(`/post.html?=${id}`);
+  window.location.reload(`post.html?=${id}`);
 }
 
 //Edit post & Delete post
@@ -144,7 +144,7 @@ const changePost = async (e) =>{
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' }
     });
-    window.location.reload(`/post.html?=${id}`);
+    window.location.reload(`post.html?=${id}`);
 }
 
 if(!userSignedIn){
@@ -152,7 +152,7 @@ if(!userSignedIn){
     const res = await fetch('http://localhost:3000/posts/' + id, {
       method: 'DELETE'
   })
-    window.location.replace(`/main.html`);
+    window.location.replace(`main.html`);
   });  
 }
 
@@ -161,7 +161,7 @@ if(activePost.userId == userSignedIn.id){
     const res = await fetch('http://localhost:3000/posts/' + id, {
         method: 'DELETE'
     })
-    window.location.replace(`/main.html?id=${userSignedIn.id}`);
+    window.location.replace(`main.html?id=${userSignedIn.id}`);
   }else{
   alert('Sorry, you can not delete the post that is created by someone else.');
   };
@@ -200,7 +200,7 @@ const panelRemover = () => {
   logo.addEventListener('click', () =>{
     localStorage.removeItem('post');
     if(!userSignedIn){
-      window.location.replace(`/main.html`);
+      window.location.replace(`main.html`);
     }
     isThePostLiked();
   });
@@ -233,7 +233,7 @@ const removeFromAnAray = (arr, item) =>{
        body: JSON.stringify(activePost),
        headers: { 'Content-Type': 'application/json' }
       });
-    window.location.replace(`/main.html?id=${userSignedIn.id}`);
+    window.location.replace(`main.html?id=${userSignedIn.id}`);
 
    }
 
@@ -245,7 +245,7 @@ const removeFromAnAray = (arr, item) =>{
       body: JSON.stringify(activePost),
       headers: { 'Content-Type': 'application/json' }
         });
-    window.location.replace(`/main.html?id=${userSignedIn.id}`);
+    window.location.replace(`main.html?id=${userSignedIn.id}`);
 
    }
  }

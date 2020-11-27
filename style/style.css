@@ -331,7 +331,7 @@ button:active {
 }
 
 .wrapper .likeAndBookmark button {
-  background: white;
+  background: rgba(255, 255, 255, 0);
   color: #027cce;
   border: 1px solid #027cce;
   line-height: 20px;
@@ -825,5 +825,9 @@ body.green .likeAndBookmark button.active svg g {
 #delete,
 #signOut {
   background: #FF5A7E;
+}
+
+#edit {
+  background: #41B741;
 }
 /*# sourceMappingURL=style.css.map */

@@ -32,7 +32,7 @@ const signInUser = async () => {
         signInForm.password.value.toString();
 
         if(user.email == signInForm.email.value && user.password == signInForm.password.value){
-            window.location.replace(`/main.html?id=${user.id}`);
+            window.location.replace(`html/main.html?id=${user.id}`);
         }
         else{
             return;
