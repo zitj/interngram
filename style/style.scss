@@ -136,11 +136,21 @@ justify-content: space-around;
            .signOut,
            .settingsBtn{
                height: 60%;
-               margin-top: 8%;
+               margin-top: 6.5%;
+           }
+           .edit,
+           .delete{
+               display: none;
+               margin-top: 3%;
+               &.active{
+                   display: block;
+               }
            }
            .settingsBtn{
-               
                margin-right: 1%;
+           }
+           .user{
+               display: flex;
            }
        }
        img{
@@ -521,6 +531,7 @@ body.green{
 #signOut{
     background:$pink;
 }
-#edit{
+#edit,
+#settingsBtn{
     background: $green;
 }

@@ -12,6 +12,8 @@ const content = document.getElementById('content');
 
 const logo = document.querySelector('.logo');
 const closeBtn = document.querySelector('.closeBtn');
+const userBtn = document.querySelector('.userBtn');
+let avatar = document.querySelector('.avatar');
 const deleteBtn = document.querySelector('.delete');
 const editBtn = document.querySelector('.edit');
 
@@ -35,11 +37,12 @@ const loadUser = async () =>{
   const res = await fetch(`http://localhost:3000/users/` + localStorage.getItem('userID'));
   const user = await res.json();
 
-
+  userBtn.innerHTML = user.firstName + ' ' + user.lastName;
+  avatar.src = user.avatar;
+  
   body.classList.add(`${user.themeColor}`);
 
   userSignedIn = user;
-  console.log(userSignedIn);
 }
 
 const renderIndividualPost = async () => {
@@ -80,8 +83,6 @@ const renderIndividualPost = async () => {
 
     }
     container.innerHTML = template;
-    console.log(activePost);
-
   }
 
 const renderComments = async () =>{
@@ -262,10 +263,33 @@ const removeFromAnAray = (arr, item) =>{
    }
  });
 
+ 
+const toProfilePage = () =>{
+  window.location.replace(`profile.html?id=${userSignedIn.id}`);
+}
+userBtn.addEventListener('click', ()=>{
+  toProfilePage();
+});
+avatar.addEventListener('click', ()=>{
+  toProfilePage();
+});
+
+
+const showEditAndDeleteButtons = async () =>{
+  await renderIndividualPost();
+  await loadUser();
+  if(userSignedIn.id == activePost.userId){
+    console.log('show me dem buttons!');
+    editBtn.classList.add('active');
+    deleteBtn.classList.add('active');
+  }
+}
+
 
   window.addEventListener('DOMContentLoaded', () => {
     renderIndividualPost();
     renderComments();
     waitForAnArray();
     loadUser();
+    showEditAndDeleteButtons();
   });

@@ -172,11 +172,28 @@ button:active {
 .wrapper nav .buttons .signOut,
 .wrapper nav .buttons .settingsBtn {
   height: 60%;
-  margin-top: 8%;
+  margin-top: 6.5%;
+}
+
+.wrapper nav .buttons .edit,
+.wrapper nav .buttons .delete {
+  display: none;
+  margin-top: 3%;
+}
+
+.wrapper nav .buttons .edit.active,
+.wrapper nav .buttons .delete.active {
+  display: block;
 }
 
 .wrapper nav .buttons .settingsBtn {
   margin-right: 1%;
+}
+
+.wrapper nav .buttons .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .wrapper nav img {
@@ -827,7 +844,8 @@ body.green .likeAndBookmark button.active svg g {
   background: #FF5A7E;
 }
 
-#edit {
+#edit,
+#settingsBtn {
   background: #41B741;
 }
 /*# sourceMappingURL=style.css.map */
