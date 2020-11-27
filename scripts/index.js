@@ -32,9 +32,7 @@ const signInUser = async () => {
         signInForm.password.value.toString();
 
         if(user.email == signInForm.email.value && user.password == signInForm.password.value){
-            let userStringified = JSON.stringify(user);
-            localStorage.setItem("user",  userStringified);
-            window.location.replace(`/main.html?id=${user.id}`);
+            window.location.replace(`html/main.html?id=${user.id}`);
         }
         else{
             return;
@@ -57,6 +55,7 @@ const createUser = async (e) =>{
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' }
     });
+    alert('You have successfully created an account!');
 }
 
 signUpBtn.addEventListener('click', ()=>{

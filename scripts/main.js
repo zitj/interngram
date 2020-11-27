@@ -16,36 +16,36 @@ const form = document.querySelector('form');
 
 const loadingSpinner = document.querySelector('.loadingSpinner');
 
-let userParsed = JSON.parse(localStorage.getItem("user"));
-userBtn.innerHTML = userParsed.firstName + ' ' + userParsed.lastName;
-avatar.src = userParsed.avatar;
-body.classList.add(`${userParsed.themeColor}`);
+let userSignedIn= {};
 
-let counter = 4;
+let counter = 2;
 let numberOfPosts = 0;
 
-// const renderUser = async () => {
-//     let uri = `http://localhost:3000/users?id=${id}`;
-//     const res = await fetch(uri);
-//     const user = await res.json();
-//     let template = '';
+const renderUser = async () => {
+    let uri = `http://localhost:3000/users`;
+    const res = await fetch(uri);
+    const users = await res.json();
     
-//         if(user.id == id){
-//             template = user.firstName + ' ' + user.lastName;
-//             let userStringified = JSON.stringify(user);
-//             localStorage.setItem("user",  userStringified);
-//             avatar.src = user.avatar
-//         }
+    users.forEach(user => {
+        if(user.id == id){
+            userBtn.innerHTML = user.firstName + ' ' + user.lastName;
+            avatar.src = user.avatar;
+            body.classList.add(`${user.themeColor}`);
+            userSignedIn = user;
+            localStorage.setItem('userID', userSignedIn.id);
+            console.log(userSignedIn);
+        
+        }
+    })
 
-//     userBtn.innerHTML = template;
-// }
+}
 
-// const parseUser = async () => {
-//     const res = await renderUsers();
-//     userParsed = JSON.parse(localStorage.getItem("user"));
-//     body.classList.add(`${userParsed.themeColor}`);
-//     console.log(userParsed);
-// }
+const parseUser = async () => {
+    const res = await renderUsers();
+    userParsed = JSON.parse(localStorage.getItem("user"));
+    body.classList.add(`${userParsed.themeColor}`);
+    console.log(userParsed);
+}
 
 const renderPosts = async () => {
     let uri = `http://localhost:3000/posts?_limit=${counter}`;
@@ -61,7 +61,7 @@ const renderPosts = async () => {
             <div class="post">
                 <h2>${post.title}</h2>
                 <img src="${post.meta.url}" alt="${post.meta.alt}">
-                <a href="/post.html?id=${post.id}">details</a>
+                <a href="post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
         ` 
@@ -78,7 +78,7 @@ const renderPosts = async () => {
                 <h2>${post.title}</h2>
                 <iframe id="ytplayer" type="text/html"
                 frameborder="0" src='https://www.youtube.com/embed/${linkIdEmbed}'></iframe>
-                <a href="/post.html?id=${post.id}">details</a>
+                <a href="post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
         ` 
@@ -88,7 +88,7 @@ const renderPosts = async () => {
             <div class="post">
                 <h2>${post.title}</h2>
                 <a class="postLink" href="${post.meta.url}">${post.meta.url}</a>
-                <a href="/post.html?id=${post.id}">details</a>
+                <a href="post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
         `
@@ -97,7 +97,6 @@ const renderPosts = async () => {
 
   container.innerHTML = template;
   console.log(numberOfPosts);
-  console.log(userParsed);
 }
 
 const createPost = async (e) =>{
@@ -108,8 +107,8 @@ const createPost = async (e) =>{
         meta:{
             url: form.content.value
         },
-        userId: userParsed.id,
-        userName: userParsed.firstName + ' ' + userParsed.lastName,
+        userId: userSignedIn.id,
+        userName: userSignedIn.firstName + ' ' + userSignedIn.lastName,
         usersWhoLiked: []
     }
     await fetch('http://localhost:3000/posts/', {
@@ -122,7 +121,7 @@ const createPost = async (e) =>{
 
 const loading = () =>{
     if(counter <= numberOfPosts){
-            counter += 4;
+            counter += 2;
             loadingSpinner.classList.add('active');
             loadingSpinner.addEventListener('animationend', ()=>{
             loadingSpinner.classList.remove('active');        
@@ -146,13 +145,13 @@ const panelRemover = () => {
 }
 
 const toProfilePage = () =>{
-        window.location.replace(`/profile.html?id=${id}`);
+        window.location.replace(`profile.html?id=${id}`);
 }
 
 
 
 createNewPostBtn.addEventListener('click', ()=>{
-    formPanel.classList.add('active');
+    formPanel.classList.add('active')
     darkBackground.classList.add('active');
 });
 darkBackground.addEventListener('click', ()=>{
@@ -163,19 +162,19 @@ closeBtn.addEventListener('click', ()=>{
 });
 
 logo.addEventListener('click', ()=>{
-    localStorage.removeItem("user");
-    window.location.replace('/index.html');
+    localStorage.removeItem('userID');
+    window.location.replace('../index.html');
 });
 
 userBtn.addEventListener('click', ()=>{
-    if(!userParsed){
+    if(!userSignedIn){
         return;
     }else{
         toProfilePage();        
     }
  });
 avatar.addEventListener('click', ()=>{
-    if(!userParsed){
+    if(!userSignedIn){
         return;
     }else{
         toProfilePage();        
@@ -187,6 +186,7 @@ form.addEventListener('submit', createPost);
 window.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem("post");
     renderPosts();
+    renderUser();
 });
 
 

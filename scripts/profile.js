@@ -15,7 +15,8 @@ const logo = document.querySelector('.logo');
 const signOutBtn = document.querySelector('.signOut');
 const settingsBtn = document.querySelector('.settingsBtn');
 
-const userParsed = JSON.parse(localStorage.getItem("user"));
+// const userParsed = JSON.parse(localStorage.getItem("user"));
+let userSignedIn = {};
 
 const loadUser = async () =>{
     const res = await fetch(`http://localhost:3000/users/` + id);
@@ -24,11 +25,14 @@ const loadUser = async () =>{
     let userName = user.firstName + ' ' + user.lastName;
     let userEmail = user.email;
 
-    body.classList.add(`${userParsed.themeColor}`);
+    body.classList.add(`${user.themeColor}`);
 
     containerImg.innerHTML = profilePic;
     heading.innerHTML = userName;
     paragraph.innerHTML = userEmail;
+
+    userSignedIn = user;
+
 }
 
 const updateUser = async (e) =>{
@@ -43,7 +47,7 @@ const updateUser = async (e) =>{
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' }
     });
-    window.location.replace(`/main.html?id=${id}`);
+    window.location.replace(`main.html?id=${id}`);
 }
 
 const panelRemover = () =>{
@@ -52,19 +56,19 @@ const panelRemover = () =>{
 }
 
 logo.addEventListener('click', ()=>{
-    window.location.replace(`/main.html?id=${id}`);
+    window.location.replace(`main.html?id=${id}`);
 });
 
 signOutBtn.addEventListener('click', ()=>{
     localStorage.removeItem("user");
     localStorage.removeItem("post");
-    window.location.replace('/index.html');
+    window.location.replace('../index.html');
 });
 
 settingsBtn.addEventListener('click', ()=>{
     formPanel.classList.add('active');
     darkBackground.classList.add('active');
-    form.avatar.value = userParsed.avatar;
+    form.avatar.value = userSignedIn.avatar;
 });
 
 closeBtn.addEventListener('click', panelRemover);
