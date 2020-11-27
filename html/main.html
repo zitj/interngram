@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interngram</title>
-    <link rel="stylesheet" href="../style/style.css">
-    <script src="../scripts/main.js" defer></script>
-
-</head>
-<body>
-    <div class="darkBackground"></div>
-    <div class="formPanel createNewPostPanel">
-        <div class="form">
-        <div class="closeBtn"><img src="https://img.icons8.com/flat_round/64/000000/delete-sign.png"/></div>
-        <h1>Create a New Post</h1>
-        <form>
-            <label for="title">Title of the post:</label>
-            <input type="text" name="title" required placeholder="Title">
-            <label for="type">Choose a type:</label>
-            <select id="type" name="type" required>
-                <option value="IMAGE">Image</option>
-                <option value="VIDEO">Video</option>
-                <option value="LINK">Link</option>
-            </select>
-            <label for="content">Content of the post:</label>
-            <textarea name="content" id="" cols="30" rows="10" required placeholder="Content"></textarea>
-            <button type="submit">Create post</button>
-        </form>
-        </div>
-    </div>
-    
-    <div class="wrapper">
-        
-        <nav class="main">
-            <h2 class="logo">iNTERNGRAM.</h2>
-            <div class="buttons">
-                <a class="createNewPostBtn">Create new post</a>
-                <a class="userBtn">user</a>
-                <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png" alt="">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Interngram</title>
+        <link rel="stylesheet" href="../style/style.css" />
+        <script src="../scripts/main.js" defer></script>
+    </head>
+    <body>
+        <div class="darkBackground"></div>
+        <!-- end .darkBackground -->
+        <div class="formPanel createNewPostPanel">
+            <div class="form">
+                <div class="closeBtn">
+                    <img
+                        src="https://img.icons8.com/flat_round/64/000000/delete-sign.png"
+                    />
+                </div>
+                <!-- end closeBtn -->
+                <h1>Create a New Post</h1>
+                <form>
+                    <label for="title">Title of the post:</label>
+                    <input
+                        type="text"
+                        name="title"
+                        required
+                        placeholder="Title"
+                    />
+                    <label for="type">Choose a type:</label>
+                    <select id="type" name="type" required>
+                        <option value="IMAGE">Image</option>
+                        <option value="VIDEO">Video</option>
+                        <option value="LINK">Link</option>
+                    </select>
+                    <label for="content">Content of the post:</label>
+                    <textarea
+                        name="content"
+                        id=""
+                        cols="30"
+                        rows="10"
+                        required
+                        placeholder="Content"
+                    ></textarea>
+                    <button type="submit">Create post</button>
+                </form>
             </div>
-        </nav>
+            <!-- end .form-->
+        </div>
+        <!-- end .createNewPostPanel -->
 
-        <div class="posts">
+        <div class="wrapper">
+            <nav class="main">
+                <h2 class="logo">iNTERNGRAM.</h2>
+                <div class="buttons">
+                    <a class="createNewPostBtn">Create new post</a>
+                    <a class="userBtn">user</a>
+                    <img
+                        class="avatar"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png"
+                        alt=""
+                    />
+                </div>
+                <!-- end .buttons-->
+            </nav>
 
-        </div> <!-- end .posts -->
-        <div class="loadingSpinner "><p>loading</p></div> <!-- end .loadingSpinner -->
-    </div> <!-- end .wrapper -->
-</body>
+            <div class="posts"></div>
+            <!-- end .posts -->
+            <div class="loadingSpinner"><p>loading</p></div>
+            <!-- end .loadingSpinner -->
+        </div>
+        <!-- end .wrapper -->
+    </body>
 </html>

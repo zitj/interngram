@@ -16,7 +16,7 @@ const form = document.querySelector('form');
 
 const loadingSpinner = document.querySelector('.loadingSpinner');
 
-let userSignedIn= {};
+let userSignedIn = {};
 
 let counter = 2;
 let numberOfPosts = 0;
@@ -25,27 +25,18 @@ const renderUser = async () => {
     let uri = `http://localhost:3000/users`;
     const res = await fetch(uri);
     const users = await res.json();
-    
-    users.forEach(user => {
-        if(user.id == id){
+
+    users.forEach((user) => {
+        if (user.id == id) {
             userBtn.innerHTML = user.firstName + ' ' + user.lastName;
             avatar.src = user.avatar;
             body.classList.add(`${user.themeColor}`);
             userSignedIn = user;
             localStorage.setItem('userID', userSignedIn.id);
             console.log(userSignedIn);
-        
         }
-    })
-
-}
-
-const parseUser = async () => {
-    const res = await renderUsers();
-    userParsed = JSON.parse(localStorage.getItem("user"));
-    body.classList.add(`${userParsed.themeColor}`);
-    console.log(userParsed);
-}
+    });
+};
 
 const renderPosts = async () => {
     let uri = `http://localhost:3000/posts?_limit=${counter}`;
@@ -54,9 +45,8 @@ const renderPosts = async () => {
     const posts = await res.json();
     numberOfPosts = posts.length;
     let template = '';
-    posts.forEach(post => {
-        
-        if(post.type === "IMAGE"){
+    posts.forEach((post) => {
+        if (post.type === 'IMAGE') {
             template += `
             <div class="post">
                 <h2>${post.title}</h2>
@@ -64,16 +54,15 @@ const renderPosts = async () => {
                 <a href="post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
-        ` 
+        `;
         }
-        if(post.type === "VIDEO"){
-
-            if(post.meta.url.split('=') && post.meta.url.split('&')){
+        if (post.type === 'VIDEO') {
+            if (post.meta.url.split('=') && post.meta.url.split('&')) {
                 let link = post.meta.url.split('=');
                 let linkID = link[1].split('&');
                 let linkIdEmbed = linkID[0];
-            
-            template += `
+
+                template += `
             <div class="post">
                 <h2>${post.title}</h2>
                 <iframe id="ytplayer" type="text/html"
@@ -81,60 +70,60 @@ const renderPosts = async () => {
                 <a href="post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
-        ` 
-        }}
-        if(post.type === "LINK"){
-        template += `
+        `;
+            }
+        }
+        if (post.type === 'LINK') {
+            template += `
             <div class="post">
                 <h2>${post.title}</h2>
                 <a class="postLink" href="${post.meta.url}">${post.meta.url}</a>
                 <a href="post.html?id=${post.id}">details</a>
                 <p>Created by: ${post.userName}</p>
             </div>
-        `
-    }
-    })
+        `;
+        }
+    });
 
-  container.innerHTML = template;
-  console.log(numberOfPosts);
-}
+    container.innerHTML = template;
+    console.log(numberOfPosts);
+};
 
-const createPost = async (e) =>{
+const createPost = async (e) => {
     e.preventDefault();
     const doc = {
         title: form.title.value,
         type: form.type.value,
-        meta:{
-            url: form.content.value
+        meta: {
+            url: form.content.value,
         },
         userId: userSignedIn.id,
         userName: userSignedIn.firstName + ' ' + userSignedIn.lastName,
-        usersWhoLiked: []
-    }
+        usersWhoLiked: [],
+    };
     await fetch('http://localhost:3000/posts/', {
         method: 'POST',
         body: JSON.stringify(doc),
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
     });
     window.location.reload('/main.html');
-}
+};
 
-const loading = () =>{
-    if(counter <= numberOfPosts){
-            counter += 2;
-            loadingSpinner.classList.add('active');
-            loadingSpinner.addEventListener('animationend', ()=>{
-            loadingSpinner.classList.remove('active');        
+const loading = () => {
+    if (counter <= numberOfPosts) {
+        counter += 2;
+        loadingSpinner.classList.add('active');
+        loadingSpinner.addEventListener('animationend', () => {
+            loadingSpinner.classList.remove('active');
             renderPosts();
-        })
+        });
     }
-}
+};
 
-
-window.addEventListener('scroll', ()=>{
+window.addEventListener('scroll', () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-    if(clientHeight + scrollTop == scrollHeight){
+    if (clientHeight + scrollTop == scrollHeight) {
         loading();
     }
 });
@@ -142,51 +131,47 @@ window.addEventListener('scroll', ()=>{
 const panelRemover = () => {
     darkBackground.classList.remove('active');
     formPanel.classList.remove('active');
-}
+};
 
-const toProfilePage = () =>{
-        window.location.replace(`profile.html?id=${id}`);
-}
+const toProfilePage = () => {
+    window.location.replace(`profile.html?id=${id}`);
+};
 
-
-
-createNewPostBtn.addEventListener('click', ()=>{
-    formPanel.classList.add('active')
+createNewPostBtn.addEventListener('click', () => {
+    formPanel.classList.add('active');
     darkBackground.classList.add('active');
 });
-darkBackground.addEventListener('click', ()=>{
+darkBackground.addEventListener('click', () => {
     panelRemover();
 });
-closeBtn.addEventListener('click', ()=>{
+closeBtn.addEventListener('click', () => {
     panelRemover();
 });
 
-logo.addEventListener('click', ()=>{
+logo.addEventListener('click', () => {
     localStorage.removeItem('userID');
     window.location.replace('../index.html');
 });
 
-userBtn.addEventListener('click', ()=>{
-    if(!userSignedIn){
+userBtn.addEventListener('click', () => {
+    if (!userSignedIn) {
         return;
-    }else{
-        toProfilePage();        
+    } else {
+        toProfilePage();
     }
- });
-avatar.addEventListener('click', ()=>{
-    if(!userSignedIn){
+});
+avatar.addEventListener('click', () => {
+    if (!userSignedIn) {
         return;
-    }else{
-        toProfilePage();        
+    } else {
+        toProfilePage();
     }
- });
+});
 
 form.addEventListener('submit', createPost);
 
 window.addEventListener('DOMContentLoaded', () => {
-    localStorage.removeItem("post");
+    localStorage.removeItem('post');
     renderPosts();
     renderUser();
 });
-
-

@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "title": "How to use localStorage 2020",
+      "title": "How to use localStorage",
       "type": "VIDEO",
       "meta": {
         "url": "https://www.youtube.com/watch?v=k8yJCeuP6I8&ab_channel=dcode"
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "title": "Angular Crash Course for beginners 2020",
+      "title": "Angular Crash Course for beginners",
       "type": "VIDEO",
       "meta": {
         "url": "https://www.youtube.com/watch?v=T_Fe4IaG0KU&ab_channel=HiteshChoudhary"
@@ -30,7 +30,8 @@
         2,
         6,
         7,
-        1
+        1,
+        3
       ]
     },
     {
@@ -72,7 +73,9 @@
       "userId": 5,
       "userName": "Marijana Stosic",
       "id": 23,
-      "usersWhoLiked": []
+      "usersWhoLiked": [
+        2
+      ]
     },
     {
       "title": "Mr. Tambourine Man",
@@ -130,8 +133,8 @@
       "password": "dida",
       "id": 2,
       "avatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
-      "themeColor": "green",
-      "language": "bulgarian"
+      "themeColor": "darkGrey",
+      "language": "english"
     },
     {
       "firstName": "Milan",
@@ -361,6 +364,14 @@
       "postId": 21,
       "content": "What about them Bob?",
       "id": 22
+    },
+    {
+      "userId": 3,
+      "userName": "Milan Stanojevic",
+      "userAvatar": "https://i.imgur.com/K5pVtx8.jpg",
+      "postId": 21,
+      "content": "Thank you for all of your support!",
+      "id": 23
     }
   ]
 }

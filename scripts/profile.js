@@ -15,10 +15,9 @@ const logo = document.querySelector('.logo');
 const signOutBtn = document.querySelector('.signOut');
 const settingsBtn = document.querySelector('.settingsBtn');
 
-// const userParsed = JSON.parse(localStorage.getItem("user"));
 let userSignedIn = {};
 
-const loadUser = async () =>{
+const loadUser = async () => {
     const res = await fetch(`http://localhost:3000/users/` + id);
     const user = await res.json();
     let profilePic = `<img id="profPic" src="${user.avatar}" alt="avatar">`;
@@ -32,40 +31,39 @@ const loadUser = async () =>{
     paragraph.innerHTML = userEmail;
 
     userSignedIn = user;
+};
 
-}
-
-const updateUser = async (e) =>{
+const updateUser = async (e) => {
     e.preventDefault();
     const doc = {
         avatar: form.avatar.value,
         themeColor: form.theme.value,
-        language: form.language.value
-    }
+        language: form.language.value,
+    };
     await fetch('http://localhost:3000/users/' + id, {
         method: 'PATCH',
         body: JSON.stringify(doc),
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
     });
     window.location.replace(`main.html?id=${id}`);
-}
+};
 
-const panelRemover = () =>{
+const panelRemover = () => {
     formPanel.classList.remove('active');
     darkBackground.classList.remove('active');
-}
+};
 
-logo.addEventListener('click', ()=>{
+logo.addEventListener('click', () => {
     window.location.replace(`main.html?id=${id}`);
 });
 
-signOutBtn.addEventListener('click', ()=>{
-    localStorage.removeItem("user");
-    localStorage.removeItem("post");
+signOutBtn.addEventListener('click', () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('post');
     window.location.replace('../index.html');
 });
 
-settingsBtn.addEventListener('click', ()=>{
+settingsBtn.addEventListener('click', () => {
     formPanel.classList.add('active');
     darkBackground.classList.add('active');
     form.avatar.value = userSignedIn.avatar;

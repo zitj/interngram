@@ -1,56 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
-    <script src="../scripts/profile.js" defer></script>
-    <title>iNTERNGRAM</title>
-</head>
-<body>
-    <div class="darkBackground "></div>
-    <div class="formPanel settingsPanel ">
-    <div class="form">
-    <div class="closeBtn"><img src="https://img.icons8.com/flat_round/64/000000/delete-sign.png"/></div>
-    <h1>Settings</h1>
-    <form class="settingsForm">
-        <label for="avatar">Upload your profile picture</label>
-        <input type="text" name="avatar" required placeholder="Insert URL">
-        <label for="theme">Change theme color</label>
-        <select id="theme" name="theme">
-            <option value="blue">Blue</option>
-            <option value="pink">Pink</option>
-            <option value="green">Green</option>
-          </select>
-          <label for="language">Choose language</label>
-            <select id="language" name="language">
-                <option value="bulgarian">Bulgarian</option>
-                <option value="english">English</option>
-                <option value="serbian">Serbian</option>
-              </select>
-        <button type="submit">Save changes</button>
-    </form>
-    </div> <!-- end .form-->
-    </div> <!-- end .signUpPanel-->
-
-    <div class="wrapper">
-        <nav>
-            <h2 class="logo">iNTERNGRAM.</h2>
-            <div class="buttons">
-                <button class="settingsBtn" id="settingsBtn">Settings</button>
-                <button class="signOut" id="signOut">Sign&nbsp;Out</button>
-            </div> <!-- end .buttons-->
-        </nav>
-        <div class="profileWrap">
-            <div class="profilePicture">
-            </div> <!-- end .profilePicture -->
-            <div class="info">
-                <h2>First and last name</h2>
-                <p>email</p>
-                <div class="buttons">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../style/style.css" />
+        <script src="../scripts/profile.js" defer></script>
+        <title>iNTERNGRAM</title>
+    </head>
+    <body>
+        <div class="darkBackground"></div>
+        <!-- end .darkBackground-->
+        <div class="formPanel settingsPanel">
+            <div class="form">
+                <div class="closeBtn">
+                    <img
+                        src="https://img.icons8.com/flat_round/64/000000/delete-sign.png"
+                    />
                 </div>
-            </div> <!-- end .info-->
-        </div><!-- end .profileWrap -->
-    </div> <!-- end .wrapper -->
-</body>
+                <!-- end .closeBtn -->
+                <h1>Settings</h1>
+                <form class="settingsForm">
+                    <label for="avatar">Upload your profile picture</label>
+                    <input
+                        type="text"
+                        name="avatar"
+                        required
+                        placeholder="Insert URL"
+                    />
+                    <label for="theme">Change theme color</label>
+                    <select id="theme" name="theme">
+                        <option value="blue">Blue</option>
+                        <option value="pink">Pink</option>
+                        <option value="green">Green</option>
+                        <option value="darkGrey">Dark grey</option>
+                    </select>
+                    <label for="language">Choose language</label>
+                    <select id="language" name="language">
+                        <option value="bulgarian">Bulgarian</option>
+                        <option value="english">English</option>
+                        <option value="serbian">Serbian</option>
+                    </select>
+                    <button type="submit">Save changes</button>
+                </form>
+            </div>
+            <!-- end .form-->
+        </div>
+        <!-- end .settingsPanel-->
+
+        <div class="wrapper">
+            <nav>
+                <h2 class="logo">iNTERNGRAM.</h2>
+                <div class="buttons">
+                    <button class="settingsBtn" id="settingsBtn">
+                        Settings
+                    </button>
+                    <button class="signOut" id="signOut">Sign&nbsp;Out</button>
+                </div>
+                <!-- end .buttons-->
+            </nav>
+            <div class="profileWrap">
+                <div class="profilePicture"></div>
+                <!-- end .profilePicture -->
+                <div class="info">
+                    <h2>First and last name</h2>
+                    <p>email</p>
+                    <div class="buttons"></div>
+                </div>
+                <!-- end .info-->
+            </div>
+            <!-- end .profileWrap -->
+        </div>
+        <!-- end .wrapper -->
+    </body>
 </html>

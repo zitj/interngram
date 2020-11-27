@@ -18,13 +18,13 @@ button {
   font-size: 1.4em;
   cursor: pointer;
   padding: 10px 40px;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 a:hover,
 button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 a:active,
@@ -106,14 +106,14 @@ button:active {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .illustration svg .signUpBtn:hover,
 .illustration svg .signInBtn:hover {
   cursor: pointer;
-  opacity: .9;
+  opacity: 0.9;
   -webkit-transform: scale(1.006);
           transform: scale(1.006);
 }
@@ -235,7 +235,8 @@ button:active {
   margin-right: 5%;
 }
 
-.wrapper .profileWrap .profilePicture img, .wrapper .profileWrap .profilePicture button {
+.wrapper .profileWrap .profilePicture img,
+.wrapper .profileWrap .profilePicture button {
   display: block;
   margin-left: 10%;
   width: 80%;
@@ -454,8 +455,8 @@ button:active {
 }
 
 .formPanel .closeBtn {
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .formPanel .closeBtn:hover {
@@ -471,8 +472,8 @@ button:active {
 .formPanel.active {
   display: block;
   z-index: 5;
-  -webkit-animation: introPanel .3s ease-in-out;
-          animation: introPanel .3s ease-in-out;
+  -webkit-animation: introPanel 0.3s ease-in-out;
+          animation: introPanel 0.3s ease-in-out;
 }
 
 @-webkit-keyframes introPanel {
@@ -564,8 +565,8 @@ button:active {
   height: 100vh;
   width: 100%;
   position: fixed;
-  -webkit-animation: intro .4s ease-in-out;
-          animation: intro .4s ease-in-out;
+  -webkit-animation: intro 0.4s ease-in-out;
+          animation: intro 0.4s ease-in-out;
   cursor: pointer;
 }
 
@@ -622,8 +623,9 @@ button:active {
   left: 20px;
 }
 
-.loadingSpinner::after, .loadingSpinner::before {
-  content: "";
+.loadingSpinner::after,
+.loadingSpinner::before {
+  content: '';
   display: block;
   width: 100px;
   height: 100px;
@@ -673,47 +675,47 @@ button:active {
 
 body.pink a,
 body.pink button {
-  background: #FF5A7E;
+  background: #ff5a7e;
 }
 
 body.pink .logo {
-  color: #FF5A7E;
+  color: #ff5a7e;
 }
 
 body.pink .posts .post .postLink {
-  border: 1px solid #FF5A7E;
-  color: #FF5A7E;
+  border: 1px solid #ff5a7e;
+  color: #ff5a7e;
 }
 
 body.pink .loadingSpinner:after {
-  border-top-color: #FF5A7E;
-  border-bottom-color: #FF5A7E;
+  border-top-color: #ff5a7e;
+  border-bottom-color: #ff5a7e;
 }
 
 body.pink nav .userBtn {
-  color: #FF5A7E;
+  color: #ff5a7e;
 }
 
 body.pink nav .userBtn:hover {
-  color: #FF5A7E;
+  color: #ff5a7e;
 }
 
 body.pink nav img {
-  border: 1px solid #FF5A7E;
+  border: 1px solid #ff5a7e;
 }
 
 body.pink #comment {
-  border: 1px solid #FF5A7E;
+  border: 1px solid #ff5a7e;
 }
 
 body.pink .form input,
 body.pink .form select,
 body.pink .form textarea {
-  border: 1px solid #FF5A7E;
+  border: 1px solid #ff5a7e;
 }
 
 body.pink #profPic {
-  border: 3px solid #FF5A7E;
+  border: 3px solid #ff5a7e;
 }
 
 body.pink .likeAndBookmark {
@@ -733,16 +735,16 @@ body.pink .likeAndBookmark .buttons {
 }
 
 body.pink .likeAndBookmark button {
-  color: #FF5A7E;
-  border: 1px solid #FF5A7E;
+  color: #ff5a7e;
+  border: 1px solid #ff5a7e;
 }
 
 body.pink .likeAndBookmark button svg g {
-  fill: #FF5A7E;
+  fill: #ff5a7e;
 }
 
 body.pink .likeAndBookmark button.active {
-  background: #FF5A7E;
+  background: #ff5a7e;
   color: white;
   border: none;
 }
@@ -757,47 +759,47 @@ body.pink .likeAndBookmark button.active svg g {
 
 body.green a,
 body.green button {
-  background: #41B741;
+  background: #41b741;
 }
 
 body.green .logo {
-  color: #41B741;
+  color: #41b741;
 }
 
 body.green .posts .post .postLink {
-  border: 1px solid #41B741;
-  color: #41B741;
+  border: 1px solid #41b741;
+  color: #41b741;
 }
 
 body.green .loadingSpinner:after {
-  border-top-color: #41B741;
-  border-bottom-color: #41B741;
+  border-top-color: #41b741;
+  border-bottom-color: #41b741;
 }
 
 body.green nav .userBtn {
-  color: #41B741;
+  color: #41b741;
 }
 
 body.green nav .userBtn:hover {
-  color: #41B741;
+  color: #41b741;
 }
 
 body.green nav img {
-  border: 1px solid #41B741;
+  border: 1px solid #41b741;
 }
 
 body.green #comment {
-  border: 1px solid #41B741;
+  border: 1px solid #41b741;
 }
 
 body.green .form input,
 body.green .form select,
 body.green .form textarea {
-  border: 1px solid #41B741;
+  border: 1px solid #41b741;
 }
 
 body.green #profPic {
-  border: 3px solid #41B741;
+  border: 3px solid #41b741;
 }
 
 body.green .likeAndBookmark {
@@ -817,16 +819,16 @@ body.green .likeAndBookmark .buttons {
 }
 
 body.green .likeAndBookmark button {
-  color: #41B741;
-  border: 1px solid #41B741;
+  color: #41b741;
+  border: 1px solid #41b741;
 }
 
 body.green .likeAndBookmark button svg g {
-  fill: #41B741;
+  fill: #41b741;
 }
 
 body.green .likeAndBookmark button.active {
-  background: #41B741;
+  background: #41b741;
   color: white;
   border: none;
 }
@@ -839,13 +841,97 @@ body.green .likeAndBookmark button.active svg g {
   fill: white;
 }
 
+body.darkGrey a,
+body.darkGrey button {
+  background: #333333;
+}
+
+body.darkGrey .logo {
+  color: #333333;
+}
+
+body.darkGrey .posts .post .postLink {
+  border: 1px solid #333333;
+  color: #333333;
+}
+
+body.darkGrey .loadingSpinner:after {
+  border-top-color: #333333;
+  border-bottom-color: #333333;
+}
+
+body.darkGrey nav .userBtn {
+  color: #333333;
+}
+
+body.darkGrey nav .userBtn:hover {
+  color: #333333;
+}
+
+body.darkGrey nav img {
+  border: 1px solid #333333;
+}
+
+body.darkGrey #comment {
+  border: 1px solid #333333;
+}
+
+body.darkGrey .form input,
+body.darkGrey .form select,
+body.darkGrey .form textarea {
+  border: 1px solid #333333;
+}
+
+body.darkGrey #profPic {
+  border: 3px solid #333333;
+}
+
+body.darkGrey .likeAndBookmark {
+  margin-top: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+}
+
+body.darkGrey .likeAndBookmark .buttons {
+  margin-top: 10px;
+}
+
+body.darkGrey .likeAndBookmark button {
+  color: #333333;
+  border: 1px solid #333333;
+}
+
+body.darkGrey .likeAndBookmark button svg g {
+  fill: #333333;
+}
+
+body.darkGrey .likeAndBookmark button.active {
+  background: #333333;
+  color: white;
+  border: none;
+}
+
+body.darkGrey .likeAndBookmark button.active span:nth-of-type(2) {
+  display: inline-block;
+}
+
+body.darkGrey .likeAndBookmark button.active svg g {
+  fill: white;
+}
+
 #delete,
 #signOut {
-  background: #FF5A7E;
+  background: #ff5a7e;
 }
 
 #edit,
 #settingsBtn {
-  background: #41B741;
+  background: #41b741;
 }
 /*# sourceMappingURL=style.css.map */
