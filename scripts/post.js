@@ -189,16 +189,8 @@ darkBackground.addEventListener('click', () => {
 editForm.addEventListener('submit', changePost);
 commentForm.addEventListener('submit', submitComment);
 
-logo.addEventListener('click', () => {
-    localStorage.removeItem('post');
-    if (!userSignedIn) {
-        window.location.replace(`main.html`);
-    }
-    isThePostLiked();
-});
-
 // LIKE POST FEATURE
-const waitForAnArray = async () => {
+const usersWhoLikedArray = async () => {
     const res = await loadUser();
     for (i = 0; i <= activePost.usersWhoLiked.length; i++) {
         if (activePost.usersWhoLiked[i] == userSignedIn.id) {
@@ -247,6 +239,62 @@ likeBtn.addEventListener('click', () => {
     }
 });
 
+// BOOKMARK FEATURE
+const bookmarkedPostsArray = async () => {
+    const res = await loadUser();
+    for (i = 0; i <= userSignedIn.bookmarkedPosts.length; i++) {
+        if (userSignedIn.bookmarkedPosts[i] == activePost.title) {
+            bookmarkBtn.classList.add('active');
+        }
+    }
+};
+
+const isBookmarked = async (e) => {
+    const res = await renderIndividualPost();
+    if (bookmarkBtn.classList.contains('active')) {
+        userSignedIn.bookmarkedPosts.push(activePost.title);
+        userSignedIn.bookmarkedPosts = [
+            ...new Set(userSignedIn.bookmarkedPosts),
+        ];
+        await fetch('http://localhost:3000/users/' + userSignedIn.id, {
+            method: 'PATCH',
+            body: JSON.stringify(userSignedIn),
+            headers: { 'Content-Type': 'application/json' },
+        });
+        window.location.replace(
+            `main.html?id=${localStorage.getItem('userID')}`
+        );
+    }
+
+    if (!bookmarkBtn.classList.contains('active')) {
+        removeFromAnAray(userSignedIn.bookmarkedPosts, activePost.title);
+        await fetch('http://localhost:3000/users/' + userSignedIn.id, {
+            method: 'PATCH',
+            body: JSON.stringify(userSignedIn),
+            headers: { 'Content-Type': 'application/json' },
+        });
+        window.location.replace(
+            `main.html?id=${localStorage.getItem('userID')}`
+        );
+    }
+};
+
+bookmarkBtn.addEventListener('click', () => {
+    if (!bookmarkBtn.classList.contains('active')) {
+        bookmarkBtn.classList.add('active');
+    } else {
+        bookmarkBtn.classList.remove('active');
+    }
+});
+
+logo.addEventListener('click', () => {
+    localStorage.removeItem('post');
+    if (!userSignedIn) {
+        window.location.replace(`main.html`);
+    }
+    isBookmarked();
+    isThePostLiked();
+});
 const toProfilePage = () => {
     window.location.replace(`profile.html?id=${userSignedIn.id}`);
 };
@@ -270,7 +318,8 @@ const showEditAndDeleteButtons = async () => {
 window.addEventListener('DOMContentLoaded', () => {
     renderIndividualPost();
     renderComments();
-    waitForAnArray();
+    usersWhoLikedArray();
+    bookmarkedPostsArray();
     loadUser();
     showEditAndDeleteButtons();
 });
