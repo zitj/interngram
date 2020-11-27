@@ -14,10 +14,19 @@ const darkBackground = document.querySelector('.darkBackground');
 const closeBtn = document.querySelector('.closeBtn');
 const form = document.querySelector('form');
 
+const formHeading = document.getElementById('formHeading');
+const titleLabel = document.getElementById('titleLabel');
+const typeLabel = document.getElementById('typeLabel');
+const contentLabel = document.getElementById('contentLabel');
+const createPostBtn = form.querySelector('button');
+const imageLabel = document.getElementById('imageLabel');
+const videoLabel = document.getElementById('videoLabel');
+const linkLabel = document.getElementById('linkLabel');
+
 const loadingSpinner = document.querySelector('.loadingSpinner');
 
 let userSignedIn = {};
-
+let userLanguage;
 let counter = 2;
 let numberOfPosts = 0;
 
@@ -33,26 +42,49 @@ const renderUser = async () => {
             body.classList.add(`${user.themeColor}`);
             userSignedIn = user;
             localStorage.setItem('userID', userSignedIn.id);
-            console.log(userSignedIn);
         }
     });
 };
 
+const updateLanguage = async () => {
+    await renderUser();
+    let uri = `http://localhost:3000/languages`;
+    const res = await fetch(uri);
+    const languages = await res.json();
+    languages.forEach((language) => {
+        if (language.language == userSignedIn.language) {
+            userLanguage = language;
+        }
+    });
+    createNewPostBtn.innerHTML = `${userLanguage.createNewPost}`;
+    formHeading.innerHTML = `${userLanguage.createNewPost}`;
+    titleLabel.innerHTML = `${userLanguage.titleOfThePost}`;
+    form.title.placeholder = `${userLanguage.titleOfThePost}`;
+    typeLabel.innerHTML = `${userLanguage.typeOfThePost}`;
+    contentLabel.innerHTML = `${userLanguage.contentOfThePost}`;
+    form.content.placeholder = `${userLanguage.contentOfThePost}`;
+    createPostBtn.innerHTML = `${userLanguage.createPost}`;
+    imageLabel.innerHTML = `${userLanguage.image}`;
+    videoLabel.innerHTML = `${userLanguage.video}`;
+    linkLabel.innerHTML = `${userLanguage.link}`;
+};
+
 const renderPosts = async () => {
     let uri = `http://localhost:3000/posts?_limit=${counter}`;
-
+    await updateLanguage();
     const res = await fetch(uri);
     const posts = await res.json();
     numberOfPosts = posts.length;
     let template = '';
+
     posts.forEach((post) => {
         if (post.type === 'IMAGE') {
             template += `
             <div class="post">
                 <h2>${post.title}</h2>
                 <img src="${post.meta.url}" alt="${post.meta.alt}">
-                <a href="post.html?id=${post.id}">details</a>
-                <p>Created by: ${post.userName}</p>
+                <a href="post.html?id=${post.id}">${userLanguage.details}</a>
+                <p>${userLanguage.createdBy}: ${post.userName}</p>
             </div>
         `;
         }
@@ -67,8 +99,8 @@ const renderPosts = async () => {
                 <h2>${post.title}</h2>
                 <iframe id="ytplayer" type="text/html"
                 frameborder="0" src='https://www.youtube.com/embed/${linkIdEmbed}'></iframe>
-                <a href="post.html?id=${post.id}">details</a>
-                <p>Created by: ${post.userName}</p>
+                <a href="post.html?id=${post.id}">${userLanguage.details}</a>
+                <p>${userLanguage.createdBy}:  ${post.userName}</p>
             </div>
         `;
             }
@@ -78,15 +110,14 @@ const renderPosts = async () => {
             <div class="post">
                 <h2>${post.title}</h2>
                 <a class="postLink" href="${post.meta.url}">${post.meta.url}</a>
-                <a href="post.html?id=${post.id}">details</a>
-                <p>Created by: ${post.userName}</p>
+                <a href="post.html?id=${post.id}">${userLanguage.details}</a>
+                <p>${userLanguage.createdBy}:  ${post.userName}</p>
             </div>
         `;
         }
     });
-
+    console.log(userLanguage);
     container.innerHTML = template;
-    console.log(numberOfPosts);
 };
 
 const createPost = async (e) => {
@@ -174,4 +205,5 @@ window.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem('post');
     renderPosts();
     renderUser();
+    updateLanguage();
 });
