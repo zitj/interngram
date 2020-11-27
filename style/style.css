@@ -262,7 +262,6 @@ button:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: white;
   text-align: center;
   width: 60%;
   height: 100%;
@@ -297,10 +296,8 @@ button:active {
 }
 
 .wrapper .individualPost {
-  margin-top: 3%;
   border-radius: 16px;
-  background: white;
-  padding: 5%;
+  padding: 2% 5% 5%;
   text-align: center;
 }
 
@@ -741,11 +738,6 @@ body.pink .likeAndBookmark button.active svg g {
   fill: white;
 }
 
-body.pink #delete,
-body.pink #signOut {
-  background: #FF5A7E;
-}
-
 body.green a,
 body.green button {
   background: #41B741;
@@ -830,8 +822,8 @@ body.green .likeAndBookmark button.active svg g {
   fill: white;
 }
 
-body.green #delete,
-body.green #signOut {
+#delete,
+#signOut {
   background: #FF5A7E;
 }
 /*# sourceMappingURL=style.css.map */

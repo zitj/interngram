@@ -55,6 +55,7 @@ const createUser = async (e) =>{
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' }
     });
+    alert('You have successfully created an account!');
 }
 
 signUpBtn.addEventListener('click', ()=>{

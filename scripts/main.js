@@ -18,7 +18,7 @@ const loadingSpinner = document.querySelector('.loadingSpinner');
 
 let userSignedIn= {};
 
-let counter = 4;
+let counter = 2;
 let numberOfPosts = 0;
 
 const renderUser = async () => {
@@ -121,7 +121,7 @@ const createPost = async (e) =>{
 
 const loading = () =>{
     if(counter <= numberOfPosts){
-            counter += 4;
+            counter += 2;
             loadingSpinner.classList.add('active');
             loadingSpinner.addEventListener('animationend', ()=>{
             loadingSpinner.classList.remove('active');        
@@ -174,7 +174,7 @@ userBtn.addEventListener('click', ()=>{
     }
  });
 avatar.addEventListener('click', ()=>{
-    if(!userParsed){
+    if(!userSignedIn){
         return;
     }else{
         toProfilePage();        

@@ -12,7 +12,8 @@
       "usersWhoLiked": [
         6,
         2,
-        8
+        8,
+        7
       ]
     },
     {
@@ -43,7 +44,8 @@
         6,
         2,
         5,
-        1
+        1,
+        9
       ]
     },
     {
@@ -79,7 +81,9 @@
       "userId": 1,
       "userName": "Aleksandar Veljkovic",
       "id": 24,
-      "usersWhoLiked": []
+      "usersWhoLiked": [
+        9
+      ]
     },
     {
       "title": "Mr. Tambourine Man",
@@ -106,15 +110,15 @@
       "usersWhoLiked": []
     },
     {
-      "title": "Koga briga?!",
-      "type": "LINK",
+      "title": "Azbuka A",
+      "type": "VIDEO",
       "meta": {
-        "url": "www.kogabriga.com"
+        "url": "https://www.youtube.com/watch?v=-czl_yRUaaA&ab_channel=MilanPopovi%C4%87"
       },
-      "userId": 2,
-      "userName": "Dimitrije Dimitrijevic",
-      "id": 28,
-      "usersWhoLiked": []
+      "userId": 9,
+      "userName": "Vuk Karadzic",
+      "usersWhoLiked": [],
+      "id": 29
     }
   ],
   "users": [
@@ -187,6 +191,23 @@
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/G013111.jpg/1200px-G013111.jpg",
       "themeColor": "blue",
       "language": "serbian"
+    },
+    {
+      "firstName": "Vuk",
+      "lastName": "Karadzic",
+      "email": "vuk@gmail.com",
+      "password": "vuk",
+      "id": 9,
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/%D0%92%D1%83%D0%BA_%D0%A1%D1%82%D0%B5%D1%84%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B_%D0%9A%D0%B0%D1%80%D0%B0%D1%9F%D0%B8%D1%9B.1816.jpg/220px-%D0%92%D1%83%D0%BA_%D0%A1%D1%82%D0%B5%D1%84%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B_%D0%9A%D0%B0%D1%80%D0%B0%D1%9F%D0%B8%D1%9B.1816.jpg",
+      "themeColor": "blue",
+      "language": "serbian"
+    },
+    {
+      "firstName": "Micheal",
+      "lastName": "Jordan",
+      "email": "mj@gmail.com",
+      "password": "mj",
+      "id": 10
     }
   ],
   "comments": [

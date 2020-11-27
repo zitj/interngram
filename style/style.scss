@@ -204,7 +204,7 @@ justify-content: space-around;
         .post{
             display: flex;
             flex-direction: column;
-            background: white;
+            // background: white;
             text-align: center;
             width: 60%;
             height: 100%;
@@ -234,10 +234,9 @@ justify-content: space-around;
         }
     }
     .individualPost{
-        margin-top: 3%;
         border-radius: 16px;
-        background: white;
-        padding: 5%;
+        // background: white;
+        padding: 2% 5% 5%;
         text-align: center;
         .postLink{
             display: block;
@@ -517,4 +516,8 @@ body.pink{
 }
 body.green{
     @include themeColor($green);
+}
+#delete,
+#signOut{
+    background:#FF5A7E;
 }
