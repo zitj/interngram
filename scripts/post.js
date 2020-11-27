@@ -231,7 +231,8 @@ commentForm.addEventListener('submit', submitComment);
 
 // LIKE POST FEATURE
 const usersWhoLikedArray = async () => {
-    const res = await loadUser();
+    await renderIndividualPost();
+    await loadUser();
     for (i = 0; i <= activePost.usersWhoLiked.length; i++) {
         if (activePost.usersWhoLiked[i] == userSignedIn.id) {
             likeBtn.classList.add('active');
@@ -281,7 +282,8 @@ likeBtn.addEventListener('click', () => {
 
 // BOOKMARK FEATURE
 const bookmarkedPostsArray = async () => {
-    const res = await loadUser();
+    await renderIndividualPost();
+    await loadUser();
     for (i = 0; i <= userSignedIn.bookmarkedPosts.length; i++) {
         if (userSignedIn.bookmarkedPosts[i] == activePost.title) {
             bookmarkBtn.classList.add('active');

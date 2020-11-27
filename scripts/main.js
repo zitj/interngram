@@ -48,6 +48,7 @@ const renderUser = async () => {
 
 const updateLanguage = async () => {
     await renderUser();
+
     let uri = `http://localhost:3000/languages`;
     const res = await fetch(uri);
     const languages = await res.json();
@@ -70,8 +71,8 @@ const updateLanguage = async () => {
 };
 
 const renderPosts = async () => {
-    let uri = `http://localhost:3000/posts?_limit=${counter}`;
     await updateLanguage();
+    let uri = `http://localhost:3000/posts?_limit=${counter}`;
     const res = await fetch(uri);
     const posts = await res.json();
     numberOfPosts = posts.length;
