@@ -6,6 +6,8 @@ const formPanel = document.querySelector('.formPanel');
 const darkBackground = document.querySelector('.darkBackground');
 const form = document.querySelector('form');
 const editForm = document.getElementById('editForm');
+const editFormHeading = formPanel.querySelector('h1');
+const editFormBtn = formPanel.querySelector('button');
 const title = document.getElementById('title');
 const type = document.getElementById('type');
 const content = document.getElementById('content');
@@ -21,13 +23,24 @@ const commentSection = document.querySelector('.commentSection');
 const commentsContainer = document.querySelector('.comments');
 const commentForm = document.querySelector('.commentForm');
 const commentContent = document.getElementById('comment');
+const commentHeading = commentSection.querySelector('h3');
+const commentButton = commentForm.querySelector('button');
+const commentTextArea = commentForm.querySelector('textarea');
 
 const likeAndBookmarkContainer = document.querySelector('.likeAndBookmark');
 const likeBtn = document.querySelector('.like');
 const bookmarkBtn = document.querySelector('.bookmark');
 
+const titleLabel = document.getElementById('titleLabel');
+const typeLabel = document.getElementById('typeLabel');
+const contentLabel = document.getElementById('contentLabel');
+const imageLabel = document.getElementById('imageLabel');
+const videoLabel = document.getElementById('videoLabel');
+const linkLabel = document.getElementById('linkLabel');
+
 let userSignedIn = {};
 let activePost = {};
+let userLanguage;
 
 const loadUser = async () => {
     const res = await fetch(
@@ -43,7 +56,34 @@ const loadUser = async () => {
     userSignedIn = user;
 };
 
+const updateLanguage = async () => {
+    await loadUser();
+    let uri = `http://localhost:3000/languages`;
+    const res = await fetch(uri);
+    const languages = await res.json();
+    languages.forEach((language) => {
+        if (language.language == userSignedIn.language) {
+            userLanguage = language;
+        }
+    });
+
+    editBtn.innerHTML = `${userLanguage.edit}`;
+    deleteBtn.innerHTML = `${userLanguage.delete}`;
+    commentHeading.innerHTML = `${userLanguage.comments}`;
+    commentButton.innerHTML = `${userLanguage.submit}`;
+    commentTextArea.placeholder = `${userLanguage.writeYourComment}`;
+    editFormHeading.innerHTML = `${userLanguage.editPost}`;
+    editFormBtn.innerHTML = `${userLanguage.editPost}`;
+    titleLabel.innerHTML = `${userLanguage.titleOfThePost}`;
+    typeLabel.innerHTML = `${userLanguage.typeOfThePost}`;
+    contentLabel.innerHTML = `${userLanguage.contentOfThePost}`;
+    imageLabel.innerHTML = `${userLanguage.image}`;
+    videoLabel.innerHTML = `${userLanguage.video}`;
+    linkLabel.innerHTML = `${userLanguage.link}`;
+};
+
 const renderIndividualPost = async () => {
+    await updateLanguage();
     const res = await fetch('http://localhost:3000/posts/' + id);
     const post = await res.json();
     let template = '';
@@ -67,7 +107,7 @@ const renderIndividualPost = async () => {
         frameborder="0" src='https://www.youtube.com/embed/${linkIdEmbed}'></iframe>
     
       `;
-            likeAndBookmarkContainer.children[1].innerHTML = `Created by: ${post.userName}`;
+            likeAndBookmarkContainer.children[1].innerHTML = `${userLanguage.createdBy}: ${post.userName}`;
         }
     }
     if (post.type === 'LINK') {
@@ -322,4 +362,5 @@ window.addEventListener('DOMContentLoaded', () => {
     bookmarkedPostsArray();
     loadUser();
     showEditAndDeleteButtons();
+    updateLanguage();
 });
