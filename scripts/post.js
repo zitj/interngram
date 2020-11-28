@@ -250,6 +250,7 @@ const removeFromAnAray = (arr, item) => {
 };
 
 const isThePostLiked = async (e) => {
+    await loadUser();
     await renderIndividualPost();
     if (likeBtn.classList.contains('active')) {
         activePost.usersWhoLiked.push(userSignedIn.id);
