@@ -50,7 +50,6 @@ const createUser = async (e) => {
             'https://images-na.ssl-images-amazon.com/images/I/51zLZbEVSTL._AC_SX466_.jpg',
         password: signUpForm.password.value,
         language: 'english',
-        likedPosts: [],
         bookmarkedPosts: [],
     };
     await fetch('http://localhost:3000/users/', {
