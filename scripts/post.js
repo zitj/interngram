@@ -119,6 +119,7 @@ const renderIndividualPost = async () => {
         likeAndBookmarkContainer.children[1].innerHTML = `Created by: ${post.userName}`;
     }
     container.innerHTML = template;
+    localStorage.setItem('postID', activePost.id);
 };
 
 const renderComments = async () => {
@@ -182,7 +183,7 @@ const changePost = async (e) => {
 //Delete button option
 if (!userSignedIn) {
     deleteBtn.addEventListener('click', async (e) => {
-        const res = await fetch('http://localhost:3000/posts/' + id, {
+        await fetch('http://localhost:3000/posts/' + id, {
             method: 'DELETE',
         });
         window.location.replace(`main.html`);
@@ -190,7 +191,7 @@ if (!userSignedIn) {
 }
 
 deleteBtn.addEventListener('click', async (e) => {
-    const res = await fetch('http://localhost:3000/posts/' + id, {
+    await fetch('http://localhost:3000/posts/' + id, {
         method: 'DELETE',
     });
     window.location.replace(`main.html?id=${userSignedIn.id}`);
@@ -249,26 +250,36 @@ const removeFromAnAray = (arr, item) => {
 };
 
 const isThePostLiked = async (e) => {
-    const res = await renderIndividualPost();
+    await renderIndividualPost();
     if (likeBtn.classList.contains('active')) {
         activePost.usersWhoLiked.push(userSignedIn.id);
         activePost.usersWhoLiked = [...new Set(activePost.usersWhoLiked)];
-        await fetch('http://localhost:3000/posts/' + activePost.id, {
-            method: 'PATCH',
-            body: JSON.stringify(activePost),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        window.location.replace(`main.html?id=${userSignedIn.id}`);
+        await fetch(
+            'http://localhost:3000/posts/' + localStorage.getItem('postID'),
+            {
+                method: 'PATCH',
+                body: JSON.stringify(activePost),
+                headers: { 'Content-Type': 'application/json' },
+            }
+        );
+        window.location.replace(
+            `main.html?id=${localStorage.getItem('userID')}`
+        );
     }
 
     if (!likeBtn.classList.contains('active')) {
         removeFromAnAray(activePost.usersWhoLiked, userSignedIn.id);
-        await fetch('http://localhost:3000/posts/' + activePost.id, {
-            method: 'PATCH',
-            body: JSON.stringify(activePost),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        window.location.replace(`main.html?id=${userSignedIn.id}`);
+        await fetch(
+            'http://localhost:3000/posts/' + localStorage.getItem('postID'),
+            {
+                method: 'PATCH',
+                body: JSON.stringify(activePost),
+                headers: { 'Content-Type': 'application/json' },
+            }
+        );
+        window.location.replace(
+            `main.html?id=${localStorage.getItem('userID')}`
+        );
     }
 };
 
@@ -292,7 +303,7 @@ const bookmarkedPostsArray = async () => {
 };
 
 const isBookmarked = async (e) => {
-    const res = await renderIndividualPost();
+    await renderIndividualPost();
     if (bookmarkBtn.classList.contains('active')) {
         userSignedIn.bookmarkedPosts.push(activePost.title);
         userSignedIn.bookmarkedPosts = [
