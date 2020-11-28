@@ -1,81 +1,18 @@
 {
   "posts": [
     {
-      "title": "How to use localStorage",
+      "title": "How to use Local storage",
       "type": "VIDEO",
       "meta": {
-        "url": "https://www.youtube.com/watch?v=k8yJCeuP6I8&ab_channel=dcode"
-      },
-      "userId": 2,
-      "userName": "Dimitrije Dimitrijevic",
-      "id": 19,
-      "usersWhoLiked": [
-        6,
-        2,
-        8,
-        7,
-        1
-      ]
-    },
-    {
-      "title": "Angular Crash Course for beginners",
-      "type": "VIDEO",
-      "meta": {
-        "url": "https://www.youtube.com/watch?v=T_Fe4IaG0KU&ab_channel=HiteshChoudhary"
+        "url": "https://www.youtube.com/watch?v=k8yJCeuP6I8&t=8s&ab_channel=dcode"
       },
       "userId": 1,
-      "userName": "Aleksandar Veljkovic",
-      "id": 20,
+      "userName": "Aleksandar Veljković",
       "usersWhoLiked": [
-        2,
-        6,
-        7,
         1,
-        3
-      ]
-    },
-    {
-      "title": "Top 5 VSCode extensions - DevEd",
-      "type": "VIDEO",
-      "meta": {
-        "url": "https://www.youtube.com/watch?v=ULssP63AhPw&ab_channel=DevEd"
-      },
-      "userId": 3,
-      "userName": "Milan Stanojevic",
-      "id": 21,
-      "usersWhoLiked": [
-        6,
-        2,
-        5,
-        1,
-        9
-      ]
-    },
-    {
-      "title": "Why you should learn vanilla JavaScript?",
-      "type": "LINK",
-      "meta": {
-        "url": "https://medium.com/madhash/why-you-should-learn-vanilla-javascript-in-isolation-if-you-want-to-be-a-better-developer-dbc15a7e66bb"
-      },
-      "userId": 5,
-      "userName": "Marijana Stosic",
-      "id": 22,
-      "usersWhoLiked": [
-        6
-      ]
-    },
-    {
-      "title": "Writing vanilla JavaScript is FUN!!!",
-      "type": "IMAGE",
-      "meta": {
-        "url": "https://cdn.hswstatic.com/gif/vanilla-expensive.jpg"
-      },
-      "userId": 5,
-      "userName": "Marijana Stosic",
-      "id": 23,
-      "usersWhoLiked": [
         2
-      ]
+      ],
+      "id": 1
     },
     {
       "title": "Mr. Tambourine Man",
@@ -83,295 +20,224 @@
       "meta": {
         "url": "https://www.youtube.com/watch?v=oecX_1pqxk0&ab_channel=BobDylanVEVO"
       },
-      "userId": 7,
+      "userId": 3,
       "userName": "Bob Dylan",
-      "id": 25,
-      "usersWhoLiked": [
-        7
-      ]
-    },
-    {
-      "title": "Azbuka A",
-      "type": "VIDEO",
-      "meta": {
-        "url": "https://www.youtube.com/watch?v=-czl_yRUaaA&ab_channel=MilanPopovi%C4%87"
-      },
-      "userId": 9,
-      "userName": "Vuk Karadzic",
       "usersWhoLiked": [],
-      "id": 29
+      "id": 2
     },
     {
-      "title": "Model View Controller",
-      "type": "VIDEO",
+      "title": "Why you should learn vanilla JavaScript in 2020",
+      "type": "LINK",
       "meta": {
-        "url": "https://www.youtube.com/watch?v=DUg2SWWK18I&ab_channel=WebDevSimplified"
+        "url": "https://medium.com/madhash/why-you-should-learn-vanilla-javascript-in-isolation-if-you-want-to-be-a-better-developer-dbc15a7e66bb"
+      },
+      "userId": 2,
+      "userName": "Arija Obilic",
+      "usersWhoLiked": [
+        1
+      ],
+      "id": 3
+    },
+    {
+      "title": "Writing vanilla JavaScript is fun!",
+      "type": "IMAGE",
+      "meta": {
+        "url": "https://cdn.hswstatic.com/gif/vanilla-expensive.jpg"
       },
       "userId": 1,
-      "userName": "Aleksandar Veljkovic",
+      "userName": "Aleksandar Veljković",
       "usersWhoLiked": [
-        5
+        2
       ],
-      "id": 30
+      "id": 4
     }
   ],
   "users": [
     {
-      "id": 1,
       "firstName": "Aleksandar",
-      "lastName": "Veljkovic",
+      "lastName": "Veljković",
       "email": "avelj@gmail.com",
       "password": "1234",
-      "avatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
-      "themeColor": "blue",
-      "language": "serbian"
-    },
-    {
-      "firstName": "Dimitrije",
-      "lastName": "Dimitrijevic",
-      "email": "dicele@live.com",
-      "password": "dida",
-      "id": 2,
-      "avatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
-      "themeColor": "darkGrey",
-      "language": "english"
-    },
-    {
-      "firstName": "Milan",
-      "lastName": "Stanojevic",
-      "email": "mikica@gmail.com",
-      "password": "90",
-      "id": 3,
-      "avatar": "https://i.imgur.com/K5pVtx8.jpg",
-      "themeColor": "blue",
-      "language": "english"
-    },
-    {
-      "firstName": "Marijana",
-      "lastName": "Stosic",
-      "email": "marimari@gmail.com",
-      "password": "mari",
-      "id": 5,
-      "avatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
-      "themeColor": "pink",
-      "language": "serbian"
+      "language": "serbian",
+      "bookmarkedPosts": [
+        "How to use Local storage",
+        "Why you should learn vanilla JavaScript in 2020"
+      ],
+      "id": 1,
+      "avatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-1/p160x160/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=dbb9e7&_nc_ohc=-71mhzh4wQMAX99QLqR&_nc_ht=scontent.fbeg4-1.fna&tp=6&oh=017673a21f8449678c7707b804cd9564&oe=5FE8719C",
+      "themeColor": "blue"
     },
     {
       "firstName": "Arija",
       "lastName": "Obilic",
       "email": "arija@gmail.com",
       "password": "2222",
-      "id": 6,
-      "avatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
-      "themeColor": "pink",
-      "language": "serbian"
+      "language": "serbian",
+      "bookmarkedPosts": [
+        "How to use Local storage"
+      ],
+      "id": 2,
+      "avatar": "data:image/jpeg;base64,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",
+      "themeColor": "pink"
     },
     {
       "firstName": "Bob",
       "lastName": "Dylan",
       "email": "bob@gmail.com",
       "password": "bob",
-      "id": 7,
+      "language": "english",
+      "bookmarkedPosts": [],
+      "id": 3,
       "avatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
-      "themeColor": "green",
-      "language": "english"
-    },
-    {
-      "firstName": "Uros",
-      "lastName": "Zlatanovic",
-      "email": "uki@gmail.com",
-      "password": "rosi",
-      "id": 8,
-      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/G013111.jpg/1200px-G013111.jpg",
-      "themeColor": "blue",
-      "language": "serbian"
-    },
-    {
-      "firstName": "Vuk",
-      "lastName": "Karadzic",
-      "email": "vuk@gmail.com",
-      "password": "vuk",
-      "id": 9,
-      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/%D0%92%D1%83%D0%BA_%D0%A1%D1%82%D0%B5%D1%84%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B_%D0%9A%D0%B0%D1%80%D0%B0%D1%9F%D0%B8%D1%9B.1816.jpg/220px-%D0%92%D1%83%D0%BA_%D0%A1%D1%82%D0%B5%D1%84%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B_%D0%9A%D0%B0%D1%80%D0%B0%D1%9F%D0%B8%D1%9B.1816.jpg",
-      "themeColor": "blue",
-      "language": "serbian"
-    },
-    {
-      "firstName": "Micheal",
-      "lastName": "Jordan",
-      "email": "mj@gmail.com",
-      "password": "mj",
-      "id": 10
+      "themeColor": "green"
     }
   ],
   "comments": [
     {
-      "userId": 1,
-      "userName": "Aleksandar Veljkovic",
-      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
-      "postId": 19,
-      "content": "First comment ever!",
+      "userId": 2,
+      "userName": "Arija Obilic",
+      "userAvatar": "data:image/jpeg;base64,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",
+      "postId": 1,
+      "content": "Thank you for sharing, this was very useful!",
       "id": 1
     },
     {
-      "userId": 5,
-      "userName": "Marijana Stosic",
-      "userAvatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
-      "postId": 19,
-      "content": "Commenting is fuuuuuuuuun! :D",
+      "userId": 1,
+      "userName": "Aleksandar Veljković",
+      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-1/p160x160/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=dbb9e7&_nc_ohc=-71mhzh4wQMAX99QLqR&_nc_ht=scontent.fbeg4-1.fna&tp=6&oh=017673a21f8449678c7707b804cd9564&oe=5FE8719C",
+      "postId": 2,
+      "content": "Dude, it is so not cool posting your song on a platform like this...",
       "id": 2
     },
     {
-      "userId": 1,
-      "userName": "Aleksandar Veljkovic",
-      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
-      "postId": 23,
-      "content": "First comment here!",
+      "userId": 2,
+      "userName": "Arija Obilic",
+      "userAvatar": "data:image/jpeg;base64,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",
+      "postId": 2,
+      "content": "I disagree with @Aleksandar. Keep posting them Bob! ^_^",
       "id": 3
     },
     {
-      "userId": 2,
-      "userName": "Dimitrije Dimitrijevic",
-      "userAvatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
-      "postId": 19,
-      "content": "Stop spamming my post... ",
+      "userId": 3,
+      "userName": "Bob Dylan",
+      "userAvatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
+      "postId": 2,
+      "content": "Like the video and subscribe to the channel! ;)",
       "id": 4
     },
     {
-      "userId": 2,
-      "userName": "Dimitrije Dimitrijevic",
-      "userAvatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
-      "postId": 23,
-      "content": "Wow, you already commented here as well...",
+      "userId": 1,
+      "userName": "Aleksandar Veljković",
+      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-1/p160x160/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=dbb9e7&_nc_ohc=-71mhzh4wQMAX99QLqR&_nc_ht=scontent.fbeg4-1.fna&tp=6&oh=017673a21f8449678c7707b804cd9564&oe=5FE8719C",
+      "postId": 3,
+      "content": "100% true",
       "id": 5
     },
     {
       "userId": 3,
-      "userName": "Milan Stanojevic",
-      "userAvatar": "https://i.imgur.com/K5pVtx8.jpg",
-      "postId": 20,
-      "content": "Is this course legit?",
+      "userName": "Bob Dylan",
+      "userAvatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
+      "postId": 3,
+      "content": "What am I even doing here?",
       "id": 6
+    }
+  ],
+  "languages": [
+    {
+      "language": "english",
+      "details": "details",
+      "createNewPost": "Create new post",
+      "createdBy": "Created by",
+      "createPost": "Create post",
+      "titleOfThePost": "Title",
+      "typeOfThePost": "Type",
+      "contentOfThePost": "Content",
+      "image": "Image",
+      "video": "Video",
+      "link": "Link",
+      "settings": "Settings",
+      "signOut": "Sign&nbsp;Out",
+      "saveChanges": "Save changes",
+      "uploadProfilePic": "Upload your profile picture",
+      "changeThemeColor": "Change theme color",
+      "chooseLanguage": "Choose language",
+      "blue": "Blue",
+      "pink": "Pink",
+      "green": "Green",
+      "darkGrey": "darkGrey",
+      "bulgarian": "Bulgarian",
+      "english": "English",
+      "serbian": "Sebian",
+      "edit": "Edit",
+      "delete": "Delete",
+      "comments": "Comments",
+      "writeYourComment": "Write your comment here",
+      "submit": "Submit",
+      "editPost": "Edit post"
     },
     {
-      "userId": 1,
-      "userName": "Aleksandar Veljkovic",
-      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
-      "postId": 20,
-      "content": "Give it a shot and see by yourself. ;)",
-      "id": 7
+      "language": "bulgarian",
+      "details": "подробности",
+      "createNewPost": "Нова публикация",
+      "createdBy": "Съобщението от",
+      "createPost": "Направете публикация",
+      "titleOfThePost": "Заглавие",
+      "typeOfThePost": "Тип публикация",
+      "contentOfThePost": "Съдържание",
+      "image": "Картината",
+      "video": "Видео",
+      "link": "Връзка",
+      "settings": "Настройки",
+      "signOut": "Отписване",
+      "saveChanges": "Запазите промените",
+      "uploadProfilePic": "Актуализиране снимката на профила",
+      "changeThemeColor": "Променете цвета на темата",
+      "chooseLanguage": "Изберете език",
+      "blue": "Син",
+      "pink": "Розов",
+      "green": "Зелено",
+      "darkGrey": "Тъмно сив",
+      "bulgarian": "Български",
+      "english": "Английски",
+      "serbian": "Сръбски",
+      "edit": "Редактиране",
+      "delete": "Изтрий",
+      "comments": "Коментари",
+      "writeYourComment": "Напишете вашия коментар тук",
+      "submit": "Изпрати",
+      "editPost": "Редактиране на публикация"
     },
     {
-      "userId": 6,
-      "userName": "Arija Obilic",
-      "userAvatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
-      "postId": 20,
-      "content": "@Milan Yes, it is legit I just finished it. ",
-      "id": 8
-    },
-    {
-      "userId": 3,
-      "userName": "Milan Stanojevic",
-      "userAvatar": "https://i.imgur.com/K5pVtx8.jpg",
-      "postId": 22,
-      "content": "Nice article, totally worth reading!",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "userName": "Aleksandar Veljkovic",
-      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
-      "postId": 22,
-      "content": "Cheers to that!",
-      "id": 10
-    },
-    {
-      "userId": 7,
-      "userName": "Bob Dylan",
-      "userAvatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
-      "postId": 23,
-      "content": "I actually really like this post, liked it so much that I had to comment it!",
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "userName": "Aleksandar Veljkovic",
-      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
-      "postId": 25,
-      "content": "Dude... It is so not cool to post your songs on a network like this.",
-      "id": 12
-    },
-    {
-      "userId": 7,
-      "userName": "Bob Dylan",
-      "userAvatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
-      "postId": 25,
-      "content": "@Aleksandar\nLike and subscribe to the channel ;)",
-      "id": 13
-    },
-    {
-      "userId": 6,
-      "userName": "Arija Obilic",
-      "userAvatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
-      "postId": 25,
-      "content": "@Bob Keep posting dem songs. :D",
-      "id": 14
-    },
-    {
-      "userId": 6,
-      "userName": "Arija Obilic",
-      "userAvatar": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118189820/original/20b6598d9bd81c36aeeacd5c9fa3f61cd58eb0f6/play-fortnite-with-you-gamer-girl.jpg",
-      "postId": 21,
-      "content": "Does the comment feature still works?",
-      "id": 15
-    },
-    {
-      "userId": 2,
-      "userName": "Dimitrije Dimitrijevic",
-      "userAvatar": "https://randomletterstotheworld.files.wordpress.com/2013/07/random-dude.jpg",
-      "postId": 21,
-      "content": "Apparently... ",
-      "id": 16
-    },
-    {
-      "userId": 5,
-      "userName": "Marijana Stosic",
-      "userAvatar": "https://pbs.twimg.com/profile_images/992886364390604800/rHV87pV3_400x400.jpg",
-      "postId": 21,
-      "content": "I love these extensions, they are literally saving my life! ^_^",
-      "id": 17
-    },
-    {
-      "userId": 7,
-      "userName": "Bob Dylan",
-      "userAvatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
-      "postId": 21,
-      "content": "What about comments?",
-      "id": 19
-    },
-    {
-      "userId": 7,
-      "userName": "Bob Dylan",
-      "userAvatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
-      "postId": 25,
-      "content": "Thanks, I will. :)",
-      "id": 20
-    },
-    {
-      "userId": 1,
-      "userName": "Aleksandar Veljkovic",
-      "userAvatar": "https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/122487238_815964235831949_2466135029827167966_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=xKyJ1JtqOPwAX-ph4XZ&_nc_oc=AQnn4gP-aZQ8YApWuwVFQ3_YS4QWRqRYnwGVxheskSiKp5Fjr5xDbbj_gqPgNcggbvk&_nc_ht=scontent.fbeg4-1.fna&oh=d33ffba92ba59b87af925420a391c51f&oe=5FE1CEA1",
-      "postId": 21,
-      "content": "What about them Bob?",
-      "id": 22
-    },
-    {
-      "userId": 3,
-      "userName": "Milan Stanojevic",
-      "userAvatar": "https://i.imgur.com/K5pVtx8.jpg",
-      "postId": 21,
-      "content": "Thank you for all of your support!",
-      "id": 23
+      "language": "serbian",
+      "details": "детаљи",
+      "createNewPost": "Нова објава",
+      "createdBy": "Креатор објаве",
+      "createPost": "Направи објаву",
+      "titleOfThePost": "Наслов објаве",
+      "typeOfThePost": "Тип објаве",
+      "contentOfThePost": "Садржај објаве",
+      "image": "Слика",
+      "video": "Видео",
+      "link": "Линк",
+      "settings": "Подешавања",
+      "signOut": "Одјава",
+      "saveChanges": "Сачувај промене",
+      "uploadProfilePic": "Ажурирај профилну слику",
+      "changeThemeColor": "Промени боју теме",
+      "chooseLanguage": "Изабери језик",
+      "blue": "Плава",
+      "pink": "Розе",
+      "green": "Зелена",
+      "darkGrey": "Тамно сива",
+      "bulgarian": "Бугарски",
+      "english": "Енглески",
+      "serbian": "Српски",
+      "edit": "Измени",
+      "delete": "Обриши",
+      "comments": "Коментари",
+      "writeYourComment": "Напишите коментар на ову објаву",
+      "submit": "Пошаљи",
+      "editPost": "Измени објаву"
     }
   ]
 }

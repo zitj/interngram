@@ -147,7 +147,9 @@
                     <!-- end .closeBtn -->
                     <h1>Edit this post</h1>
                     <form id="editForm">
-                        <label for="title">Title of the post:</label>
+                        <label id="titleLabel" for="title"
+                            >Title of the post:</label
+                        >
                         <input
                             type="text"
                             name="title"
@@ -155,13 +157,15 @@
                             required
                             placeholder="Title"
                         />
-                        <label for="type">Choose a type:</label>
+                        <label id="typeLabel" for="type">Choose a type:</label>
                         <select id="type" name="type" required>
-                            <option value="IMAGE">Image</option>
-                            <option value="VIDEO">Video</option>
-                            <option value="LINK">Link</option>
+                            <option id="imageLabel" value="IMAGE">Image</option>
+                            <option id="videoLabel" value="VIDEO">Video</option>
+                            <option id="linkLabel" value="LINK">Link</option>
                         </select>
-                        <label for="content">Content of the post:</label>
+                        <label id="contentLabel" for="content"
+                            >Content of the post:</label
+                        >
                         <textarea
                             id="content"
                             name="content"

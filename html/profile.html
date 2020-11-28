@@ -20,25 +20,39 @@
                 <!-- end .closeBtn -->
                 <h1>Settings</h1>
                 <form class="settingsForm">
-                    <label for="avatar">Upload your profile picture</label>
+                    <label id="avatarLabel" for="avatar"
+                        >Upload your profile picture</label
+                    >
                     <input
                         type="text"
                         name="avatar"
                         required
                         placeholder="Insert URL"
                     />
-                    <label for="theme">Change theme color</label>
+                    <label id="themeLabel" for="theme"
+                        >Change theme color</label
+                    >
                     <select id="theme" name="theme">
-                        <option value="blue">Blue</option>
-                        <option value="pink">Pink</option>
-                        <option value="green">Green</option>
-                        <option value="darkGrey">Dark grey</option>
+                        <option id="blueLabel" value="blue">Blue</option>
+                        <option id="pinkLabel" value="pink">Pink</option>
+                        <option id="greenLabel" value="green">Green</option>
+                        <option id="darkGreyLabel" value="darkGrey">
+                            Dark grey
+                        </option>
                     </select>
-                    <label for="language">Choose language</label>
+                    <label id="languageLabel" for="language"
+                        >Choose language</label
+                    >
                     <select id="language" name="language">
-                        <option value="bulgarian">Bulgarian</option>
-                        <option value="english">English</option>
-                        <option value="serbian">Serbian</option>
+                        <option id="bulgarianLabel" value="bulgarian">
+                            Bulgarian
+                        </option>
+                        <option id="englishLabel" value="english">
+                            English
+                        </option>
+                        <option id="serbianLabel" value="serbian">
+                            Serbian
+                        </option>
                     </select>
                     <button type="submit">Save changes</button>
                 </form>
