@@ -46,7 +46,10 @@ const createUser = async (e) => {
         firstName: signUpForm.firstname.value,
         lastName: signUpForm.lastname.value,
         email: signUpForm.email.value,
+        avatar:
+            'https://images-na.ssl-images-amazon.com/images/I/51zLZbEVSTL._AC_SX466_.jpg',
         password: signUpForm.password.value,
+
         language: 'english',
         bookmarkedPosts: [],
     };
