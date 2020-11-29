@@ -208,12 +208,11 @@ button {
     .posts {
         display: flex;
         flex-wrap: wrap;
-        padding: 5%;
+        padding: 3% 5% 5%;
 
         .post {
             display: flex;
             flex-direction: column;
-            // background: white;
             text-align: center;
             width: 60%;
             height: 100%;

@@ -269,7 +269,7 @@ button:active {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 5%;
+  padding: 3% 5% 5%;
 }
 
 .wrapper .posts .post {
