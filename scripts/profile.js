@@ -101,8 +101,8 @@ logo.addEventListener('click', () => {
 });
 
 signOutBtn.addEventListener('click', () => {
-    localStorage.removeItem('user');
-    localStorage.removeItem('post');
+    localStorage.removeItem('userID');
+    localStorage.removeItem('postID');
     window.location.replace('../index.html');
 });
 
