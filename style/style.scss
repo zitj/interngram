@@ -9,7 +9,7 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: rgb(240, 240, 240);
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }
 a,
 button {
@@ -478,10 +478,10 @@ button {
     background: #dfdede;
     border-radius: 50%;
     position: relative;
-    margin: 50px;
+    margin: 40px 50px 50px;
     display: inline-block;
-    bottom: 50px;
-    left: 41%;
+    bottom: 120px;
+    left: 43%;
 }
 .loadingSpinner::after,
 .loadingSpinner::before {
