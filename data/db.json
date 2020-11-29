@@ -90,6 +90,17 @@
       "id": 3,
       "avatar": "https://i.guim.co.uk/img/media/32c7b75bf76de33658a3e1c930a2045af23b9884/315_275_1784_1070/master/1784.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=2eb8b1f7c8420cd3fd69c783b76af534",
       "themeColor": "green"
+    },
+    {
+      "firstName": "Demo",
+      "lastName": "Version",
+      "email": "demo@gmail.com",
+      "password": "demo",
+      "language": "english",
+      "bookmarkedPosts": [],
+      "id": 4,
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png",
+      "themeColor": "blue"
     }
   ],
   "comments": [
