@@ -88,7 +88,7 @@ const updateUser = async (e) => {
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' },
     });
-    window.location.replace(`main.html?id=${id}`);
+    window.location.reload(`profile.html?id=${id}`);
 };
 
 const panelRemover = () => {
