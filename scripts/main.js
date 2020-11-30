@@ -182,6 +182,7 @@ closeBtn.addEventListener('click', () => {
 
 logo.addEventListener('click', () => {
     localStorage.removeItem('userID');
+    localStorage.removeItem('postID');
     window.location.replace('../index.html');
 });
 
