@@ -183,18 +183,26 @@ const changePost = async (e) => {
 //Delete button option
 if (!userSignedIn) {
     deleteBtn.addEventListener('click', async (e) => {
-        await fetch('http://localhost:3000/posts/' + id, {
-            method: 'DELETE',
-        });
-        window.location.replace(`main.html`);
+        if (confirm('Are you sure you want to DELETE this post?')) {
+            await fetch('http://localhost:3000/posts/' + id, {
+                method: 'DELETE',
+            });
+            window.location.replace(`main.html`);
+        } else {
+            return;
+        }
     });
 }
 
 deleteBtn.addEventListener('click', async (e) => {
-    await fetch('http://localhost:3000/posts/' + id, {
-        method: 'DELETE',
-    });
-    window.location.replace(`main.html?id=${userSignedIn.id}`);
+    if (confirm('Are you sure you want to DELETE this post?')) {
+        await fetch('http://localhost:3000/posts/' + id, {
+            method: 'DELETE',
+        });
+        window.location.replace(`main.html?id=${userSignedIn.id}`);
+    } else {
+        return;
+    }
 });
 
 //Edit button option

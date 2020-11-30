@@ -138,6 +138,7 @@ const createPost = async (e) => {
         body: JSON.stringify(doc),
         headers: { 'Content-Type': 'application/json' },
     });
+    alert('You have successfully created a new post');
     window.location.reload('/main.html');
 };
 
