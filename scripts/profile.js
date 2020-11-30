@@ -110,6 +110,8 @@ settingsBtn.addEventListener('click', () => {
     formPanel.classList.add('active');
     darkBackground.classList.add('active');
     form.avatar.value = userSignedIn.avatar;
+    form.theme.value = userSignedIn.themeColor;
+    form.language.value = userSignedIn.language;
 });
 
 closeBtn.addEventListener('click', panelRemover);
