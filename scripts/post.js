@@ -303,7 +303,7 @@ const bookmarkedPostsArray = async () => {
     }
 };
 
-const isBookmarked = async (e) => {
+const isBookmarked = async (route) => {
     await renderIndividualPost();
     if (bookmarkBtn.classList.contains('active')) {
         userSignedIn.bookmarkedPosts.push(activePost.title);
@@ -315,9 +315,7 @@ const isBookmarked = async (e) => {
             body: JSON.stringify(userSignedIn),
             headers: { 'Content-Type': 'application/json' },
         });
-        window.location.replace(
-            `main.html?id=${localStorage.getItem('userID')}`
-        );
+        window.location.replace(route);
     }
 
     if (!bookmarkBtn.classList.contains('active')) {
@@ -327,9 +325,7 @@ const isBookmarked = async (e) => {
             body: JSON.stringify(userSignedIn),
             headers: { 'Content-Type': 'application/json' },
         });
-        window.location.replace(
-            `main.html?id=${localStorage.getItem('userID')}`
-        );
+        window.location.replace(route);
     }
 };
 
@@ -346,11 +342,13 @@ logo.addEventListener('click', () => {
     if (!userSignedIn) {
         window.location.replace(`main.html`);
     }
-    isBookmarked();
-    isThePostLiked();
+
+    isBookmarked(`main.html?id=${localStorage.getItem('userID')}`);
+    isThePostLiked(`main.html?id=${localStorage.getItem('userID')}`);
 });
 const toProfilePage = () => {
-    window.location.replace(`profile.html?id=${userSignedIn.id}`);
+    isBookmarked(`profile.html?id=${userSignedIn.id}`);
+    isThePostLiked(`profile.html?id=${userSignedIn.id}`);
 };
 userBtn.addEventListener('click', () => {
     toProfilePage();
